@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'gatsby'
 import * as NavStyles from './nav.module.css'
 import { Hamburger } from './Hamburgers'
@@ -7,7 +7,7 @@ import PropTypes from 'prop-types'
 import _ from 'lodash'
 
 import useMediaQuery from '../Hooks/MatchMedia'
-import { Logo } from '../../../static/assets/Logo'
+import Logo from '../graphics/logo'
 
 const MenuItems = () => {
   return (

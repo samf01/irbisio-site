@@ -2,9 +2,10 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 const Footer = () => {
+  const year = new Date()
   return (
     <footer>
-      <Link to="/">© 2022 Land Design Studios Ltd</Link>
+      <Link to="/">© {year.getFullYear()} Land Design Studios Ltd</Link>
       <Link to="/cookie-policy">Cookie Policy</Link>
       <a href="/#about">About</a>
       <a href="/#projects">Projects</a>

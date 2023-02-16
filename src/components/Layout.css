@@ -28,10 +28,13 @@
   /* Variables go here */
   --irbisio-off-white: #fbfbfb;
   --irbisio-grey: #f3f3f3;
+
+  --nav-height: 56px;
 }
 
 body {
   margin: 0;
+  background-color: var(--irbisio-off-white);
   overflow-x: hidden;
   font-family: 'PP Neue Montreal', Arial, Helvetica, sans-serif;
   font-size: 16px;
@@ -49,6 +52,12 @@ p {
   width: fit-content;
 }
 
+a,
+Link {
+  text-decoration: none;
+  color: black;
+}
+
 /* Nav & Footer */
 
 nav {
@@ -57,18 +66,18 @@ nav {
   top: 0;
   z-index: 10;
   width: 100vw;
-  background: blue;
-  backdrop-filter: blur(4px);
+  background: #fbfbfba2;
+  backdrop-filter: blur(14px);
   transition: top 0.4s;
 }
 
 .nav-bar {
   position: relative;
-  height: 60px;
+  height: var(--nav-height);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 0 12px;
+  margin: 0 60px 0 40px;
 }
 
 .nav-list {
