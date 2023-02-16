@@ -1,4 +1,4 @@
-# My Gatsby 4 | NetlifyCMS Starter
+# Irbisio Main Site - Gatsby 4 | NetlifyCMS Starter
 
 Doesn't use styled-components so, when creating editor previews the CSS can be loaded directly from Layout.css _or_ with a custom stylesheet.
 
