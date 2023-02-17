@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'gatsby'
 import * as NavStyles from './nav.module.css'
-import { Hamburger } from './Hamburgers'
+import { Hamburger } from '../graphics/Hamburgers'
 import { useTransition, animated } from 'react-spring'
 import PropTypes from 'prop-types'
 import _ from 'lodash'
@@ -47,6 +47,7 @@ const NavBar = () => {
 
   useEffect(() => {
     const scrollFunction = _.debounce(() => {
+      setNavbarOpen(false)
       let currentScrollPosY = window.scrollY
       if (scrollPosY > currentScrollPosY) {
         document.getElementById('navbar').style.top = '0'
@@ -66,9 +67,9 @@ const NavBar = () => {
   }, [scrollPosY])
 
   const appear = useTransition(navbarOpen, {
-    from: { right: '-50%', height: '0em' },
-    enter: { height: '10em', right: '0%' },
-    leave: { right: '-50%', height: '0em' },
+    from: { right: '-100%' },
+    enter: { right: '0%' },
+    leave: { right: '-100%' },
   })
 
   return (

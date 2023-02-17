@@ -94,7 +94,7 @@
 #navicon2 span {
   display: block;
   position: absolute;
-  height: 4px;
+  height: 6px;
   width: 50%;
   background: black;
   opacity: 1;
@@ -110,12 +110,10 @@
 
 #navicon2 span:nth-child(even) {
   left: 50%;
-  border-radius: 0 9px 9px 0;
 }
 
 #navicon2 span:nth-child(odd) {
   left: 0px;
-  border-radius: 9px 0 0 9px;
 }
 
 #navicon2 span:nth-child(1),
@@ -151,12 +149,12 @@
 
 #navicon2.open span:nth-child(1) {
   left: 5px;
-  top: 8px;
+  top: 10px;
 }
 
 #navicon2.open span:nth-child(2) {
   left: calc(50% - 5px);
-  top: 8px;
+  top: 10px;
 }
 
 #navicon2.open span:nth-child(3) {
@@ -171,12 +169,12 @@
 
 #navicon2.open span:nth-child(5) {
   left: 5px;
-  top: 26px;
+  top: 25px;
 }
 
 #navicon2.open span:nth-child(6) {
   left: calc(50% - 5px);
-  top: 26px;
+  top: 25px;
 }
 
 /* Icon 3 */

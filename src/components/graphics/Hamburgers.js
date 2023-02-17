@@ -1,8 +1,7 @@
 import React, { useEffect, useRef } from 'react'
-import * as NavStyles from './nav.module.css'
+import * as NavStyles from '../UI/nav.module.css'
 
 export const Hamburger = ({ open, id }) => {
-  console.log(open)
   const icon = useRef(null)
   useEffect(() => {
     if (open) icon.current.classList.add(NavStyles.open)

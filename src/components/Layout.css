@@ -44,16 +44,28 @@
   --irbisio-grey: #f3f3f3;
 
   --nav-height: 56px;
+  --margin-page: 0 100px;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --margin-page: 0 16px;
+  }
 }
 
 body {
   margin: 0;
+  height: 100vh;
   background-color: var(--irbisio-off-white);
   overflow-x: hidden;
   font-family: 'PP Neue Montreal', Arial, Helvetica, sans-serif;
   font-size: 16px;
   font-weight: normal;
   line-height: 126.5%;
+}
+
+.gatsby-focus-wrapper {
+  height: 100%;
 }
 
 .h0 {
@@ -133,7 +145,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 0 60px 0 40px;
+  margin: var(--margin-page);
 }
 
 .nav-list {
@@ -141,7 +153,6 @@ nav {
   width: 100%;
   align-items: center;
   justify-content: flex-end;
-  margin-right: 60px;
   column-gap: 75px;
 }
 
@@ -175,10 +186,16 @@ nav {
   font-weight: 600;
 }
 
+.nav-item:active {
+  font-size: 1.2rem;
+}
+
 .toggle {
   background: none;
   border: none;
   cursor: pointer;
+  transform-origin: right;
+  transform: scale(0.5);
 }
 
 .mobile-menu {
@@ -191,7 +208,8 @@ footer {
   bottom: 0;
   display: flex;
   flex-wrap: wrap;
-  margin: 30px;
+  padding: 24px 0;
+  margin: var(--margin-page);
   justify-content: space-around;
   align-items: center;
 }
@@ -200,16 +218,14 @@ footer {
   .nav-item {
     display: block;
     width: fit-content;
-    font-size: 1.25em;
-    font-weight: 600;
-    line-height: 100%;
     padding: 0.5em 0;
     margin-left: auto;
-    margin-right: 32px;
+    margin-right: 16px;
   }
 
   .nav-list {
     display: block;
+    margin-bottom: 12px;
   }
 }
 
@@ -223,16 +239,25 @@ footer {
 }
 
 /* Grid & Layout */
+.layout {
+  width: 100%;
+  height: 100%;
+  scroll-snap-type: y mandatory;
+  overflow: scroll;
+}
+
 .grid-column-12 {
-  min-height: 100vh;
   max-width: 2260px;
-  margin: 180px 100px 0 100px;
+  margin: var(--margin-page);
   display: grid;
   grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: minmax(100vh, auto);
   column-gap: 8px;
+  scroll-snap-align: start;
 }
 
 .grid-content--center-4 {
+  margin-top: 180px;
   position: relative;
   align-self: center;
   grid-column: 5 / 9;
