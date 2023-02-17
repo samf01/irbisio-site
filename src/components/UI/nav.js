@@ -42,7 +42,7 @@ const MenuItems = () => {
 
 const NavBar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false)
-  let mobile = useMediaQuery('(min-width: 1024px)')
+  let mobile = useMediaQuery('(min-width: 991px)')
   const [scrollPosY, prevScrollPosY] = useState(0)
 
   useEffect(() => {

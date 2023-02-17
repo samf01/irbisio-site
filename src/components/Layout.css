@@ -61,7 +61,6 @@
 
 body {
   margin: 0;
-  height: 100vh;
   background-color: var(--irbisio-off-white);
   overflow-x: hidden;
   font-family: 'PP Neue Montreal', Arial, Helvetica, sans-serif;
@@ -70,8 +69,8 @@ body {
   line-height: 126.5%;
 }
 
-.gatsby-focus-wrapper {
-  height: 100%;
+#gatsby-focus-wrapper {
+  height: 100vh;
 }
 
 .h0 {
@@ -220,6 +219,7 @@ footer {
   margin: var(--margin-page);
   justify-content: space-around;
   align-items: center;
+  scroll-snap-align: end;
 }
 
 @media (max-width: 990px) {
