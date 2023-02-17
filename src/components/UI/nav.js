@@ -16,10 +16,25 @@ const MenuItems = () => {
         ABOUT
       </a>
       <a className="nav-item" href="/#projects">
-        Projects
+        News
       </a>
       <a className="nav-item" href="/#contact">
-        CONTACT
+        case studies
+      </a>
+      <a className="nav-item" href="/#contact">
+        strategy
+      </a>
+      <a className="nav-item" href="/#contact">
+        team
+      </a>
+      <a className="nav-item" href="/#contact">
+        partners
+      </a>
+      <a className="nav-item" href="/#contact">
+        wild cat rescue
+      </a>
+      <a className="nav-item" href="/#contact">
+        contact
       </a>
     </div>
   )

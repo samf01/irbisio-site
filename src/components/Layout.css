@@ -6,7 +6,7 @@
     url('/fonts/PPNeueMontreal-Bold.woff') format('woff'),
     url('/fonts/PPNeueMontreal-Bold.ttf') format('truetype'),
     url('/fonts/PPNeueMontreal-Bold.svg#PPNeueMontreal-Bold') format('svg');
-  font-weight: bold;
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
@@ -19,7 +19,21 @@
     url('/fonts/PPNeueMontreal-Book.woff') format('woff'),
     url('/fonts/PPNeueMontreal-Book.ttf') format('truetype'),
     url('/fonts/PPNeueMontreal-Book.svg#PPNeueMontreal-Book') format('svg');
-  font-weight: normal;
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'PP Neue Montreal';
+  src: url('/fonts/PPNeueMontreal-SemiBold.eot');
+  src: url('/fonts/PPNeueMontreal-SemiBold.eot?#iefix')
+      format('embedded-opentype'),
+    url('/fonts/PPNeueMontreal-SemiBold.woff2') format('woff2'),
+    url('/fonts/PPNeueMontreal-SemiBold.woff') format('woff'),
+    url('/fonts/PPNeueMontreal-SemiBold.ttf') format('truetype'),
+    url('/fonts/PPNeueMontreal-SemiBold.svg#PPNeueMontreal-SemiBold')
+      format('svg');
+  font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
@@ -39,12 +53,50 @@ body {
   font-family: 'PP Neue Montreal', Arial, Helvetica, sans-serif;
   font-size: 16px;
   font-weight: normal;
+  line-height: 126.5%;
+}
+
+.h0 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 84px;
 }
 
 h1 {
   text-align: center;
   font-size: 48px;
   text-transform: uppercase;
+}
+
+h3 {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 110%;
+  /* or 26px */
+  letter-spacing: 0.025em;
+}
+
+h4 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+  text-transform: uppercase;
+}
+
+h5 {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 126.5%;
+}
+
+h6 {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 126.5%;
 }
 
 p {
@@ -55,7 +107,11 @@ p {
 a,
 Link {
   text-decoration: none;
+  font-weight: 700;
+  font-size: 11px;
+  text-align: center;
   color: black;
+  text-transform: uppercase;
 }
 
 /* Nav & Footer */
@@ -84,7 +140,9 @@ nav {
   display: flex;
   width: 100%;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: flex-end;
+  margin-right: 60px;
+  column-gap: 75px;
 }
 
 .nav-item {
@@ -92,10 +150,6 @@ nav {
   text-decoration: none;
   color: black;
   transition: all 200ms ease-in;
-  font-family: 'Raleway';
-  font-weight: 400;
-  font-size: 1em;
-  text-transform: uppercase;
   margin: 0;
 }
 
@@ -107,8 +161,8 @@ nav {
   width: 0%;
   content: '.';
   color: transparent;
-  background: white;
-  height: 1px;
+  background: black;
+  height: 2px;
   transition: all 0.2s ease-in;
 }
 
@@ -117,7 +171,6 @@ nav {
 }
 
 .nav-item:hover {
-  font-size: 1.2em;
   transition: all 0.2s ease-in;
   font-weight: 600;
 }

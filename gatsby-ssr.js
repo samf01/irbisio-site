@@ -2,6 +2,7 @@ import * as React from 'react'
 
 export const onRenderBody = ({ setHeadComponents }) => {
   setHeadComponents([
+    //Bold
     <link
       rel="preload"
       href="/fonts/PPNeueMontreal-Bold.eot"
@@ -34,6 +35,7 @@ export const onRenderBody = ({ setHeadComponents }) => {
       crossOrigin="anonymous"
       key="interFont"
     />,
+    // Book
     <link
       rel="preload"
       href="/fonts/PPNeueMontreal-Book.eot"
@@ -61,6 +63,39 @@ export const onRenderBody = ({ setHeadComponents }) => {
     <link
       rel="preload"
       href="/fonts/PPNeueMontreal-Book.ttf"
+      as="font"
+      type="font/ttf"
+      crossOrigin="anonymous"
+      key="interFont"
+    />,
+    // Semi-Bold
+    <link
+      rel="preload"
+      href="/fonts/PPNeueMontreal-SemiBold.eot"
+      as="font"
+      type="font/eot"
+      crossOrigin="anonymous"
+      key="interFont"
+    />,
+    <link
+      rel="preload"
+      href="/fonts/PPNeueMontreal-SemiBold.woff2"
+      as="font"
+      type="font/woff2"
+      crossOrigin="anonymous"
+      key="interFont"
+    />,
+    <link
+      rel="preload"
+      href="/fonts/PPNeueMontreal-SemiBold.woff"
+      as="font"
+      type="font/woff"
+      crossOrigin="anonymous"
+      key="interFont"
+    />,
+    <link
+      rel="preload"
+      href="/fonts/PPNeueMontreal-SemiBold.ttf"
       as="font"
       type="font/ttf"
       crossOrigin="anonymous"
