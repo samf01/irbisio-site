@@ -9,43 +9,17 @@ import _ from 'lodash'
 import useMediaQuery from '../Hooks/MatchMedia'
 import Logo from '../graphics/logo'
 
-const MenuItems = () => {
-  return (
-    <div className="nav-list">
-      <a className="nav-item" href="/#about">
-        ABOUT
-      </a>
-      <a className="nav-item" href="/#projects">
-        News
-      </a>
-      <a className="nav-item" href="/#contact">
-        case studies
-      </a>
-      <a className="nav-item" href="/#contact">
-        strategy
-      </a>
-      <a className="nav-item" href="/#contact">
-        team
-      </a>
-      <a className="nav-item" href="/#contact">
-        partners
-      </a>
-      <a className="nav-item" href="/#contact">
-        wild cat rescue
-      </a>
-      <a className="nav-item" href="/#contact">
-        contact
-      </a>
-    </div>
-  )
-}
-
 const NavBar = ({ layoutRef }) => {
+  const [isStart, setIsStart] = useState(true)
   const [navbarOpen, setNavbarOpen] = useState(false)
-  let mobile = useMediaQuery('(min-width: 991px)')
+  const mobile = useMediaQuery('(max-width: 990px)')
   const [scrollPosY, prevScrollPosY] = useState(0)
 
   useEffect(() => {
+    const checkType = _.once(() => {
+      if (scrollPosY > 10 && !mobile) setIsStart(!isStart)
+    })
+
     const scrollFunction = _.debounce(() => {
       setNavbarOpen(false)
       //It is no longer window. that is scrolling > need to ref() the layout div...
@@ -54,6 +28,7 @@ const NavBar = ({ layoutRef }) => {
 
       if (scrollPosY > currentScrollPosY) {
         document.getElementById('navbar').style.top = '0'
+        checkType()
       } else {
         document.getElementById('navbar').style.top = '-60px'
       }
@@ -83,8 +58,33 @@ const NavBar = ({ layoutRef }) => {
             <Logo />
           </Link>
         </div>
-        {mobile ? (
-          <MenuItems />
+        {isStart && !mobile ? (
+          <div className="nav-list">
+            <a className="nav-item pos-start" href="/#about">
+              ABOUT
+            </a>
+            <a className="nav-item pos-start" href="/#projects">
+              News
+            </a>
+            <a className="nav-item pos-start" href="/#contact">
+              case studies
+            </a>
+            <a className="nav-item pos-start" href="/#contact">
+              strategy
+            </a>
+            <a className="nav-item pos-start" href="/#contact">
+              team
+            </a>
+            <a className="nav-item pos-start" href="/#contact">
+              partners
+            </a>
+            <a className="nav-item pos-start" href="/#contact">
+              wild cat rescue
+            </a>
+            <a className="nav-item pos-start" href="/#contact">
+              contact
+            </a>
+          </div>
         ) : (
           <button
             aria-label="button"
@@ -104,7 +104,32 @@ const NavBar = ({ layoutRef }) => {
               onClick={() => setNavbarOpen(!navbarOpen)}
               style={appear}
             >
-              <MenuItems />
+              <div className="nav-list">
+                <a className="nav-item" href="/#about">
+                  ABOUT
+                </a>
+                <a className="nav-item" href="/#projects">
+                  News
+                </a>
+                <a className="nav-item" href="/#contact">
+                  case studies
+                </a>
+                <a className="nav-item" href="/#contact">
+                  strategy
+                </a>
+                <a className="nav-item" href="/#contact">
+                  team
+                </a>
+                <a className="nav-item" href="/#contact">
+                  partners
+                </a>
+                <a className="nav-item" href="/#contact">
+                  wild cat rescue
+                </a>
+                <a className="nav-item" href="/#contact">
+                  contact
+                </a>
+              </div>
             </animated.div>
           )
       )}

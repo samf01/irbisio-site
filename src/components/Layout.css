@@ -150,7 +150,7 @@ nav {
   height: var(--nav-height);
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   margin: var(--margin-page);
 }
 
@@ -168,6 +168,9 @@ nav {
   color: black;
   transition: all 200ms ease-in;
   margin: 0;
+}
+
+.nav-item.pos-start {
   text-align: right;
   margin-left: auto;
 }
@@ -208,7 +211,8 @@ nav {
 
 .mobile-menu {
   position: relative;
-  width: 100%;
+  margin: var(--margin-page);
+  /* width: 100%; */
 }
 
 footer {
@@ -224,21 +228,23 @@ footer {
 }
 
 @media (max-width: 990px) {
-  .nav-bar {
-    justify-content: space-between;
-  }
-
   .nav-item {
     display: block;
     width: fit-content;
     padding: 0.5em 0;
     margin-left: auto;
-    margin-right: 16px;
+    margin-right: 6px;
   }
 
   .nav-list {
     display: block;
     margin-bottom: 12px;
+  }
+}
+
+@media (min-width: 2100px) {
+  .nav-bar {
+    margin: 0 100px;
   }
 }
 
