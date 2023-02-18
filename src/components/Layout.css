@@ -61,6 +61,7 @@
 
 body {
   margin: 0;
+  height: 100%;
   background-color: var(--irbisio-off-white);
   overflow-x: hidden;
   font-family: 'PP Neue Montreal', Arial, Helvetica, sans-serif;

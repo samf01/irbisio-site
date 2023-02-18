@@ -40,7 +40,7 @@ const MenuItems = () => {
   )
 }
 
-const NavBar = () => {
+const NavBar = ({ layoutRef }) => {
   const [navbarOpen, setNavbarOpen] = useState(false)
   let mobile = useMediaQuery('(min-width: 991px)')
   const [scrollPosY, prevScrollPosY] = useState(0)
@@ -48,7 +48,10 @@ const NavBar = () => {
   useEffect(() => {
     const scrollFunction = _.debounce(() => {
       setNavbarOpen(false)
-      let currentScrollPosY = window.scrollY
+      //It is no longer window. that is scrolling > need to ref() the layout div...
+      //let currentScrollPosY = window.scrollY
+      let currentScrollPosY = layoutRef.current.scrollTop
+
       if (scrollPosY > currentScrollPosY) {
         document.getElementById('navbar').style.top = '0'
       } else {
@@ -57,12 +60,12 @@ const NavBar = () => {
       prevScrollPosY(currentScrollPosY)
     }, 12)
 
-    window.addEventListener('scroll', () => {
+    layoutRef.current.addEventListener('scroll', () => {
       scrollFunction()
     })
 
     return () => {
-      window.removeEventListener('scroll', scrollFunction)
+      layoutRef.current.removeEventListener('scroll', scrollFunction)
     }
   }, [scrollPosY])
 
