@@ -64,6 +64,26 @@
   }
 }
 
+.light-mode > * {
+  color: var(--irbisio-off-white);
+}
+
+.light-mode > .grid-column-12 > .hourglass {
+  background: var(--irbisio-off-white);
+}
+
+.light-mode {
+  background: var(--irbisio-drk-blue);
+}
+
+.dark-mode > * {
+  color: var(--irbisio-drk-blue);
+}
+
+.dark-mode > .grid-column-12 > .hourglass {
+  background: var(--irbisio-drk-blue);
+}
+
 body {
   margin: 0;
   height: 100%;
@@ -270,6 +290,11 @@ footer {
   overflow: scroll;
 }
 
+.container {
+  width: 100%;
+  min-height: 100vh;
+}
+
 .grid-column-12 {
   max-width: 2260px;
   margin: var(--margin-page);
@@ -281,7 +306,10 @@ footer {
 }
 
 .grid-content {
+  display: flex;
+  flex-direction: column;
   margin-top: 180px;
+  margin-bottom: 80px;
   position: relative;
   align-self: center;
 }
