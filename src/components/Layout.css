@@ -47,6 +47,7 @@
   --irbisio-orange: #f97133;
   --irbisio-cyan: #abf6f3;
   --nav-height: 56px;
+
   --margin-page: 0 100px;
 }
 
@@ -155,6 +156,14 @@ Link {
   text-align: center;
   color: black;
   text-transform: uppercase;
+}
+
+.paginator {
+  position: absolute;
+  top: 56px;
+  bottom: 56px;
+  right: 135px;
+  mix-blend-mode: exclusion;
 }
 
 /* Nav & Footer */

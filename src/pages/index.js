@@ -4,8 +4,23 @@ import Layout from '../components/Layout'
 import GridContent from '../components/UI/grid-content'
 
 const Home = () => (
+  //Create pagination marker position: absolute on RHS.
+  //Count the number of sections and get the key.
+  //OnScroll, check which section getBoundingClientRect().top = 0;
   <Layout>
     <GatsbySeo title="Home Page" />
+    <div className="paginator">
+      <ul style={{ color: 'white' }}>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
     <GridContent layout=" --center-4" mode="dark-mode" background="grey">
       <h4>Introduction</h4>
       <p>
