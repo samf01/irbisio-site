@@ -42,7 +42,10 @@
   /* Variables go here */
   --irbisio-off-white: #fbfbfb;
   --irbisio-grey: #f3f3f3;
-
+  --irbisio-drk-blue: #03222b;
+  --irbisio-blue: #85e1fb;
+  --irbisio-orange: #f97133;
+  --irbisio-cyan: #abf6f3;
   --nav-height: 56px;
   --margin-page: 0 100px;
 }
@@ -56,6 +59,8 @@
 @media (min-width: 2100px) {
   :root {
     --margin-page: 0 auto;
+
+    /* Create lightmode/darkmode so that on pages with a dark background you can set one flag & all the content switches... */
   }
 }
 
@@ -275,17 +280,26 @@ footer {
   scroll-snap-align: start;
 }
 
-.grid-content--center-4 {
+.grid-content {
   margin-top: 180px;
   position: relative;
   align-self: center;
+}
+
+.grid-content.--center-4 {
   grid-column: 5 / 9;
 }
 
-.grid-content--center-6 {
-  position: relative;
-  align-self: center;
+.grid-content.--center-6 {
   grid-column: 3 / 11;
+}
+
+.hourglass {
+  position: relative;
+  background-color: var(--irbisio-drk-blue);
+  grid-column-start: 3;
+  width: 75px;
+  top: 0px;
 }
 
 @media (max-width: 990px) {
@@ -295,11 +309,19 @@ footer {
     grid-template-columns: repeat(8, 1fr);
   }
 
-  .grid-content--center-4 {
+  .grid-content {
+  }
+
+  .grid-content.--center-4 {
     grid-column: 2 / 8;
   }
 
-  .grid-content--center-6 {
+  .grid-content.--center-6 {
     grid-column: 2 / 8;
+  }
+
+  .hourglass {
+    grid-column-start: 1;
+    width: 20px;
   }
 }
