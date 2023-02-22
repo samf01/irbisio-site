@@ -85,6 +85,12 @@
   background: var(--irbisio-drk-blue);
 }
 
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   height: 100%;
@@ -164,6 +170,23 @@ Link {
   bottom: 56px;
   right: 135px;
   mix-blend-mode: exclusion;
+}
+
+/* Pagination */
+
+.spot-column {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.dot {
+  transition: 0.5s;
+}
+
+.grow {
+  transform: scale(3);
 }
 
 /* Nav & Footer */
@@ -297,6 +320,7 @@ footer {
   height: 100%;
   scroll-snap-type: y proximity;
   overflow: scroll;
+  scroll-behavior: smooth;
 }
 
 .container {

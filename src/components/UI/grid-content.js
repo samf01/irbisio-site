@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 
 //Pass in the layout e.g(--center-4, etc)
-const GridContent = ({ children, layout, background, mode }) => {
+const GridContent = ({ children, layout, background, mode, id }) => {
   // We get the height of the content object
   const content = useRef(null)
   const hourglass = useRef(null)
@@ -23,7 +23,7 @@ const GridContent = ({ children, layout, background, mode }) => {
     })
   }, [content, hourglass])
   return (
-    <div className={`container ${mode}`}>
+    <div className={`container ${mode}`} id={id}>
       <div className="grid-column-12">
         <div className="hourglass" ref={hourglass}></div>
         <div className={`grid-content ${layout}`} ref={content}>

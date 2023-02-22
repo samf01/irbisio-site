@@ -4,7 +4,7 @@ import { Link } from 'gatsby'
 const Footer = () => {
   const year = new Date()
   return (
-    <footer>
+    <footer id="footer">
       <Link to="/">© {year.getFullYear()} Irbisio Investments Ltd</Link>
       <Link to="/cookie-policy">Cookie Policy</Link>
       <a href="/#about">About</a>

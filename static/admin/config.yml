@@ -12,6 +12,32 @@ media_folder: "static/assets"
 public_folder: "static/assets"
 
 collections:
+   - name: "content"
+    label: "Pages"
+    files:
+      - name: "home"
+        label: "Home Page"
+        file: "content/pages/home.md"
+        fields:
+          - {
+                label: Introduction,
+                name: introduction,
+                widget: object,
+                summary: "{ { label } }",
+                fields:
+                  [
+                    {
+                      label: Title,
+                      name: title,
+                      widget: string,
+                      default: Who We Are,
+                    },
+                    { label: Body, name: body, widget: markdown },
+                    { label: Image Tag, name: tag, widget: string },
+                    { label: Image, name: image, widget: image },
+                  ],
+              }
+
   - name: "posts"
     label: "Blog Post"
     folder: "content/blog/"

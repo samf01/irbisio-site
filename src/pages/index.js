@@ -9,19 +9,12 @@ const Home = () => (
   //OnScroll, check which section getBoundingClientRect().top = 0;
   <Layout>
     <GatsbySeo title="Home Page" />
-    <div className="paginator">
-      <ul style={{ color: 'white' }}>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
-    </div>
-    <GridContent layout=" --center-4" mode="dark-mode" background="grey">
+    <GridContent
+      id="introduction"
+      layout="--center-4"
+      mode="dark-mode"
+      background="grey"
+    >
       <h4>Introduction</h4>
       <p>
         <br />
@@ -51,7 +44,12 @@ const Home = () => (
         porttitor. Nullam varius lorem sapien. Donec sed tortor turpis.
       </p>
     </GridContent>
-    <GridContent layout=" --center-4" mode="light-mode" background="image">
+    <GridContent
+      id="strategy"
+      layout="--center-4"
+      mode="light-mode"
+      background="image"
+    >
       <h4>Startegy</h4>
       <p>
         <br />
