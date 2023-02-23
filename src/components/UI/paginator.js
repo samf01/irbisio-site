@@ -43,17 +43,20 @@ const Pagination = ({ layoutRef }) => {
           })
       })
     }
-
-    layoutRef.current.addEventListener('scroll', () => {
-      //if any of the sections are in the current screen space add a class to them...
-      window.clearTimeout(isScrolling)
-      const isScrolling = setTimeout(() => {
-        middleOfList()
-      }, 66)
-    })
+    if (layoutRef.current)
+      layoutRef.current.addEventListener('scroll', () => {
+        //if any of the sections are in the current screen space add a class to them...
+        window.clearTimeout(isScrolling)
+        const isScrolling = setTimeout(() => {
+          middleOfList()
+        }, 66)
+      })
 
     return () => {
-      layoutRef.current.removeEventListener('scroll')
+      if (layoutRef.current)
+        layoutRef.current.removeEventListener('scroll', () => {
+          middleOfList()
+        })
     }
   }, [])
 

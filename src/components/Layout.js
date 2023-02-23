@@ -8,10 +8,10 @@ import NavBar from './UI/nav'
 const Layout = ({ children }) => {
   const layoutRef = useRef(null)
 
-  useEffect(() => {
-    const length = layoutRef.current.childNodes.length
-    console.log(length)
-  }, [])
+  // useEffect(() => {
+  //   const length = layoutRef.current.childNodes.length
+  //   console.log(length)
+  // }, [])
 
   return (
     <>

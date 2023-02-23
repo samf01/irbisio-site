@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import { Link } from 'gatsby'
 import * as NavStyles from './nav.module.css'
 import { Hamburger } from '../graphics/Hamburgers'
@@ -15,12 +15,11 @@ const NavBar = ({ layoutRef }) => {
   const mobile = useMediaQuery('(max-width: 990px)')
   const [scrollPosY, prevScrollPosY] = useState(0)
 
-  useEffect(() => {
-    const checkType = _.once(() => {
-      if (scrollPosY > 10 && !mobile) setIsStart(!isStart)
-    })
-
-    const scrollFunction = _.debounce(() => {
+  const scrollFunction = useCallback(
+    _.debounce(() => {
+      const checkType = _.once(() => {
+        if (scrollPosY > 10 && !mobile) setIsStart(!isStart)
+      })
       setNavbarOpen(false)
       //It is no longer window. that is scrolling > need to ref() the layout div...
       //let currentScrollPosY = window.scrollY
@@ -33,14 +32,19 @@ const NavBar = ({ layoutRef }) => {
         document.getElementById('navbar').style.top = '-60px'
       }
       prevScrollPosY(currentScrollPosY)
-    }, 12)
+    }, 12),
+    [prevScrollPosY]
+  )
 
+  useEffect(() => {
     layoutRef.current.addEventListener('scroll', () => {
       scrollFunction()
     })
 
     return () => {
-      layoutRef.current.removeEventListener('scroll', scrollFunction)
+      layoutRef.current.removeEventListener('scroll', () => {
+        scrollFunction()
+      })
     }
   }, [scrollPosY])
 

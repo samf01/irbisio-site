@@ -78,7 +78,11 @@
 }
 
 .dark-mode > * {
-  color: var(--irbisio-drk-blue);
+  color: var(--irbisio-drk-blue) !important;
+}
+
+.dark-mode > .grid-column-12 > .grid-content > span > .icon > path {
+  stroke: var(--irbisio-drk-blue);
 }
 
 .dark-mode > .hourglass {
@@ -335,7 +339,8 @@ footer {
   width: 100%;
   height: 100%;
   scroll-snap-type: y proximity;
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
@@ -343,7 +348,13 @@ footer {
   position: relative;
   width: 100%;
   min-height: 100vh;
-  background-size: cover;
+  background-size: 120% 120%;
+  padding-left: 40px;
+  margin-left: -40px;
+  padding-top: 40px;
+  margin-top: -40px;
+  background-position-x: 0;
+  background-position-y: 0;
 }
 
 .container-shape {
@@ -373,6 +384,11 @@ footer {
   align-self: center;
 }
 
+.grid-content > a,
+Link {
+  align-self: flex-end;
+}
+
 .grid-content.--center-4 {
   grid-column: 5 / 9;
 }
@@ -381,6 +397,10 @@ footer {
   grid-column: 3 / 11;
 }
 
+.row {
+  display: flex;
+  gap: 24px;
+}
 @keyframes hourglass {
   0% {
     /* Starts with shape at bottom */

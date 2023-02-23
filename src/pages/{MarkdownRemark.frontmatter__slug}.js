@@ -16,7 +16,7 @@ export default function Template({
           <h1>{frontmatter.title}</h1>
           <div dangerouslySetInnerHTML={{ __html: html }} />
         </div>
-        <Link styleName="footer" href="/">
+        <Link className="footer" to="/">
           Agree & Close
         </Link>
       </div>
