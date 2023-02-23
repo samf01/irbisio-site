@@ -1,0 +1,41 @@
+/* Pagination */
+
+.paginator {
+  position: absolute;
+  top: 56px;
+  bottom: 56px;
+  right: 135px;
+  mix-blend-mode: exclusion;
+  z-index: 10;
+}
+
+.spot-column {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.dot {
+  transition: 0.6s;
+}
+
+.dot:hover {
+  transform: scale(4);
+}
+
+.dot:hover * {
+  fill: var(--irbisio-orange);
+}
+
+.grow {
+  transform: scale(3);
+  transition: 0.6s;
+}
+
+@media (max-width: 990px) {
+  .paginator {
+    right: 32px;
+    transform: scale(0.5);
+  }
+}

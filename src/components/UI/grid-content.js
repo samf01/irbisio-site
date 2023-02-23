@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react'
 import { BackgroundShape } from '../graphics/background-shape'
 import useMediaQuery from '../Hooks/MatchMedia'
-import Hourglass from './hourglass'
+import Hourglass from './hourglass/hourglass'
 //Pass in the layout e.g(--center-4, etc)
 const GridContent = ({ children, layout, background, mode, id, hide }) => {
   // We get the height of the content object

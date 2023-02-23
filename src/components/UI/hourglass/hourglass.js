@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react'
+import './hourglass.css'
 
 const Hourglass = ({ content, hide }) => {
   const hourglass = useRef(null)

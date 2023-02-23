@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react'
-import * as NavStyles from '../UI/nav.module.css'
+import * as NavStyles from './nav.module.css'
 
 export const Hamburger = ({ open, id }) => {
   const icon = useRef(null)

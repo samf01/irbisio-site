@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import { Link } from 'gatsby'
 import * as NavStyles from './nav.module.css'
-import { Hamburger } from '../graphics/Hamburgers'
+import { Hamburger } from './hamburgers'
 import { useTransition, animated } from 'react-spring'
 import PropTypes from 'prop-types'
 import _ from 'lodash'
 
-import useMediaQuery from '../Hooks/MatchMedia'
-import Logo from '../graphics/logo'
+import useMediaQuery from '../../Hooks/MatchMedia'
+import Logo from '../../graphics/logo'
 
 const NavBar = ({ layoutRef }) => {
   const [isStart, setIsStart] = useState(true)

@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react'
-import { closestItem } from '../Hooks/closestTo'
+import { closestItem } from '../../Hooks/closestTo'
+import './paginator.css'
 
 const Pagination = ({ layoutRef }) => {
   const [sections, setSections] = useState([])
@@ -78,8 +79,10 @@ const Pagination = ({ layoutRef }) => {
   })
 
   return (
-    <div className="spot-column" ref={pageSpot}>
-      {PageDots}
+    <div className="paginator">
+      <div className="spot-column" ref={pageSpot}>
+        {PageDots}
+      </div>
     </div>
   )
 }

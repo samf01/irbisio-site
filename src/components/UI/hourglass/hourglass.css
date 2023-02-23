@@ -1,0 +1,56 @@
+@keyframes hourglass {
+  0% {
+    /* Starts with shape at bottom */
+    clip-path: polygon(
+      0 0,
+      100% 0,
+      100% 0%,
+      50% 5%,
+      100% 10%,
+      100% 100%,
+      0 100%,
+      0 10%,
+      50% 5%,
+      0 0%
+    );
+  }
+  100% {
+    clip-path: polygon(
+      0 0,
+      100% 0,
+      100% 90%,
+      50% 95%,
+      100% 100%,
+      100% 100%,
+      0 100%,
+      0 100%,
+      50% 95%,
+      0 90%
+    );
+  }
+}
+
+.hourglass {
+  position: relative;
+  grid-column-start: 3;
+  width: 75px;
+  top: 0px;
+  overflow: hidden;
+}
+
+.hourglass::after {
+  position: absolute;
+  background-color: var(--irbisio-drk-blue);
+  content: '';
+  width: 100%;
+  bottom: -20%;
+  top: -20%;
+  animation: hourglass 4s linear infinite;
+}
+
+@media (max-width: 990px) {
+  .hourglass {
+    grid-column-start: 1;
+    width: 20px;
+  }
+}
