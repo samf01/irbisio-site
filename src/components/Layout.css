@@ -69,8 +69,8 @@
   color: var(--irbisio-off-white);
 }
 
-.light-mode > .grid-column-12 > .hourglass {
-  background: var(--irbisio-off-white);
+.light-mode > .grid-column-12 > .hourglass::after {
+  background-color: var(--irbisio-off-white);
 }
 
 .light-mode {
@@ -81,8 +81,16 @@
   color: var(--irbisio-drk-blue);
 }
 
-.dark-mode > .grid-column-12 > .hourglass {
-  background: var(--irbisio-drk-blue);
+.dark-mode > .hourglass {
+  transform: scale(1);
+}
+
+.light-mode > .container-shape > svg > path {
+  fill: #03222b8f;
+}
+
+.dark-mode > .grid-column-12 > .hourglass::after {
+  background-color: var(--irbisio-drk-blue);
 }
 
 html {
@@ -95,6 +103,7 @@ body {
   margin: 0;
   height: 100%;
   background-color: var(--irbisio-off-white);
+  color: var(--irbisio-drk-blue);
   overflow-x: hidden;
   font-family: 'PP Neue Montreal', Arial, Helvetica, sans-serif;
   font-size: 16px;
@@ -160,7 +169,7 @@ Link {
   font-weight: 700;
   font-size: 11px;
   text-align: center;
-  color: black;
+  color: var(--irbisio-drk-blue);
   text-transform: uppercase;
 }
 
@@ -170,6 +179,7 @@ Link {
   bottom: 56px;
   right: 135px;
   mix-blend-mode: exclusion;
+  z-index: 10;
 }
 
 /* Pagination */
@@ -182,11 +192,12 @@ Link {
 }
 
 .dot {
-  transition: 0.5s;
+  transition: 0.6s;
 }
 
 .grow {
   transform: scale(3);
+  transition: 0.6s;
 }
 
 /* Nav & Footer */
@@ -222,7 +233,6 @@ nav {
 .nav-item {
   position: relative;
   text-decoration: none;
-  color: black;
   transition: all 200ms ease-in;
   margin: 0;
 }
@@ -324,8 +334,17 @@ footer {
 }
 
 .container {
+  position: relative;
   width: 100%;
   min-height: 100vh;
+  background-size: cover;
+}
+
+.container-shape {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .grid-column-12 {
@@ -355,12 +374,54 @@ footer {
   grid-column: 3 / 11;
 }
 
+@keyframes hourglass {
+  0% {
+    /* Starts with shape at bottom */
+    clip-path: polygon(
+      0 0,
+      100% 0,
+      100% 0%,
+      50% 5%,
+      100% 10%,
+      100% 100%,
+      0 100%,
+      0 10%,
+      50% 5%,
+      0 0%
+    );
+  }
+  100% {
+    clip-path: polygon(
+      0 0,
+      100% 0,
+      100% 90%,
+      50% 95%,
+      100% 100%,
+      100% 100%,
+      0 100%,
+      0 100%,
+      50% 95%,
+      0 90%
+    );
+  }
+}
+
 .hourglass {
   position: relative;
-  background-color: var(--irbisio-drk-blue);
   grid-column-start: 3;
   width: 75px;
   top: 0px;
+  overflow: hidden;
+}
+
+.hourglass::after {
+  position: absolute;
+  background-color: var(--irbisio-drk-blue);
+  content: '';
+  width: 100%;
+  bottom: -20%;
+  top: -20%;
+  animation: hourglass 4s linear infinite;
 }
 
 @media (max-width: 990px) {

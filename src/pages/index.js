@@ -2,6 +2,7 @@ import { GatsbySeo } from 'gatsby-plugin-next-seo'
 import React from 'react'
 import Layout from '../components/Layout'
 import GridContent from '../components/UI/grid-content'
+import background from '../../static/assets/background-test.jpg'
 
 const Home = () => (
   //Create pagination marker position: absolute on RHS.
@@ -48,7 +49,7 @@ const Home = () => (
       id="strategy"
       layout="--center-4"
       mode="light-mode"
-      background="image"
+      background={background}
     >
       <h4>Startegy</h4>
       <p>
