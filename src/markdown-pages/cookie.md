@@ -1,11 +1,11 @@
 ---
-title: "Cookie Policy"
-slug: "/cookie-policy"
+title: 'Cookie Policy'
+slug: '/cookie-policy'
 ---
 
 ### INTRODUCTION
 
-LDES Council (“we” or “us” or “our”) may use cookies, web beacons, tracking pixels, and other tracking technologies when you visit our [website](https://www.cubecapital.co.uk), including any other media form, media channel, mobile website, or mobile application related or connected thereto (collectively, the “Site”) to help customise the Site and improve your experience.
+Irbisio Ltd (“we” or “us” or “our”) may use cookies, web beacons, tracking pixels, and other tracking technologies when you visit our [website](https://www.irbisio.com), including any other media form, media channel, mobile website, or mobile application related or connected thereto (collectively, the “Site”) to help customise the Site and improve your experience.
 
 We reserve the right to make changes to this Cookie Policy at any time and for any reason. We will alert you about any changes by updating the “Last Updated” date of this Cookie Policy. Any changes or modifications will be effective immediately upon posting the updated Cookie Policy on the Site, and you waive the right to receive specific notice of each such change or modification.
 
@@ -76,4 +76,4 @@ In addition to cookies, we may use web beacons, pixel tags, and other tracking t
 
 ### PRIVACY POLICY
 
-For more information about how we use information collected by cookies and other tracking technologies, please refer to our Privacy Policy [CLICK HERE](https://www.cubecapital.co.uk/privacy-policy)/posted on the Site. This Cookie Policy is part of and is incorporated into our Privacy Policy. By using the Site, you agree to be bound by this Cookie Policy and our Privacy Policy.
+For more information about how we use information collected by cookies and other tracking technologies, please refer to our Privacy Policy [CLICK HERE](https://www.irbisio.com/privacy-policy)/posted on the Site. This Cookie Policy is part of and is incorporated into our Privacy Policy. By using the Site, you agree to be bound by this Cookie Policy and our Privacy Policy.

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 
-const Hourglass = ({ content }) => {
+const Hourglass = ({ content, hide }) => {
   const hourglass = useRef(null)
   // We need a pagination object on right
 
@@ -20,7 +20,13 @@ const Hourglass = ({ content }) => {
     })
   }, [content, hourglass])
 
-  return <div className="hourglass" ref={hourglass} />
+  return (
+    <div
+      className="hourglass"
+      ref={hourglass}
+      style={hide && { display: 'none' }}
+    />
+  )
 }
 
 export default Hourglass

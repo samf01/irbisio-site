@@ -37,12 +37,12 @@ const NavBar = ({ layoutRef }) => {
   )
 
   useEffect(() => {
-    layoutRef.current.addEventListener('scroll', () => {
+    document.addEventListener('scroll', () => {
       scrollFunction()
     })
 
     return () => {
-      layoutRef.current.removeEventListener('scroll', () => {
+      document.removeEventListener('scroll', () => {
         scrollFunction()
       })
     }

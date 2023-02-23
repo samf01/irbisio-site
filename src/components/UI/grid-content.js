@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from 'react'
 import { BackgroundShape } from '../graphics/background-shape'
 import Hourglass from './hourglass'
 //Pass in the layout e.g(--center-4, etc)
-const GridContent = ({ children, layout, background, mode, id }) => {
+const GridContent = ({ children, layout, background, mode, id, hide }) => {
   // We get the height of the content object
   const content = useRef(null)
   const containerRef = useRef(null)
@@ -50,7 +50,7 @@ const GridContent = ({ children, layout, background, mode, id }) => {
         <BackgroundShape />
       </div>
       <div className="grid-column-12">
-        <Hourglass content={content} />
+        <Hourglass content={content} hide={hide} />
         <div className={`grid-content ${layout}`} ref={content}>
           {children}
         </div>

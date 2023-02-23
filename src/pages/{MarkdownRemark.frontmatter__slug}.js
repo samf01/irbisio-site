@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
 import { GatsbySeo } from 'gatsby-plugin-next-seo'
+import GridContent from '../components/UI/grid-content'
 
 export default function Template({
   data, // this prop will be injected by the GraphQL query below.
@@ -11,15 +12,14 @@ export default function Template({
   return (
     <Layout>
       <GatsbySeo title={frontmatter.slug} />
-      <div className="grid-content--center-6">
-        <div>
-          <h1>{frontmatter.title}</h1>
-          <div dangerouslySetInnerHTML={{ __html: html }} />
-        </div>
+      <GridContent layout="--center-6" mode="dark-mode" hide="true">
+        <h1>{frontmatter.title}</h1>
+        <div dangerouslySetInnerHTML={{ __html: html }} />
+
         <Link className="footer" to="/">
           Agree & Close
         </Link>
-      </div>
+      </GridContent>
     </Layout>
   )
 }
