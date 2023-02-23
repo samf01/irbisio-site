@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import './Layout.css'
 import Pagination from './UI/paginator'
 
@@ -7,6 +7,11 @@ import NavBar from './UI/nav'
 
 const Layout = ({ children }) => {
   const layoutRef = useRef(null)
+
+  useEffect(() => {
+    const length = layoutRef.current.childNodes.length
+    console.log(length)
+  }, [])
 
   return (
     <>
