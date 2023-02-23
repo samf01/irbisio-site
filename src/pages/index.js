@@ -8,6 +8,7 @@ import snowLeopard from '../../static/assets/snow-leopard-bg.jpg'
 
 import PreviewArticle from '../components/UI/news/article-preview'
 import FoundationButton from '../components/UI/snow-leopard-button'
+import Landing from '../components/UI/above-the-fold'
 
 const Home = () => {
   const mockArticles = [
@@ -33,6 +34,7 @@ const Home = () => {
   return (
     <Layout>
       <GatsbySeo title="Home Page" />
+      <Landing />
       <GridContent
         id="introduction"
         layout="--center-4"
@@ -189,8 +191,8 @@ const Home = () => {
         background={background}
       >
         <h4>News</h4>
-        {mockArticles.map(article => {
-          return <PreviewArticle key={article.heading} article={article} />
+        {mockArticles.map((article, i) => {
+          return <PreviewArticle key={i} article={article} />
         })}
         <p>
           For more information contact:{' '}
