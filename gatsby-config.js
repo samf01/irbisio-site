@@ -3,6 +3,8 @@ const title = 'Irbisio Website'
 const description = 'Irbisio Website based on - Gatsby 4 + Netlify CMS'
 const logo = 'static/assets/icons/logo512.png'
 const color = '#fbfbfb'
+const company_address =
+  'Iribisio Management Ltd. c/o M Q Services Ltd. Victoria Place, 31 Victoria Street, Hamilton HM10. Bermuda'
 const social = {
   twitter: '@irbisio',
   instagram: '',
@@ -16,6 +18,7 @@ require('dotenv').config()
 
 module.exports = {
   siteMetadata: {
+    company_address,
     siteUrl,
     logo,
     title,
