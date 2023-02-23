@@ -1,11 +1,32 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import { BackgroundShape } from '../graphics/background-shape'
+import useMediaQuery from '../Hooks/MatchMedia'
 import Hourglass from './hourglass'
 //Pass in the layout e.g(--center-4, etc)
 const GridContent = ({ children, layout, background, mode, id, hide }) => {
   // We get the height of the content object
   const content = useRef(null)
   const containerRef = useRef(null)
+  const [styles, setStyles] = useState({ backgroundImage: 'none' })
+  const mobile = useMediaQuery('(max-width: 990px)')
+
+  useEffect(() => {
+    switch (mode) {
+      case 'light-mode':
+        setStyles({
+          backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${background})`,
+        })
+        break
+      case 'dark-mode':
+        setStyles({ backgroundImage: 'none' })
+        break
+      case 'snow-mode':
+        setStyles({
+          backgroundImage: `url(${background})`,
+        })
+        break
+    }
+  }, [mode])
 
   useEffect(() => {
     const imageMove = event => {
@@ -22,11 +43,12 @@ const GridContent = ({ children, layout, background, mode, id, hide }) => {
     const height = window.innerHeight
 
     //Amount the image can move (px)
-    const move = 40
-
-    document.addEventListener('mousemove', event => {
-      imageMove(event)
-    })
+    const move = -40
+    if (!mobile) {
+      document.addEventListener('mousemove', event => {
+        imageMove(event)
+      })
+    }
     return () =>
       document.removeEventListener('mousemove', event => {
         imageMove(event)
@@ -38,13 +60,7 @@ const GridContent = ({ children, layout, background, mode, id, hide }) => {
       className={`container ${mode}`}
       ref={containerRef}
       id={id}
-      style={
-        mode === 'light-mode'
-          ? {
-              backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${background})`,
-            }
-          : { backgroundImage: 'none' }
-      }
+      style={styles}
     >
       <div className="container-shape">
         <BackgroundShape />

@@ -4,10 +4,10 @@ import React from 'react'
 import Layout from '../components/Layout'
 import GridContent from '../components/UI/grid-content'
 import background from '../../static/assets/background-test.jpg'
-import technologyIcon from '../../static/assets/icons/technology-icon.svg'
-import financeIcon from '../../static/assets/icons/finance-icon.svg'
-import projectIcon from '../../static/assets/icons/project-management-icon.svg'
+import snowLeopard from '../../static/assets/snow-leopard-bg.jpg'
+
 import PreviewArticle from '../components/UI/news/article-preview'
+import FoundationButton from '../components/UI/snow-leopard-button'
 
 const Home = () => {
   const mockArticles = [
@@ -196,6 +196,43 @@ const Home = () => {
           For more information contact:{' '}
           <a href="mailto:media@irbisio.com">media@irbisio.com</a>
         </p>
+      </GridContent>
+      <GridContent id="about" layout="--center-4" mode="dark-mode">
+        <h4>About</h4>
+        <h1>
+          Founded in January 2023 to provide a new approach to cleantech
+          investing.
+        </h1>
+        <p>
+          Based on deep expertise and a focus on pragmatic projects that will
+          accelerate carbon net zero while making returns for investors.
+          <br />
+          <br />
+          Founded by a group of energy professionals, technical specialists and
+          investment experts, Irbisio operates across Western Europe. Initial
+          projects (include name examples or area of investment).
+        </p>
+        <Link to="/about">Learn More</Link>
+      </GridContent>
+      <GridContent
+        id="snow-leopard"
+        layout="--center-4"
+        mode="snow-mode"
+        background={snowLeopard}
+      >
+        <h4>Wild Cat Rescue Fund</h4>
+        <h1>Protecting snow leopards, now, and for the future.</h1>
+        <p>
+          The Snow Leopard symbolises power, courage and intuition, but paired
+          with an amazing analytical ability. This reflects the approach and
+          attributes of Irbisio and we have chosen theSnow Leopard as our icon.
+          <br />
+          <br />
+          We support Snow Leopard Trust and its aims to better understand and
+          protect this endangered species in partnership with communities that
+          share its habitat.
+        </p>
+        <FoundationButton />
       </GridContent>
     </Layout>
   )

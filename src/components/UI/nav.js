@@ -36,17 +36,17 @@ const NavBar = ({ layoutRef }) => {
     [prevScrollPosY]
   )
 
-  useEffect(() => {
-    document.addEventListener('scroll', () => {
-      scrollFunction()
-    })
+  // useEffect(() => {
+  //   document.addEventListener('scroll', () => {
+  //     scrollFunction()
+  //   })
 
-    return () => {
-      document.removeEventListener('scroll', () => {
-        scrollFunction()
-      })
-    }
-  }, [scrollPosY])
+  //   return () => {
+  //     document.removeEventListener('scroll', () => {
+  //       scrollFunction()
+  //     })
+  //   }
+  // }, [scrollPosY])
 
   const appear = useTransition(navbarOpen, {
     from: { right: '-100%' },

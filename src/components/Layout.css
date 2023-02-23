@@ -49,11 +49,13 @@
   --nav-height: 56px;
 
   --margin-page: 0 100px;
+  --content-margin-top: 180px;
 }
 
 @media (max-width: 990px) {
   :root {
     --margin-page: 0 16px;
+    --content-margin-top: 80px;
   }
 }
 
@@ -146,6 +148,23 @@ Link {
   text-transform: uppercase;
 }
 
+@media (max-width: 990px) {
+  body {
+    font-size: 12px;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  h2 {
+    font-size: 28px;
+    line-height: normal;
+  }
+}
+
+/* Pagination */
+
 .paginator {
   position: absolute;
   top: 56px;
@@ -154,8 +173,6 @@ Link {
   mix-blend-mode: exclusion;
   z-index: 10;
 }
-
-/* Pagination */
 
 .spot-column {
   display: flex;
@@ -171,6 +188,13 @@ Link {
 .grow {
   transform: scale(3);
   transition: 0.6s;
+}
+
+@media (max-width: 990px) {
+  .paginator {
+    right: 32px;
+    transform: scale(0.5);
+  }
 }
 
 /* Nav & Footer */
@@ -311,13 +335,12 @@ footer {
   position: relative;
   width: 100%;
   min-height: 100vh;
-  background-size: 120% 120%;
+  background-size: 110% 110%;
   /* padding-left: 40px;
   margin-left: -40px;
   padding-top: 40px;
   margin-top: -40px; */
-  background-position-x: 0;
-  background-position-y: 0;
+  background-repeat: no-repeat;
 }
 
 .container-shape {
@@ -341,7 +364,7 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 24px;
-  margin-top: 180px;
+  margin-top: var(--content-margin-top);
   margin-bottom: 80px;
   position: relative;
   align-self: center;
@@ -415,13 +438,18 @@ Link {
 }
 
 @media (max-width: 990px) {
+  .container {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+
   .grid-column-12 {
     margin: 16px;
     margin-top: 80px;
     grid-template-columns: repeat(8, 1fr);
-  }
-
-  .grid-content {
   }
 
   .grid-content.--center-4 {
@@ -456,7 +484,7 @@ Link {
 }
 
 .light-mode {
-  background: var(--irbisio-drk-blue);
+  background-color: var(--irbisio-drk-blue);
 }
 
 .dark-mode > * {
