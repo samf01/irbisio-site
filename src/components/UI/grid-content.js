@@ -20,6 +20,7 @@ const GridContent = ({ children, layout, background, mode, id }) => {
     }
     const width = window.innerWidth
     const height = window.innerHeight
+
     //Amount the image can move (px)
     const move = 40
 
