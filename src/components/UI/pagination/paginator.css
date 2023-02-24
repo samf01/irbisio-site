@@ -2,11 +2,36 @@
 
 .paginator {
   position: absolute;
-  top: 56px;
-  bottom: 56px;
+  top: 20%;
+  bottom: 20%;
   right: 135px;
   mix-blend-mode: exclusion;
   z-index: 10;
+}
+
+.paginator-home-line {
+  height: 24%;
+  width: 2px;
+  background-color: var(--irbisio-off-white);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: column;
+  transition: 1s;
+}
+
+.paginator-home-line.--hide {
+  height: 0%;
+}
+
+.home-line-icon {
+  margin-bottom: -24px;
+  will-change: transform;
+  transition: 1s;
+}
+
+.home-line-icon.--hide {
+  transform: scale(0);
 }
 
 .spot-column {

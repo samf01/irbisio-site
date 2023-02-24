@@ -467,3 +467,17 @@ Link {
   align-self: flex-end;
   grid-column: 1 / 1;
 }
+
+.logo {
+  /* This makes the object sit in top of things that have clipping -- z-index doesn't work... */
+  transform: scale(1);
+  transition: 0.3s;
+}
+
+nav .logo:hover {
+  transform: scale(1.2);
+}
+
+nav .logo:hover > path {
+  fill: var(--irbisio-blue);
+}

@@ -7,7 +7,7 @@ export const Logo = () => {
       height="100%"
       viewBox="0 0 570 117"
       fill="none"
-      style={{ transform: 'scaleX(1)' }}
+      className="logo"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
