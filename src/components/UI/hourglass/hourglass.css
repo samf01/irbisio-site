@@ -38,14 +38,21 @@
   overflow: hidden;
 }
 
-.hourglass::after {
+.hourglass-container {
   position: absolute;
-  background-color: var(--irbisio-drk-blue);
-  content: '';
+  /* background-color: var(--irbisio-drk-blue); */
   width: 100%;
   bottom: -20%;
   top: -20%;
-  animation: hourglass 4s linear infinite;
+  /* animation: hourglass 4s linear infinite; */
+}
+
+.dark-mode * polygon {
+  fill: var(--irbisio-drk-blue);
+}
+
+.snow-mode * polygon {
+  fill: var(--irbisio-drk-blue);
 }
 
 @media (max-width: 990px) {

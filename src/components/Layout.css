@@ -322,7 +322,7 @@ footer {
   position: relative;
   width: 100%;
   min-height: 100vh;
-  background-size: 110%;
+  background-size: cover;
   /* padding-left: 40px;
   margin-left: -40px;
   padding-top: 40px;
@@ -336,7 +336,7 @@ footer {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  opacity: 0.93;
+  /* opacity: 0.93; */
 }
 
 .video-cutter {
@@ -442,16 +442,14 @@ Link {
   stroke: var(--irbisio-drk-blue);
 }
 
-.dark-mode > .hourglass {
-  transform: scale(1);
-}
-
 .light-mode > .container-shape > svg > path {
   fill: #03222b8f;
+  mix-blend-mode: multiply;
 }
 
-.dark-mode > .grid-column-12 > .hourglass::after {
-  background-color: var(--irbisio-drk-blue);
+.snow-mode > .container-shape > svg > path {
+  fill: var(--irbisio-grey);
+  mix-blend-mode: multiply;
 }
 
 .light-mode + footer > a,

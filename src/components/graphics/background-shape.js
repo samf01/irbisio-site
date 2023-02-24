@@ -17,11 +17,7 @@ export const BackgroundShape = () => {
         height: '100%',
       }}
     >
-      <path
-        d="M0 0H100V30L50 100L0 30Z"
-        fill="#F3F3F3"
-        style={{ mixBlendMode: 'multiply' }}
-      />
+      <path d="M0 0H100V30L50 100L0 30Z" fill="var(--irbisio-grey)" />
     </svg>
   )
 }
