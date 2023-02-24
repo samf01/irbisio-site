@@ -57,11 +57,10 @@ const NavBar = ({ layoutRef }) => {
   return (
     <nav id="navbar">
       <div className="nav-bar">
-        <div>
-          <Link to="/#">
-            <Logo />
-          </Link>
-        </div>
+        <Link to="/#" style={{ height: '16px' }}>
+          <Logo />
+        </Link>
+
         {isStart && !mobile ? (
           <div className="nav-list">
             <a className="nav-item pos-start" href="/#about">

@@ -365,6 +365,12 @@ footer {
   align-self: center;
 }
 
+.landing-content-center {
+  display: block;
+  height: fit-content;
+  grid-column: 5 / 9;
+}
+
 .grid-content > a,
 Link {
   align-self: flex-end;
@@ -458,6 +464,6 @@ Link {
   bottom: 80px;
   display: flex;
   gap: 32px;
-  align-self: flex-start;
-  grid-column: 1 / 8;
+  align-self: flex-end;
+  grid-column: 1 / 1;
 }
