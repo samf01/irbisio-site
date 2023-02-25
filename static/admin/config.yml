@@ -12,7 +12,7 @@ media_folder: "static/assets"
 public_folder: "static/assets"
 
 collections:
-   - name: "content"
+  - name: "content"
     label: "Pages"
     files:
       - name: "home"
@@ -20,53 +20,267 @@ collections:
         file: "content/pages/home.md"
         fields:
           - {
-                label: Introduction,
-                name: introduction,
-                widget: object,
-                summary: "{ { label } }",
-                fields:
-                  [
-                    {
-                      label: Title,
-                      name: title,
-                      widget: string,
-                      default: Who We Are,
-                    },
-                    { label: Body, name: body, widget: markdown },
-                    { label: Image Tag, name: tag, widget: string },
-                    { label: Image, name: image, widget: image },
-                  ],
-              }
+              label: Introduction,
+              name: introduction,
+              widget: object,
+              summary: "{{fields.section}}",
+              fields:
+                [
+                  {
+                    label: Section Name,
+                    name: section,
+                    widget: string,
+                    default: Introduction,
+                  },
+                  {
+                    label: Section Background & Colour Scheme,
+                    name: mode,
+                    widget: select,
+                    multiple: false,
+                    options:
+                      [
+                        { label: "No image - white background", value: "dark-mode" },
+                        { label: "Dark - image background", value: "light-mode" },
+                        { label: "Light, with image, (ala Snow Leopard)", value: "snow-mode" },
+                      ],
+                    default: ["dark-mode"],
+                  },
+                  {
+                    label: Title,
+                    name: title,
+                    widget: string,
+                    default: Who We Are,
+                  },
+                  { label: Background Image, name: image, widget: image, default: static/assets/background-test.jpg, required: false },
+                  { label: Body, name: body, widget: markdown },
+                ],
+            }
+          - {
+              label: Strategy,
+              name: strategy,
+              widget: object,
+              summary: "{{fields.section}}",
+              fields:
+                [
+                  {
+                    label: Section Name,
+                    name: section,
+                    widget: string,
+                    default: Strategy,
+                  },
+                  {
+                    label: Page 1,
+                    name: page_1,
+                    widget: object,
+                    fields:
+                      [
+                        {
+                          label: Title,
+                          name: title,
+                          widget: string,
+                          default: Who We Are,
+                        },
+                        {
+                          label: Section Background & Colour Scheme,
+                          name: mode,
+                          widget: select,
+                          multiple: false,
+                          options:
+                            [
+                              { label: "No image - white background", value: "dark-mode" },
+                              { label: "Dark - image background", value: "light-mode" },
+                              { label: "Light, with image, (ala Snow Leopard)", value: "snow-mode" },
+                            ],
+                          default: ["light-mode"],
+                        },
+                        { label: Body, name: body, widget: markdown },
+                      ]
+                  },
+                  {
+                    label: Page 2,
+                    name: page_2,
+                    widget: object,
+                    fields:
+                      [
+                        {
+                          label: Title,
+                          name: title,
+                          widget: string,
+                          default: Who We Are,
+                        },
+                        {
+                          label: Section Background & Colour Scheme,
+                          name: mode,
+                          widget: select,
+                          multiple: false,
+                          options:
+                            [
+                              { label: "No image - white background", value: "dark-mode" },
+                              { label: "Dark - image background", value: "light-mode" },
+                              { label: "Light, with image, (ala Snow Leopard)", value: "snow-mode" },
+                            ],
+                          default: ["dark-mode"],
+                        },
+                        { label: Bullet Point List, name: bullets, widget: list, allow_add: true, fields: 
+                          [
+                            {
+                              label: Icon, name: icon, widget: image
+                            },
+                            {
+                              label: Body, name: body, widget: text
+                            },
+                          ]
+                        },
+                      ]
+                  },
+                  { label: Background Image, name: image, widget: image, default: static/assets/background-test.jpg, required: false },
+                ],
+            }
+          - {
+              label: News,
+              name: news,
+              widget: object,
+              summary: "{{fields.section}}",
+              fields:
+                [
+                  {
+                    label: Section Name,
+                    name: section,
+                    widget: string,
+                    default: News,
+                  },
+                  {
+                    label: Section Background & Colour Scheme,
+                    name: mode,
+                    widget: select,
+                    multiple: false,
+                    options:
+                      [
+                        { label: "No image - white background", value: "dark-mode" },
+                        { label: "Dark - image background", value: "light-mode" },
+                        { label: "Light, with image, (ala Snow Leopard)", value: "snow-mode" },
+                      ],
+                    default: ["light-mode"],
+                  },
+                  {
+                    label: Title,
+                    name: title,
+                    widget: string,
+                    default: Who We Are,
+                    required: false,
+                  },
+                  { label: Background Image, name: image, widget: image, default: static/assets/background-test.jpg, required: false },
+                  { label: Body, name: body, widget: markdown, required: false },
+                  { label: Contact Link, name: contact, widget: object, fields: 
+                    [
+                      { label: Label, name: label, widget: string, default: media@irbisio.com },
+                      { label: Destination, name: link, widget: string, default: media@irbisio.com },
+                    ]
+                  }
+                ],    
+            }
+          - {
+              label: About,
+              name: about,
+              widget: object,
+              summary: "{{fields.section}}",
+              fields:
+                [
+                  {
+                    label: Section Name,
+                    name: section,
+                    widget: string,
+                    default: About,
+                  },
+                  {
+                    label: Section Background & Colour Scheme,
+                    name: mode,
+                    widget: select,
+                    multiple: false,
+                    options:
+                      [
+                        { label: "No image - white background", value: "dark-mode" },
+                        { label: "Dark - image background", value: "light-mode" },
+                        { label: "Light, with image, (ala Snow Leopard)", value: "snow-mode" },
+                      ],
+                    default: ["dark-mode"],
+                  },
+                  {
+                    label: Title,
+                    name: title,
+                    widget: string,
+                    default: Who We Are,
+                  },
+                  { label: Background Image, name: image, widget: image, default: static/assets/background-test.jpg, required: false },
+                  { label: Body, name: body, widget: markdown },
+                  { label: Button, name: button, widget: object, fields: 
+                    [
+                      { label: Label, name: label, widget: string, default: Learn More },
+                      { label: Destination, name: link, widget: string, default: /about },
+                    ]
+                  }
+                ],    
+            }
+          - {
+              label: Snow Leopard,
+              name: leopard,
+              widget: object,
+              summary: "{{fields.section}}",
+              fields:
+                [
+                  {
+                    label: Section Name,
+                    name: section,
+                    widget: string,
+                    default: Wild Cat Rescue Fund,
+                  },
+                  {
+                    label: Section Background & Colour Scheme,
+                    name: mode,
+                    widget: select,
+                    multiple: false,
+                    options:
+                      [
+                        { label: "No image - white background", value: "dark-mode" },
+                        { label: "Dark - image background", value: "light-mode" },
+                        { label: "Light, with image, (ala Snow Leopard)", value: "snow-mode" },
+                      ],
+                    default: ["snow-mode"],
+                  },
+                  {
+                    label: Title,
+                    name: title,
+                    widget: string,
+                    default: Who We Are,
+                  },
+                  { label: Background Image, name: image, widget: image, default: static/assets/background-test.jpg, required: false },
+                  { label: Body, name: body, widget: markdown },
+                  { label: Foundation Button, name: button, widget: object, fields: 
+                    [
+                      { label: Label, name: label, widget: string, default: Track the Snow Leopard },
+                      { label: Destination, name: link, widget: string, default: /about },
+                    ]
+                  }
+                ],    
+            }
 
   - name: "posts"
-    label: "Blog Post"
-    folder: "content/blog/"
+    label: "News"
+    folder: "content/news/"
     create: true
     path: "{{slug}}/index"
     fields:
       - {
-          label: "Template Key",
-          name: "templateKey",
+          label: "CMS Key",
+          name: "cms",
           widget: "hidden",
-          default: "blog-post",
+          default: "news",
         }
-      - { label: "Title", name: "title", widget: "string", required: true }
+      - { label: "Hrading", name: "heading", widget: "string", required: true }
       - {
           label: "Publish Date",
           name: "date",
           widget: "datetime",
-          required: true,
-        }
-      - {
-          label: "Description",
-          name: "description",
-          widget: "text",
-          required: true,
-        }
-      - {
-          label: "Featured Image",
-          name: "featuredimage",
-          widget: image,
           required: true,
         }
       - { label: "Body", name: "body", widget: "markdown", required: true }

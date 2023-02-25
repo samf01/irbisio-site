@@ -14,7 +14,7 @@ const BlogPost = ({
   },
 }) => {
   const url = `${siteUrl}${post.fields.slug}`
-  const { description, featuredimage, publishedDate, title } = post.frontmatter
+  const { publishedDate, title } = post.frontmatter
 
   return (
     <Layout>
@@ -24,29 +24,20 @@ const BlogPost = ({
         canonical={url}
         openGraph={{
           title,
-          description,
           url,
           type: 'article',
           article: {
             publishedTime: publishedDate,
             modifiedTime: publishedDate,
           },
-          images: [
-            {
-              url: `${siteUrl}${getSrc(featuredimage)}`,
-              alt: title,
-            },
-          ],
         }}
       />
       <ArticleJsonLd
         url={url}
         headline={title}
-        images={[`${siteUrl}${getSrc(featuredimage)}`]}
         datePublished={publishedDate}
         dateModified={publishedDate}
         publisherLogo={`${siteUrl}/logo.png`}
-        description={description}
         overrides={{
           '@type': 'BlogPosting',
         }}
@@ -92,17 +83,6 @@ export const pageQuery = graphql`
       frontmatter {
         date
         title
-        featuredimage {
-          childImageSharp {
-            gatsbyImageData(
-              height: 350
-              placeholder: BLURRED
-              formats: [AUTO, WEBP, AVIF]
-              layout: CONSTRAINED
-            )
-          }
-        }
-        description
       }
     }
     site {

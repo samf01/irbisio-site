@@ -21,7 +21,7 @@ exports.createPages = ({ actions, graphql }) => {
               slug
             }
             frontmatter {
-              templateKey
+              cms
             }
           }
         }
