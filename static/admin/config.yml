@@ -39,7 +39,7 @@ collections:
                     multiple: false,
                     options:
                       [
-                        { label: "No image - white background", value: "dark-mode" },
+                        { label: "Light/no image - white background", value: "dark-mode" },
                         { label: "Dark - image background", value: "light-mode" },
                         { label: "Light, with image, (ala Snow Leopard)", value: "snow-mode" },
                       ],
@@ -87,7 +87,7 @@ collections:
                           multiple: false,
                           options:
                             [
-                              { label: "No image - white background", value: "dark-mode" },
+                              { label: "Light/no image - white background", value: "dark-mode" },
                               { label: "Dark - image background", value: "light-mode" },
                               { label: "Light, with image, (ala Snow Leopard)", value: "snow-mode" },
                             ],
@@ -103,9 +103,9 @@ collections:
                     fields:
                       [
                         {
-                          label: Title,
-                          name: title,
-                          widget: string,
+                          label: Statement,
+                          name: statement,
+                          widget: text,
                           default: Who We Are,
                         },
                         {
@@ -115,7 +115,7 @@ collections:
                           multiple: false,
                           options:
                             [
-                              { label: "No image - white background", value: "dark-mode" },
+                              { label: "Light/no image - white background", value: "dark-mode" },
                               { label: "Dark - image background", value: "light-mode" },
                               { label: "Light, with image, (ala Snow Leopard)", value: "snow-mode" },
                             ],
@@ -134,6 +134,13 @@ collections:
                       ]
                   },
                   { label: Background Image, name: image, widget: image, default: static/assets/background-test.jpg, required: false },
+                  { label: Body, name: body, widget: markdown },
+                  { label: Button, name: button, widget: object, fields: 
+                    [
+                      { label: Label, name: label, widget: string, default: Learn More },
+                      { label: Destination, name: link, widget: string, default: /about },
+                    ]
+                  }
                 ],
             }
           - {
@@ -156,7 +163,7 @@ collections:
                     multiple: false,
                     options:
                       [
-                        { label: "No image - white background", value: "dark-mode" },
+                        { label: "Light/no image - white background", value: "dark-mode" },
                         { label: "Dark - image background", value: "light-mode" },
                         { label: "Light, with image, (ala Snow Leopard)", value: "snow-mode" },
                       ],
@@ -199,7 +206,7 @@ collections:
                     multiple: false,
                     options:
                       [
-                        { label: "No image - white background", value: "dark-mode" },
+                        { label: "Light/no image - white background", value: "dark-mode" },
                         { label: "Dark - image background", value: "light-mode" },
                         { label: "Light, with image, (ala Snow Leopard)", value: "snow-mode" },
                       ],
@@ -241,7 +248,7 @@ collections:
                     multiple: false,
                     options:
                       [
-                        { label: "No image - white background", value: "dark-mode" },
+                        { label: "Light/no image - white background", value: "dark-mode" },
                         { label: "Dark - image background", value: "light-mode" },
                         { label: "Light, with image, (ala Snow Leopard)", value: "snow-mode" },
                       ],

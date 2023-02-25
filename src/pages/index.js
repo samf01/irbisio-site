@@ -1,6 +1,7 @@
+import React from 'react'
 import { GatsbySeo } from 'gatsby-plugin-next-seo'
 import { Link } from 'gatsby'
-import React from 'react'
+import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import GridContent from '../components/UI/grid-content'
 import background from '../../static/assets/background-test.jpg'
@@ -10,7 +11,11 @@ import PreviewArticle from '../components/UI/news/article-preview'
 import FoundationButton from '../components/UI/snow-leopard-button'
 import Landing from '../components/UI/above-the-fold'
 
-const Home = () => {
+const Home = ({ data }) => {
+  console.log(data)
+  const { introduction, about, leopard, news, strategy } =
+    data.allFile.edges[0].node.childMarkdownRemark.frontmatter
+
   const mockArticles = [
     {
       heading: 'Urban investment in the cleantech space reaches new highs.',
@@ -38,26 +43,12 @@ const Home = () => {
       <GridContent
         id="introduction"
         layout="--center-4"
-        mode="dark-mode"
-        background="grey"
+        mode={introduction.mode}
+        background={introduction.image}
       >
-        <h4>Introduction</h4>
-        <h1>
-          Integrated cleantech investing to deliver predictable ROI and
-          accelerate carbon net zero.
-        </h1>
-        <p>
-          At Irbisio, we bring together technology expertise, project management
-          skills and financial acumen into one integrated approach to
-          investment.
-          <br />
-          <br />
-          We carefully select, fund, manage and profitably exit cleantech
-          investment projects, companies and programmes.
-          <br />
-          <br />
-          We make investment in sustainability, sustainable.
-        </p>
+        <h4>{introduction.section}</h4>
+        <h1>{introduction.title}</h1>
+        <p>{introduction.body}</p>
       </GridContent>
       <GridContent
         id="strategy"
@@ -84,10 +75,6 @@ const Home = () => {
         background={background}
       >
         <h4>Startegy</h4>
-        <h1>
-          Cleantech investing is no longer about speculative bets on possible
-          winners...
-        </h1>
         <p>
           We integrate the core capabilities for successful and responsible
           cleantech investing:
@@ -241,3 +228,82 @@ const Home = () => {
 }
 
 export default Home
+
+export const query = graphql`
+  query {
+    allFile(filter: { name: { eq: "home" } }) {
+      edges {
+        node {
+          id
+          childMarkdownRemark {
+            fields {
+              slug
+            }
+            frontmatter {
+              about {
+                body
+                button {
+                  label
+                  link
+                }
+                image
+                mode
+                section
+                title
+              }
+              introduction {
+                body
+                image
+                mode
+                section
+                title
+              }
+              leopard {
+                body
+                button {
+                  label
+                  link
+                }
+                image
+                mode
+                section
+                title
+              }
+              news {
+                contact {
+                  label
+                  link
+                }
+                image
+                mode
+                section
+              }
+              strategy {
+                body
+                button {
+                  label
+                  link
+                }
+                image
+                section
+                page_1 {
+                  body
+                  mode
+                  title
+                }
+                page_2 {
+                  bullets {
+                    body
+                    icon
+                  }
+                  mode
+                  statement
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`
