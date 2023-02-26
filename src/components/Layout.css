@@ -301,11 +301,7 @@ footer {
 
 /* Markdown Pages */
 .markdown {
-  margin: 20px;
-  padding: 20px;
-  border-radius: 6px;
   white-space: pre-wrap;
-  background: white;
 }
 
 /* Grid & Layout */
@@ -385,8 +381,9 @@ Link {
 }
 
 .row {
-  display: flex;
+  display: grid;
   gap: 24px;
+  grid-template-columns: 40px auto;
 }
 
 @media (max-width: 990px) {
@@ -411,6 +408,12 @@ Link {
   .grid-content.--center-6 {
     grid-column: 2 / 8;
   }
+
+  .landing-content-center {
+    display: block;
+    height: fit-content;
+    grid-column: 2 / 8;
+  }
 }
 
 .article-preview {
@@ -424,6 +427,7 @@ Link {
 
 .light-mode > .grid-column-12 > .grid-content * {
   color: var(--irbisio-off-white) !important;
+  stroke: var(--irbisio-off-white);
 }
 
 .light-mode > .grid-column-12 > .hourglass::after {
@@ -463,7 +467,7 @@ Link {
   display: flex;
   gap: 32px;
   align-self: flex-end;
-  grid-column: 1 / 1;
+  grid-column: 1 / 3;
 }
 
 .logo {
@@ -478,4 +482,8 @@ nav .logo:hover {
 
 nav .logo:hover > path {
   fill: var(--irbisio-blue);
+}
+
+.icon {
+  width: 100px;
 }

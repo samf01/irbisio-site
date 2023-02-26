@@ -1,7 +1,7 @@
 import React from 'react'
-import { Link } from 'gatsby'
 
-const FoundationButton = () => {
+const FoundationButton = ({ button }) => {
+  const { label, destination } = button
   return (
     <div
       style={{
@@ -36,8 +36,8 @@ const FoundationButton = () => {
         />
       </svg>
 
-      <Link
-        to="/snow-leopard"
+      <a
+        href={destination}
         style={{
           width: 'fit-content',
           padding: '8px 24px',
@@ -45,8 +45,8 @@ const FoundationButton = () => {
           color: 'var(--irbisio-off-white',
         }}
       >
-        Track the Leopard
-      </Link>
+        {label}
+      </a>
     </div>
   )
 }

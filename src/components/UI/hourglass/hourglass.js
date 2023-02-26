@@ -21,7 +21,7 @@ const Hourglass = ({ content, hide }) => {
       hourglass.current.style.height = `${contentBounds.height}px`
     })
   }, [content, hourglass])
-  console.log(knockin)
+
   return (
     <div
       className="hourglass"

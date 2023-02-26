@@ -14,7 +14,7 @@ const GridContent = ({ children, layout, background, mode, id, hide }) => {
     switch (mode) {
       case 'light-mode':
         setStyles({
-          backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${background})`,
+          backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${background.publicURL})`,
         })
         break
       case 'dark-mode':
@@ -22,7 +22,7 @@ const GridContent = ({ children, layout, background, mode, id, hide }) => {
         break
       case 'snow-mode':
         setStyles({
-          backgroundImage: `url(${background})`,
+          backgroundImage: `url(${background.publicURL})`,
         })
         break
     }

@@ -9,7 +9,7 @@ backend:
 local_backend: true
 
 media_folder: "static/assets"
-public_folder: "static/assets"
+public_folder: "/assets"
 
 collections:
   - name: "content"
@@ -51,7 +51,7 @@ collections:
                     widget: string,
                     default: Who We Are,
                   },
-                  { label: Background Image, name: image, widget: image, default: static/assets/background-test.jpg, required: false },
+                  { label: Background Image, name: image, widget: image},
                   { label: Body, name: body, widget: markdown },
                 ],
             }
@@ -124,17 +124,17 @@ collections:
                         { label: Bullet Point List, name: bullets, widget: list, allow_add: true, fields: 
                           [
                             {
-                              label: Icon, name: icon, widget: image
+                              label: Icon, name: icon, widget: string
                             },
                             {
                               label: Body, name: body, widget: text
                             },
                           ]
                         },
+                        { label: Body, name: body, widget: markdown },
                       ]
                   },
-                  { label: Background Image, name: image, widget: image, default: static/assets/background-test.jpg, required: false },
-                  { label: Body, name: body, widget: markdown },
+                  { label: Background Image, name: image, widget: image},
                   { label: Button, name: button, widget: object, fields: 
                     [
                       { label: Label, name: label, widget: string, default: Learn More },
@@ -176,7 +176,7 @@ collections:
                     default: Who We Are,
                     required: false,
                   },
-                  { label: Background Image, name: image, widget: image, default: static/assets/background-test.jpg, required: false },
+                  { label: Background Image, name: image, widget: image },
                   { label: Body, name: body, widget: markdown, required: false },
                   { label: Contact Link, name: contact, widget: object, fields: 
                     [
@@ -218,7 +218,7 @@ collections:
                     widget: string,
                     default: Who We Are,
                   },
-                  { label: Background Image, name: image, widget: image, default: static/assets/background-test.jpg, required: false },
+                  { label: Background Image, name: image, widget: image},
                   { label: Body, name: body, widget: markdown },
                   { label: Button, name: button, widget: object, fields: 
                     [
@@ -260,7 +260,7 @@ collections:
                     widget: string,
                     default: Who We Are,
                   },
-                  { label: Background Image, name: image, widget: image, default: static/assets/background-test.jpg, required: false },
+                  { label: Background Image, name: image, widget: image},
                   { label: Body, name: body, widget: markdown },
                   { label: Foundation Button, name: button, widget: object, fields: 
                     [
