@@ -279,6 +279,131 @@ collections:
                   }
                 ],    
             }
+      - name: "about"
+        label: "About Page"
+        file: "content/pages/about.md"
+        fields:
+          - {
+              label: About Us,
+              name: about,
+              widget: object,
+              summary: "{{fields.section}}",
+              fields:
+                [
+                  {
+                    label: Section Name,
+                    name: section,
+                    widget: string,
+                    default: About,
+                  },
+                  {
+                    label: Section Background & Colour Scheme,
+                    name: mode,
+                    widget: select,
+                    multiple: false,
+                    options:
+                      [
+                        { label: "Light/no image - white background", value: "dark-mode" },
+                        { label: "Dark - image background", value: "light-mode" },
+                        { label: "Light, with image, (ala Snow Leopard)", value: "snow-mode" },
+                      ],
+                    default: ["dark-mode"],
+                  },
+                  {
+                    label: Title,
+                    name: title,
+                    widget: string,
+                    default: Who We Are,
+                  },
+                  {
+                    label: Sub - Title,
+                    name: sub_title,
+                    widget: string,
+                    default: Who We Are,
+                    required: false,
+                  },
+                  { label: Body, name: body, widget: markdown },
+                  { label: Background Image, name: image, widget: image},
+                ],
+            }
+          - {
+              label:  Partner Section,
+              name: partners,
+              widget: object,
+              summary: "{{fields.section}}",
+              fields:
+                [
+                  {
+                    label: Section Name,
+                    name: section,
+                    widget: string,
+                    default: Partners,
+                  },
+                  {
+                    label: Section Background & Colour Scheme,
+                    name: mode,
+                    widget: select,
+                    multiple: false,
+                    options:
+                      [
+                        { label: "Light/no image - white background", value: "dark-mode" },
+                        { label: "Dark - image background", value: "light-mode" },
+                        { label: "Light, with image, (ala Snow Leopard)", value: "snow-mode" },
+                      ],
+                    default: ["dark-mode"],
+                  },
+                  { label: Partner Details, name: details, widget: object, allow_add: true, fields: 
+                    [
+                      { label: Partner Logo, name: logo, widget: image },
+                      { label: Partner Link (their site?), name: button, widget: object, fields: 
+                        [
+                          { label: Label, name: label, widget: string, default: Learn More },
+                          { label: Destination, name: link, widget: string, default: /about },
+                        ]
+                      },
+                      { label: Body, name: body, widget: markdown },
+                    ]
+                  },
+                  { label: Background Image, name: image, widget: image},
+                ],
+            }
+          - {
+              label:  Team Section,
+              name: team,
+              widget: object,
+              summary: "{{fields.section}}",
+              fields:
+                [
+                  {
+                    label: Section Name,
+                    name: section,
+                    widget: string,
+                    default: Team,
+                  },
+                  {
+                    label: Section Background & Colour Scheme,
+                    name: mode,
+                    widget: select,
+                    multiple: false,
+                    options:
+                      [
+                        { label: "Light/no image - white background", value: "dark-mode" },
+                        { label: "Dark - image background", value: "light-mode" },
+                        { label: "Light, with image, (ala Snow Leopard)", value: "snow-mode" },
+                      ],
+                    default: ["dark-mode"],
+                  },
+                  { label: Team Member, name: member, widget: object, allow_add: true, fields: 
+                    [
+                      { label: Team Photo, name: photo, widget: image },
+                      { label: Name, name: name, widget: string },
+                      { label: Title, name: title, widget: string },
+                      { label: Body, name: body, widget: markdown },
+                    ]
+                  },
+                  { label: Background Image, name: image, widget: image},
+                ],
+            }
 
   - name: "posts"
     label: "News"
