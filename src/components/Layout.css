@@ -380,6 +380,29 @@ Link {
   grid-column: 3 / 11;
 }
 
+.grid-content.--center-6-offset {
+  grid-column: 5 / 11;
+}
+
+.team-sheet {
+  display: flex;
+
+  border-bottom: 2px solid var(--irbisio-drk-blue);
+}
+
+.team-controls {
+  display: flex;
+  width: 70%;
+  justify-content: space-between;
+}
+
+.team-details {
+  display: flex;
+  max-width: 70%;
+  flex-direction: column;
+  gap: 24px;
+}
+
 .row {
   display: grid;
   gap: 24px;
@@ -407,6 +430,22 @@ Link {
 
   .grid-content.--center-6 {
     grid-column: 2 / 8;
+  }
+
+  .grid-content.--center-6-offset {
+    grid-column: 2 / 8;
+  }
+
+  .team-sheet {
+    display: block;
+  }
+
+  .team-details {
+    max-width: 100%;
+  }
+
+  .team-controls {
+    width: 100%;
   }
 
   .landing-content-center {

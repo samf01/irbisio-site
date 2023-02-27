@@ -17,12 +17,10 @@ const Footer = ({ background }) => {
         <MockForm />
       </GridContent>
       <footer id="footer">
-        <Link to="/">
-          <small>
-            Irbisio Ltd is regulated by the Financial Conduct Authority. All
-            rights reserved. © Irbisio Ltd {year.getFullYear()} Irbisio
-            Investments Ltd
-          </small>
+        <Link to="/" style={{ textTransform: 'unset', fontWeight: 'normal' }}>
+          Irbisio Ltd is regulated by the Financial Conduct Authority. All
+          rights reserved. © Irbisio Ltd {year.getFullYear()} Irbisio
+          Investments Ltd
         </Link>
         <Link to="/cookie-policy">Cookie Policy</Link>
         <Link to="/#about">About</Link>

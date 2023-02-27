@@ -352,9 +352,10 @@ collections:
                       ],
                     default: ["dark-mode"],
                   },
-                  { label: Partner Details, name: details, widget: object, allow_add: true, fields: 
+                  { label: Partner Details, name: details, widget: list, summary: "{{fields.name}}", allow_add: true, fields: 
                     [
-                      { label: Partner Logo, name: logo, widget: image },
+                      { label: Partner Name, name: name, widget: string },
+                      { label: Partner Logo (as SVG file), name: logo, widget: image },
                       { label: Partner Link (their site?), name: button, widget: object, fields: 
                         [
                           { label: Label, name: label, widget: string, default: Learn More },
@@ -393,7 +394,7 @@ collections:
                       ],
                     default: ["dark-mode"],
                   },
-                  { label: Team Member, name: member, widget: object, allow_add: true, fields: 
+                  { label: Team Members, name: members, widget: list, summary: "{{fields.name}}", allow_add: true, fields: 
                     [
                       { label: Team Photo, name: photo, widget: image },
                       { label: Name, name: name, widget: string },

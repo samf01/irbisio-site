@@ -4,6 +4,7 @@ import { GatsbySeo } from 'gatsby-plugin-next-seo'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import GridContent from '../components/UI/grid-content'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 const Home = ({ data }) => {
   const { about, team, partners } =
@@ -26,6 +27,71 @@ const Home = ({ data }) => {
         </p>
         <p className="markdown">{about.body}</p>
       </GridContent>
+
+      <GridContent
+        id="partners"
+        layout="--center-4"
+        mode={partners.mode}
+        background={partners.image}
+      >
+        <h4>{partners.section}</h4>
+        {partners.details.map(partner => {
+          return (
+            <div key={partner.name}>
+              <img
+                src={partner.logo.publicURL}
+                alt={partner.name}
+                style={{ width: '100%' }}
+              />
+              <p className="markdown">{partner.body}</p>
+              <a
+                href={partner.button.link}
+                style={{ display: 'block', textAlign: 'end' }}
+              >
+                {partner.button.label}
+              </a>
+            </div>
+          )
+        })}
+      </GridContent>
+
+      <GridContent
+        id="team"
+        layout="--center-6-offset"
+        mode={team.mode}
+        background={team.image}
+      >
+        <h4>{team.section}</h4>
+        {team.members.map(member => {
+          const image = getImage(member.photo)
+          return (
+            <div className="team-sheet" key={member.name}>
+              <div className="team-details">
+                <h1>{member.name}</h1>
+                <h4>{member.title}</h4>
+                <p className="markdown">{member.body}</p>
+              </div>
+              <GatsbyImage
+                image={image}
+                alt={member.name}
+                style={{ width: '100%', marginBottom: '-1px' }}
+                imgStyle={{
+                  overflow: 'visible',
+                  float: 'left',
+                }}
+              />
+            </div>
+          )
+        })}
+        <span className="team-controls">
+          <button>
+            <h4>Prev</h4>
+          </button>
+          <button>
+            <h4>Next</h4>
+          </button>
+        </span>
+      </GridContent>
     </Layout>
   )
 }
@@ -47,9 +113,7 @@ export const query = graphql`
                     link
                   }
                   logo {
-                    childImageSharp {
-                      gatsbyImageData
-                    }
+                    publicURL
                   }
                 }
                 mode
@@ -59,12 +123,12 @@ export const query = graphql`
                 }
               }
               team {
-                member {
+                members {
                   body
                   name
                   photo {
                     childImageSharp {
-                      gatsbyImageData
+                      gatsbyImageData(formats: PNG, placeholder: BLURRED)
                     }
                   }
                   title
