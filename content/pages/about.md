@@ -32,6 +32,7 @@ partners:
 team:
   section: Team
   mode: dark-mode
+  member: null
   image: /assets/background-test.jpg
   members:
     - photo: /assets/maria-bio.png
@@ -51,4 +52,23 @@ team:
 
 
         Maria holds a Master of Science in Regional Development and Planning and holds a Becker CPA Review qualification.
+    - photo: /assets/sergey-bio.png
+      name: Sergey Buchin
+      title: Founder
+      body: >-
+        Sergey is an entrepreneur and experienced executive across the
+        technology and finance sectors. Prior to founding Irbisio, Sergey
+        co-founded HeadOffice a unique multi-family office with more than 20
+        UHNWI clients, before starting HeadOffice, he spent several years
+        heading up an energy innovation project, where he developed a new
+        business strategyhelping to deliver a successful restructure for the
+        business. Before this, Sergey worked with a private trust where he
+        helped oversee assets of over $7 billion in a portfolio that included
+        energy, biotech and real estate.
+
+
+        Sergey’s business experience before this included General Director and CEO of Intercomp, a finance and human resources outsourcing company, and Managing Partner of InvestTEK, a construction engineering company in the oil and gas sector. He started his career in expanding a family business, and founded and sold his own consulting business at 21.
+
+
+        Sergey holds a Candidate of Science in Economics, a Masters in Economics and a Bachelor of Science in Law.
 ---

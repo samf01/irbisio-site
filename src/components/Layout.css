@@ -387,7 +387,7 @@ Link {
 .team-sheet {
   display: flex;
 
-  border-bottom: 2px solid var(--irbisio-drk-blue);
+  flex-shrink: 0;
 }
 
 .team-controls {
@@ -398,8 +398,9 @@ Link {
 
 .team-details {
   display: flex;
-  max-width: 70%;
+  max-width: 60%;
   flex-direction: column;
+  justify-content: flex-end;
   gap: 24px;
 }
 
