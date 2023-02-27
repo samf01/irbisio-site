@@ -2,9 +2,8 @@ import React from 'react'
 import { Link } from 'gatsby'
 import GridContent from './grid-content'
 import MockForm from '../graphics/contact-form-mockup'
-import background from '../../../static/assets/background-test.jpg'
 
-const Footer = () => {
+const Footer = ({ background }) => {
   const year = new Date()
   return (
     <div id="footer">
@@ -26,10 +25,10 @@ const Footer = () => {
           </small>
         </Link>
         <Link to="/cookie-policy">Cookie Policy</Link>
-        <a href="/#about">About</a>
-        <a href="/#projects">News</a>
-        <a href="/#projects">Strategy</a>
-        <a href="/#contact">Contact Us</a>
+        <Link to="/#about">About</Link>
+        <Link to="/#projects">News</Link>
+        <Link to="/#projects">Strategy</Link>
+        <Link to="/#contact">Contact Us</Link>
       </footer>
     </div>
   )

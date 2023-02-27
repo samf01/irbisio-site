@@ -458,7 +458,7 @@ Link {
 
 .light-mode + footer > a,
 Link {
-  color: white !important;
+  color: var(--irbisio-off-white) !important;
 }
 
 .video-controls {

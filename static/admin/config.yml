@@ -15,6 +15,15 @@ collections:
   - name: "content"
     label: "Pages"
     files:
+      - name: "footer"
+        label: "Footer & Header"
+        file: "content/pages/footer.md"
+        fields: 
+          - {
+              label: Footer Background Image,
+              name: image,
+              widget: image,
+          }
       - name: "home"
         label: "Home Page"
         file: "content/pages/home.md"
