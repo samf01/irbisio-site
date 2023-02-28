@@ -1,12 +1,37 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import { GatsbySeo } from 'gatsby-plugin-next-seo'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
 import GridContent from '../components/UI/grid-content'
+import { isInViewport } from '../components/Hooks/ViewFunctions'
 
 const StrategyPage = ({ data }) => {
   const { funds, investors, investing, esg } =
     data.allFile.edges[0].node.childMarkdownRemark.frontmatter
+
+  const principleRef = useRef(null)
+
+  useEffect(() => {
+    const principleNodes = principleRef.current.childNodes
+    const layout =
+      principleRef.current.parentNode.parentNode.parentNode.parentNode
+
+    function inView() {
+      principleNodes.forEach((principle, i) => {
+        if (isInViewport(principle)) {
+          principle.childNodes[0].childNodes[0].classList.add('appear')
+          principle.childNodes[1].childNodes[0].classList.add('appear')
+        } else {
+          principle.childNodes[0].childNodes[0].classList.remove('appear')
+          principle.childNodes[1].childNodes[0].classList.remove('appear')
+        }
+      })
+    }
+
+    layout.addEventListener('scroll', () => inView())
+
+    return () => layout.removeEventListener('scroll', () => inView())
+  }, [])
 
   return (
     <Layout>
@@ -23,16 +48,21 @@ const StrategyPage = ({ data }) => {
           <br />
           <p>{investing.body}</p>
         </div>
-        <div className="investing-principles">
+        <div className="investing-principles" ref={principleRef}>
           {investing.principles.map((principle, i) => {
             return (
               <div
                 key={i}
+                id={`investing-principle__${i + 1}`}
                 className="principle"
                 style={{ alignSelf: i % 2 === 1 && 'flex-end' }}
               >
-                <h2>{principle.title}</h2>
-                <p>{principle.body}</p>
+                <div style={{ overflow: 'hidden' }}>
+                  <h2 className="hidden">{principle.title}</h2>
+                </div>
+                <div style={{ overflow: 'hidden' }}>
+                  <p className="hidden">{principle.body}</p>
+                </div>
               </div>
             )
           })}

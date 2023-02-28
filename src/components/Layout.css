@@ -601,3 +601,17 @@ nav .logo:hover > path {
 .principle {
   width: 50%;
 }
+
+.principle h2 {
+  transform: translateY(125px);
+  transition: 0.5s 0.5s;
+}
+
+.principle p {
+  transform: translateY(-100%);
+  transition: 0.5s 1s;
+}
+
+.hidden.appear {
+  transform: translateY(0);
+}
