@@ -16,7 +16,7 @@ partners:
   details:
     - button:
         label: Learn More
-        link: https://genera-group.com
+        link: https://generagroup.it/en/
       logo: /assets/genera-group.svg
       body: >-
         Genera Group is one of the leading Italian investors within the energy

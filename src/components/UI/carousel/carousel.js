@@ -1,73 +1,40 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import './carousel.css'
 
-const Carousel = () => {
+//Simple Carousel Slider without any infinte repeat or auto-slide back to start. Make sure each child has className="slide"
+
+const Carousel = ({ children }) => {
+  const slideRef = useRef(null)
+
+  function nextSlide() {
+    const slidesContainer = slideRef.current.childNodes[0]
+    const slideWidth = slidesContainer.clientWidth
+    slidesContainer.scrollLeft += slideWidth
+  }
+
+  function prevSlide() {
+    const slidesContainer = slideRef.current.childNodes[0]
+    const slideWidth = slidesContainer.clientWidth
+    slidesContainer.scrollLeft -= slideWidth
+  }
+
   return (
-    <section class="carousel" aria-label="Gallery">
-      <ol class="carousel__viewport">
-        <li id="carousel__slide1" tabindex="0" class="carousel__slide">
-          <div class="carousel__snapper">
-            <a href="#carousel__slide4" class="carousel__prev">
-              Go to last slide
-            </a>
-            <a href="#carousel__slide2" class="carousel__next">
-              Go to next slide
-            </a>
-          </div>
-        </li>
-        <li id="carousel__slide2" tabindex="0" class="carousel__slide">
-          <div class="carousel__snapper"></div>
-          <a href="#carousel__slide1" class="carousel__prev">
-            Go to previous slide
-          </a>
-          <a href="#carousel__slide3" class="carousel__next">
-            Go to next slide
-          </a>
-        </li>
-        <li id="carousel__slide3" tabindex="0" class="carousel__slide">
-          <div class="carousel__snapper"></div>
-          <a href="#carousel__slide2" class="carousel__prev">
-            Go to previous slide
-          </a>
-          <a href="#carousel__slide4" class="carousel__next">
-            Go to next slide
-          </a>
-        </li>
-        <li id="carousel__slide4" tabindex="0" class="carousel__slide">
-          <div class="carousel__snapper"></div>
-          <a href="#carousel__slide3" class="carousel__prev">
-            Go to previous slide
-          </a>
-          <a href="#carousel__slide1" class="carousel__next">
-            Go to first slide
-          </a>
-        </li>
-      </ol>
-      {/* <aside class="carousel__navigation">
-        <ol class="carousel__navigation-list">
-          <li class="carousel__navigation-item">
-            <a href="#carousel__slide1" class="carousel__navigation-button">
-              Go to slide 1
-            </a>
-          </li>
-          <li class="carousel__navigation-item">
-            <a href="#carousel__slide2" class="carousel__navigation-button">
-              Go to slide 2
-            </a>
-          </li>
-          <li class="carousel__navigation-item">
-            <a href="#carousel__slide3" class="carousel__navigation-button">
-              Go to slide 3
-            </a>
-          </li>
-          <li class="carousel__navigation-item">
-            <a href="#carousel__slide4" class="carousel__navigation-button">
-              Go to slide 4
-            </a>
-          </li>
-        </ol>
-      </aside> */}
-    </section>
+    <>
+      <section class="slider-wrapper" ref={slideRef}>
+        <ul class="slides-container" id="slides-container">
+          {children}
+        </ul>
+
+        <span className="team-controls">
+          <button onClick={prevSlide}>
+            <h4>Prev</h4>
+          </button>
+          <button onClick={nextSlide}>
+            <h4>Next</h4>
+          </button>
+        </span>
+      </section>
+    </>
   )
 }
 

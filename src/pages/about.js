@@ -63,49 +63,38 @@ const Home = ({ data }) => {
         background={team.image}
       >
         <h4>{team.section}</h4>
-        <section class="carousel" aria-label="Gallery">
-          <ol class="carousel__viewport">
-            {team.members.map((member, i) => {
-              const image = getImage(member.photo)
-              return (
-                <li
-                  className="carousel__slide"
-                  id={`carousel__slide${i}`}
-                  tabindex="0"
-                  key={member.name}
-                >
-                  <div className="team-sheet carousel__snapper">
-                    <div className="team-details">
-                      <h1>{member.name}</h1>
-                      <h4>{member.title}</h4>
-                      <p className="markdown">{member.body}</p>
-                    </div>
-                    <GatsbyImage
-                      image={image}
-                      alt={member.name}
-                      style={{
-                        marginBottom: '-1px',
-                      }}
-                      imgStyle={{
-                        objectPosition: 'bottom',
-                        objectFit: 'scale-down',
-                      }}
-                    />
+        <Carousel>
+          {team.members.map((member, i) => {
+            const image = getImage(member.photo)
+            return (
+              <li
+                className="slide"
+                id={`carousel__slide-${i}`}
+                tabindex="0"
+                key={member.name}
+              >
+                <div className="team-sheet">
+                  <div className="team-details">
+                    <h1>{member.name}</h1>
+                    <h4>{member.title}</h4>
+                    <p className="markdown">{member.body}</p>
                   </div>
-                </li>
-              )
-            })}
-          </ol>
-        </section>
-
-        <span className="team-controls">
-          <button>
-            <h4>Prev</h4>
-          </button>
-          <button>
-            <h4>Next</h4>
-          </button>
-        </span>
+                  <GatsbyImage
+                    image={image}
+                    alt={member.name}
+                    style={{
+                      marginBottom: '-2px',
+                    }}
+                    imgStyle={{
+                      objectPosition: 'bottom',
+                      objectFit: 'scale-down',
+                    }}
+                  />
+                </div>
+              </li>
+            )
+          })}
+        </Carousel>
       </GridContent>
     </Layout>
   )

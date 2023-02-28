@@ -63,25 +63,25 @@ const NavBar = ({ layoutRef }) => {
 
         {isStart && !mobile ? (
           <div className="nav-list">
-            <a className="nav-item pos-start" href="/#about">
+            <a className="nav-item pos-start" href="/about">
               ABOUT
             </a>
-            <a className="nav-item pos-start" href="/#projects">
+            <a className="nav-item pos-start" href="/news">
               News
             </a>
-            <a className="nav-item pos-start" href="/#contact">
+            <a className="nav-item pos-start" href="/case-studies">
               case studies
             </a>
-            <a className="nav-item pos-start" href="/#contact">
+            <a className="nav-item pos-start" href="/strategy">
               strategy
             </a>
-            <a className="nav-item pos-start" href="/#contact">
+            <a className="nav-item pos-start" href="/about/#team">
               team
             </a>
-            <a className="nav-item pos-start" href="/#contact">
+            <a className="nav-item pos-start" href="/about/#partners">
               partners
             </a>
-            <a className="nav-item pos-start" href="/#contact">
+            <a className="nav-item pos-start" href="/#snow-leopard">
               wild cat rescue
             </a>
             <a className="nav-item pos-start" href="/#contact">
