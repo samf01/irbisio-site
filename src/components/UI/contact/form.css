@@ -1,0 +1,40 @@
+form {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas: 'name name email email' 'message message message submit';
+  gap: 6px;
+  border-bottom: 1px solid var(--irbisio-off-white);
+}
+
+.submit {
+  grid-area: submit;
+  background: rgba(0, 0, 0, 0.2);
+  border: 0.910476px solid #ffffff;
+  border-radius: 3.6419px;
+  margin-bottom: 6px;
+}
+
+.submit:hover {
+  transform: unset;
+  background-color: var(--irbisio-off-white);
+}
+
+.submit:active {
+  transform: scale(0.6);
+}
+
+.submit:hover h4 {
+  transform: scale(1.4);
+  color: var(--irbisio-drk-blue) !important;
+}
+
+.thanks {
+  margin: auto;
+  text-align: center;
+}
+
+form:nth-child(3),
+form:nth-child(4) {
+  grid-row-start: 2;
+}

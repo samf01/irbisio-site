@@ -129,6 +129,12 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-env-variables`,
+      options: {
+        allowList: ['SITE_RECAPTCHA_KEY'],
+      },
+    },
+    {
       resolve: `gatsby-plugin-feed`,
       options: {
         query: `

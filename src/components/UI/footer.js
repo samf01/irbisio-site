@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import GridContent from './grid-content'
-import MockForm from '../graphics/contact-form-mockup'
+import Form from './contact/form'
 
 const Footer = ({ background }) => {
   const year = new Date()
@@ -13,8 +13,7 @@ const Footer = ({ background }) => {
         background={background}
       >
         <h4>Contact</h4>
-        <h1>We’re here to answer all your questions.</h1>
-        <MockForm />
+        <Form />
       </GridContent>
       <footer id="footer">
         <Link to="/" style={{ textTransform: 'unset', fontWeight: 'normal' }}>
