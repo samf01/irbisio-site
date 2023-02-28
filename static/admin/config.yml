@@ -19,11 +19,34 @@ collections:
         label: "Footer & Header"
         file: "content/pages/footer.md"
         fields: 
-          - {
-              label: Footer Background Image,
-              name: image,
-              widget: image,
-          }
+         - {
+              label: Footer,
+              name: footer,
+              widget: object,
+              summary: "{{fields.section}}",
+              fields:
+                [
+                  {
+                    label: Footer Background Image,
+                    name: image,
+                    widget: image,
+                  },
+                   {
+                    label: Footer Background & Colour Scheme,
+                    name: mode,
+                    widget: select,
+                    multiple: false,
+                    options:
+                      [
+                        { label: "Light/no image - white background", value: "dark-mode" },
+                        { label: "Dark -  with image-background", value: "light-mode" },
+                        { label: "Light, with image, (ala Snow Leopard)", value: "snow-mode" },
+                      ],
+                    default: ["dark-mode"],
+                  },
+                ]
+            }
+         
       - name: "home"
         label: "Home Page"
         file: "content/pages/home.md"
@@ -400,6 +423,171 @@ collections:
                       { label: Name, name: name, widget: string },
                       { label: Title, name: title, widget: string },
                       { label: Body, name: body, widget: markdown },
+                    ]
+                  },
+                  { label: Background Image, name: image, widget: image},
+                ],
+            }
+      - name: "strategy"
+        label: "Strategy Page"
+        file: "content/pages/strategy.md"
+        fields:
+          - {
+              label: Investing Principles,
+              name: investing,
+              widget: object,
+              summary: "{{fields.section}}",
+              fields:
+                [
+                  {
+                    label: Section Name,
+                    name: section,
+                    widget: string,
+                    default: Investing,
+                  },
+                  {
+                    label: Section Background & Colour Scheme,
+                    name: mode,
+                    widget: select,
+                    multiple: false,
+                    options:
+                      [
+                        { label: "Light/no image - white background", value: "dark-mode" },
+                        { label: "Dark - image background", value: "light-mode" },
+                        { label: "Light, with image, (ala Snow Leopard)", value: "snow-mode" },
+                      ],
+                    default: ["dark-mode"],
+                  },
+                  { label: Title, name: title, widget: string},
+                  { label: Body, name: body, widget: markdown},
+                  { label: Investing Principles, name: principles, widget: list, summary: "{{fields.title}}", allow_add: true, fields: 
+                    [
+                      { label: Title, name: title, widget: string },
+                      { label: Body, name: body, widget: markdown },
+                    ]
+                  },
+                  { label: Footer, name: footer, widget: markdown },
+                  { label: Background Image, name: image, widget: image},
+                ],
+            }
+          - {
+              label:  Investors Section,
+              name: investors,
+              widget: object,
+              summary: "{{fields.section}}",
+              fields:
+                [
+                  {
+                    label: Section Name,
+                    name: section,
+                    widget: string,
+                    default: Investors,
+                  },
+                  {
+                    label: Section Background & Colour Scheme,
+                    name: mode,
+                    widget: select,
+                    multiple: false,
+                    options:
+                      [
+                        { label: "Light/no image - white background", value: "dark-mode" },
+                        { label: "Dark - image background", value: "light-mode" },
+                        { label: "Light, with image, (ala Snow Leopard)", value: "snow-mode" },
+                      ],
+                    default: ["dark-mode"],
+                  },
+                  { label: Body, name: body, widget: markdown },
+                  { label: Investor Details, name: details, widget: list, summary: "{{fields.name}}", allow_add: true, fields: 
+                    [
+                      { label: Investor Name, name: name, widget: string },
+                      { label: Investor Logo (as SVG file), name: logo, widget: image },
+                      { label: Investor Link (their site?), name: button, widget: object, fields: 
+                        [
+                          { label: Label, name: label, widget: string, default: Learn More },
+                          { label: Destination, name: link, widget: string, default: /about },
+                        ]
+                      },
+                      { label: Investor Bio, name: body, widget: markdown },
+                    ]
+                  },
+                  { label: Background Image, name: image, widget: image},
+                ],
+            }
+          - {
+              label:  Funds Section,
+              name: funds,
+              widget: object,
+              summary: "{{fields.section}}",
+              fields:
+                [
+                  {
+                    label: Section Name,
+                    name: section,
+                    widget: string,
+                    default: Funds,
+                  },
+                  {
+                    label: Section Background & Colour Scheme,
+                    name: mode,
+                    widget: select,
+                    multiple: false,
+                    options:
+                      [
+                        { label: "Light/no image - white background", value: "dark-mode" },
+                        { label: "Dark - image background", value: "light-mode" },
+                        { label: "Light, with image, (ala Snow Leopard)", value: "snow-mode" },
+                      ],
+                    default: ["dark-mode"],
+                  },
+                  { label: Heading Text, name: heading, widget: string },
+                  { label: Funds, name: fund_type, widget: list, summary: "{{fields.name}}", allow_add: true, fields: 
+                    [
+                      { label: Name, name: name, widget: string },
+                      { label: Fund Title, name: title, widget: image },
+                      { label: Fund Logo (sub-brand), name: logo, widget: image },
+                      { label: Body, name: body, widget: markdown },
+                      { label: Fund Link (web page), name: button, widget: object, fields: 
+                        [
+                          { label: Label, name: label, widget: string, default: Learn More },
+                          { label: Destination, name: link, widget: string, default: /about },
+                        ]
+                      },
+                    ]
+                  },
+                  { label: Background Image, name: image, widget: image},
+                ],
+            }
+          - {
+              label:  ESG Section,
+              name: esg,
+              widget: object,
+              summary: "{{fields.section}}",
+              fields:
+                [
+                  {
+                    label: Section Name,
+                    name: section,
+                    widget: string,
+                    default: ESG Approach,
+                  },
+                  {
+                    label: Section Background & Colour Scheme,
+                    name: mode,
+                    widget: select,
+                    multiple: false,
+                    options:
+                      [
+                        { label: "Light/no image - white background", value: "dark-mode" },
+                        { label: "Dark - image background", value: "light-mode" },
+                        { label: "Light, with image, (ala Snow Leopard)", value: "snow-mode" },
+                      ],
+                    default: ["dark-mode"],
+                  },
+                  { label: Heading (statement), name: heading, widget: string },
+                  { label: UN Sustainability Goals, name: goals, widget: list, summary: "{{fields.name}}", allow_add: true, fields: 
+                    [
+                      { label: Goal Name, name: name, widget: string },
+                      { label: Goal Logo, name: logo, widget: image },
                     ]
                   },
                   { label: Background Image, name: image, widget: image},

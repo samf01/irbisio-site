@@ -71,7 +71,7 @@ const Pagination = ({ layoutRef }) => {
 
   const PageDots = sections.map((element, i) => {
     return (
-      <a href={`/#${element.id}`} key={i}>
+      <a href={`#${element.id}`} key={i}>
         <svg
           className="dot"
           width="4"

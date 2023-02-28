@@ -1,3 +1,5 @@
 ---
-image: /assets/background-test.jpg
+footer:
+  mode: light-mode
+  image: /assets/background-test.jpg
 ---

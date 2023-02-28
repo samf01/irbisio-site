@@ -84,7 +84,7 @@ const NavBar = ({ layoutRef }) => {
             <a className="nav-item pos-start" href="/#snow-leopard">
               wild cat rescue
             </a>
-            <a className="nav-item pos-start" href="/#contact">
+            <a className="nav-item pos-start" href="#contact">
               contact
             </a>
           </div>

@@ -100,6 +100,12 @@ h1 {
   font-size: 48px;
   /* text-transform: uppercase; */
   line-height: normal;
+  margin: 24px 0;
+}
+
+h2 {
+  line-height: normal;
+  margin: 24px 0;
 }
 
 h3 {
@@ -128,9 +134,11 @@ h5 {
 
 h6 {
   font-style: normal;
+  text-align: center;
   font-weight: 600;
   font-size: 18px;
   line-height: 126.5%;
+  margin: 24px 0;
 }
 
 /* p {
@@ -158,8 +166,8 @@ textarea {
   box-sizing: border-box;
   padding: 6px;
   background: rgba(0, 0, 0, 0.2);
-  border: 0.910476px solid #ffffff;
-  border-radius: 3.6419px;
+  border: 1px solid var(--irbisio-off-white);
+  border-radius: 4px;
 }
 
 input::placeholder,
@@ -184,6 +192,7 @@ button:hover {
 
 button:active {
   transform: scale(0.9);
+  border: none;
 }
 
 button:active * {
@@ -507,7 +516,35 @@ Link {
   color: var(--irbisio-drk-blue) !important;
 }
 
-.dark-mode > .grid-column-12 > .grid-content > span > .icon > path {
+.dark-mode .article-preview {
+  border-color: var(--irbisio-drk-blue) !important;
+}
+
+.dark-mode input,
+textarea,
+button.submit {
+  background: transparent;
+  border: 2px solid var(--irbisio-drk-blue);
+}
+
+.light-mode input,
+textarea,
+button.submit {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--irbisio-off-white);
+}
+
+.dark-mode input::placeholder,
+textarea::placeholder {
+  color: var(--irbisio-drk-blue);
+}
+
+.light-mode input::placeholder,
+textarea::placeholder {
+  color: var(--irbisio-off-white);
+}
+
+.dark-mode .dark-mode > .grid-column-12 > .grid-content > span > .icon > path {
   stroke: var(--irbisio-drk-blue);
 }
 
@@ -551,4 +588,16 @@ nav .logo:hover > path {
 
 .icon {
   width: 100px;
+}
+
+.investing-principles {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  row-gap: 3rem;
+  margin: 5rem 0;
+}
+
+.principle {
+  width: 50%;
 }

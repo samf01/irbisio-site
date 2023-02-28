@@ -3,14 +3,14 @@ import { Link } from 'gatsby'
 import GridContent from './grid-content'
 import Form from './contact/form'
 
-const Footer = ({ background }) => {
+const Footer = ({ footer }) => {
   const year = new Date()
   return (
-    <div id="footer">
+    <div id="contact">
       <GridContent
         layout="--center-4"
-        mode="light-mode"
-        background={background}
+        mode={footer.mode}
+        background={footer.image}
       >
         <h4>Contact</h4>
         <Form />

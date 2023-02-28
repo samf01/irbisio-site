@@ -16,8 +16,11 @@ const Layout = ({ children }) => {
           node {
             childMarkdownRemark {
               frontmatter {
-                image {
-                  publicURL
+                footer {
+                  mode
+                  image {
+                    publicURL
+                  }
                 }
               }
             }
@@ -36,8 +39,8 @@ const Layout = ({ children }) => {
       <div className="layout" ref={layoutRef}>
         {children}
         <Footer
-          background={
-            data.allFile.edges[0].node.childMarkdownRemark.frontmatter.image
+          footer={
+            data.allFile.edges[0].node.childMarkdownRemark.frontmatter.footer
           }
         />
       </div>
