@@ -13,9 +13,11 @@ const GridContent = ({ children, layout, background, mode, id, hide }) => {
   useEffect(() => {
     switch (mode) {
       case 'light-mode':
-        setStyles({
-          backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${background.publicURL})`,
-        })
+        background
+          ? setStyles({
+              backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${background.publicURL})`,
+            })
+          : setStyles({ backgroundImage: 'none' })
         break
       case 'dark-mode':
         setStyles({ backgroundImage: 'none' })

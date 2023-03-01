@@ -4,21 +4,55 @@ import { GatsbySeo } from 'gatsby-plugin-next-seo'
 import PropTypes from 'prop-types'
 import React from 'react'
 import Layout from '../components/Layout'
+import GridContent from '../components/UI/grid-content'
 
 const Fund = ({ data }) => {
   const url = `${data.site.siteUrl}${data.markdownRemark.fields.slug}`
-  const { title } = data.markdownRemark.frontmatter
+  const { title, logo, brand, sub_heading, opportunity, stats, section } =
+    data.markdownRemark.frontmatter
 
   return (
     <Layout>
       <GatsbySeo title={title} canonical={url} />
-      <div className="grid-content--center-4">
-        <div>
-          <h1>{title}</h1>
-        </div>
-
-        <Link to="/blog">Back to Articles</Link>
-      </div>
+      <GridContent layout="--center-4" mode="dark-mode">
+        <h4>Fund</h4>
+        <img src={brand.publicURL} alt={title} style={{ width: '100%' }} />
+        <h6>{sub_heading}</h6>
+        <h4>opportunity</h4>
+        <p>{opportunity}</p>
+      </GridContent>
+      <GridContent layout="--center-4" mode="light-mode">
+        {stats.map((stat, i) => {
+          return (
+            <div
+              key={stat.name}
+              style={{ alignSelf: i % 2 === 1 && 'flex-end' }}
+            >
+              <h4>{stat.name}</h4>
+              <h1>{stat.main}</h1>
+              <p>
+                <small>{stat.subscript}</small>
+              </p>
+            </div>
+          )
+        })}
+      </GridContent>
+      <GridContent layout="--center-4" mode="dark-mode">
+        {section.map(node => {
+          return (
+            <div key={node.title}>
+              <h4>{node.title}</h4>
+              <p>{node.statement}</p>
+              <ul>
+                {node.list.map(item => {
+                  return <li>{item.point}</li>
+                })}
+              </ul>
+            </div>
+          )
+        })}
+        <Link to="/strategy/#funds">Back to Funds</Link>
+      </GridContent>
     </Layout>
   )
 }
@@ -40,6 +74,27 @@ export const pageQuery = graphql`
       }
       frontmatter {
         title
+        logo {
+          publicURL
+        }
+        brand {
+          publicURL
+        }
+        sub_heading
+        opportunity
+        stats {
+          name
+          main
+          subscript
+        }
+        section {
+          order
+          title
+          statement
+          list {
+            point
+          }
+        }
       }
     }
     site {
