@@ -28,8 +28,8 @@ const Fund = ({ data }) => {
               key={stat.name}
               style={{ alignSelf: i % 2 === 1 && 'flex-end' }}
             >
-              <h4>{stat.name}</h4>
-              <h1>{stat.main}</h1>
+              <h4 style={{ margin: '0' }}>{stat.name}</h4>
+              <h1 className="h0">{stat.main}</h1>
               <p>
                 <small>{stat.subscript}</small>
               </p>

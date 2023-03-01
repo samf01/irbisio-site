@@ -16,7 +16,7 @@ const StrategyPage = ({ data }) => {
   const [esgIn, setEsgIn] = useState(false)
 
   const trail = useTrail(esg.goals.length, {
-    config: 'gentle',
+    config: { mass: 10, tension: 500, friction: 10, clamp: true },
     translateY: esgIn ? 0 : -220,
   })
 

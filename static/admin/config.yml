@@ -645,6 +645,7 @@ collections:
   - name: "funds"
     label: "Fund Pages"
     folder: "content/funds/"
+    media_folder: "/static/assets"
     create: true
     path: "{{slug}}/index"
     fields:

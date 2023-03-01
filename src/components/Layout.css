@@ -93,6 +93,7 @@ body {
   font-style: normal;
   font-weight: 700;
   font-size: 84px;
+  margin: 0;
 }
 
 h1 {
@@ -397,8 +398,8 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 24px;
-  margin-top: var(--content-margin-top);
-  margin-bottom: 80px;
+  /* margin-top: var(--content-margin-top); */
+  /* margin-bottom: 80px; */
   position: relative;
   align-self: center;
 }
@@ -463,8 +464,8 @@ Link {
   }
 
   .grid-column-12 {
-    margin: 16px;
-    margin-top: 80px;
+    /* margin: 16px; */
+    /* margin-top: 80px; */
     grid-template-columns: repeat(8, 1fr);
   }
 
@@ -632,6 +633,10 @@ nav .logo:hover > path {
 @media (max-width: 990px) {
   .principle {
     width: 80%;
+  }
+
+  .video-controls {
+    bottom: 20px;
   }
 }
 

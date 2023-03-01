@@ -24,7 +24,7 @@ const GridContent = ({ children, layout, background, mode, id, hide }) => {
         break
       case 'snow-mode':
         setStyles({
-          backgroundImage: `url(${background.publicURL})`,
+          backgroundImage: `linear-gradient(0deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url(${background.publicURL})`,
         })
         break
     }

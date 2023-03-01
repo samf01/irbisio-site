@@ -14,7 +14,7 @@ const CaseStudy = ({ data }) => {
   return (
     <Layout>
       <GatsbySeo title={title} canonical={url} />
-      <GridContent layout="--center-4" mode="dark-mode">
+      <GridContent layout="--center-6" mode="dark-mode" hide="true">
         <h1>{title}</h1>
 
         <div dangerouslySetInnerHTML={{ __html: html }} />
