@@ -41,7 +41,7 @@ const Landing = () => {
   }
 
   return (
-    <div className={`container dark-mode`} id="atf">
+    <div className="container" id="atf">
       <div className="container-shape">
         <video ref={videoRef} autoPlay loop muted className="video-cutter">
           <source src={video} type="video/mp4" />

@@ -47,7 +47,7 @@
   /* animation: hourglass 4s linear infinite; */
 }
 
-.dark-mode * polygon {
+.dark-mode * .hourglass-polygon {
   fill: var(--irbisio-drk-blue);
 }
 

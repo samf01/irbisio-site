@@ -4,6 +4,7 @@ import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
 import GridContent from '../components/UI/grid-content'
 import { isInViewport } from '../components/Hooks/ViewFunctions'
+import { SideShape } from '../components/graphics/landing-shape'
 
 const StrategyPage = ({ data }) => {
   const { funds, investors, investing, esg } =
@@ -36,6 +37,7 @@ const StrategyPage = ({ data }) => {
   return (
     <Layout>
       <GatsbySeo title="Strategy" />
+
       <GridContent
         id="investing"
         layout="--center-4"
@@ -68,7 +70,9 @@ const StrategyPage = ({ data }) => {
           })}
         </div>
         <p>{investing.footer}</p>
+        <SideShape />
       </GridContent>
+
       <GridContent
         id="funds"
         layout="--center-6"
@@ -100,11 +104,14 @@ const StrategyPage = ({ data }) => {
                   alt={fund.name}
                   style={{ width: '100%' }}
                 />
-                <img
-                  src={fund.logo.publicURL}
-                  alt={fund.name}
-                  style={{ height: '230px', margin: '0 auto' }}
-                />
+                <Link to={fund.button.link}>
+                  <img
+                    src={fund.logo.publicURL}
+                    className="mock-button"
+                    alt={fund.name}
+                    style={{ height: '230px', margin: '0 auto' }}
+                  />
+                </Link>
                 <p>{fund.body}</p>
                 <Link
                   to={fund.button.link}
@@ -147,8 +154,9 @@ const StrategyPage = ({ data }) => {
 
       <GridContent
         id="esg"
-        layout="--center-4"
+        layout="--center-6"
         mode={esg.mode}
+        hide="true"
         background={esg.image}
       >
         <h4>{esg.section}</h4>
@@ -165,7 +173,12 @@ const StrategyPage = ({ data }) => {
         >
           {esg.goals.map(goal => {
             return (
-              <img src={goal.logo.publicURL} alt={goal.name} key={goal.name} />
+              <img
+                src={goal.logo.publicURL}
+                alt={goal.name}
+                key={goal.name}
+                className="mock-button"
+              />
             )
           })}
         </div>

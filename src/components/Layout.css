@@ -200,6 +200,15 @@ button:active * {
   stroke: var(--irbisio-orange);
 }
 
+.mock-button {
+  transform: scale(1);
+  transition: 0.3s;
+}
+
+.mock-button:hover {
+  transform: scale(1.2);
+}
+
 @media (max-width: 990px) {
   body {
     font-size: 12px;
@@ -463,6 +472,10 @@ Link {
     grid-column: 2 / 8;
   }
 
+  .grid-content.--right-4 {
+    grid-column: 10 / 11;
+  }
+
   .grid-content.--center-6 {
     grid-column: 2 / 8;
   }
@@ -604,14 +617,20 @@ nav .logo:hover > path {
 
 .principle h2 {
   transform: translateY(125px);
-  transition: 0.5s 0.5s;
+  transition: 0.5s 0.1s;
 }
 
 .principle p {
-  transform: translateY(-100%);
-  transition: 0.5s 1s;
+  transform: translateY(-120%);
+  transition: 0.5s 0.25s;
 }
 
 .hidden.appear {
   transform: translateY(0);
+}
+
+@media (max-width: 990px) {
+  .principle {
+    width: 80%;
+  }
 }

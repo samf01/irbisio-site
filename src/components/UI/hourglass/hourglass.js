@@ -37,7 +37,11 @@ const Hourglass = ({ content, hide }) => {
           preserveAspectRatio="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <polygon points="" fill="var(--irbisio-off-white)">
+          <polygon
+            points=""
+            className="hourglass-polygon"
+            fill="var(--irbisio-off-white)"
+          >
             <animate
               attributeName="points"
               repeatCount="indefinite"
