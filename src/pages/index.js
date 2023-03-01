@@ -17,26 +17,8 @@ const Home = ({ data }) => {
   const { introduction, about, leopard, news, strategy } =
     data.allFile.edges[0].node.childMarkdownRemark.frontmatter
 
-  const mockArticles = [
-    {
-      heading: 'Urban investment in the cleantech space reaches new highs.',
-      extract:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed ullamcorper augue. Maecenas eu porttitor libero, nec egestas ante. Sed eleifend ultrices velit in molestie. Nulla at tellus id dui bibendum eleifend nec nec turpis. Morbi cursus sed augue pellentesque convallis. Mauris id magna malesuada, condimentum libero quis, varius libero. Integer non diam mollis mauris blandit molestie et sit amet sem. Cras quis sem vel quam pulvinar malesuada.',
-    },
-    {
-      heading: 'Urban investment in the cleantech space reaches new highs.',
-      extract:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed ullamcorper augue. Maecenas eu porttitor libero, nec egestas ante. Sed eleifend ultrices velit in molestie. Nulla at tellus id dui bibendum eleifend nec nec turpis. Morbi cursus sed augue pellentesque convallis. Mauris id magna malesuada, condimentum libero quis, varius libero. Integer non diam mollis mauris blandit molestie et sit amet sem. Cras quis sem vel quam pulvinar malesuada.',
-    },
-    {
-      heading: 'Urban investment in the cleantech space reaches new highs.',
-      extract:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed ullamcorper augue. Maecenas eu porttitor libero, nec egestas ante. Sed eleifend ultrices velit in molestie. Nulla at tellus id dui bibendum eleifend nec nec turpis. Morbi cursus sed augue pellentesque convallis. Mauris id magna malesuada, condimentum libero quis, varius libero. Integer non diam mollis mauris blandit molestie et sit amet sem. Cras quis sem vel quam pulvinar malesuada.',
-    },
-  ]
-  //Create pagination marker position: absolute on RHS.
-  //Count the number of sections and get the key.
-  //OnScroll, check which section getBoundingClientRect().top = 0;
+  const articles = data.allMarkdownRemark.edges
+
   return (
     <Layout>
       <GatsbySeo title="Home Page" />
@@ -90,7 +72,13 @@ const Home = ({ data }) => {
         background={news.image}
       >
         <h4>{news.section}</h4>
-        {mockArticles.map((article, i) => {
+        {articles.map((node, i) => {
+          const article = {
+            title: node.node.frontmatter.title,
+            date: node.node.frontmatter.date,
+            excerpt: node.node.excerpt,
+            slug: node.node.fields.slug,
+          }
           return <PreviewArticle key={i} article={article} />
         })}
         <p>
@@ -223,6 +211,20 @@ export const query = graphql`
                 }
               }
             }
+          }
+        }
+      }
+    }
+    allMarkdownRemark(filter: { frontmatter: { cms: { eq: "news" } } }) {
+      edges {
+        node {
+          excerpt(pruneLength: 230)
+          frontmatter {
+            title
+            date
+          }
+          fields {
+            slug
           }
         }
       }

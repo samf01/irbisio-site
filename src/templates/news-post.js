@@ -9,6 +9,7 @@ const BlogPost = ({ data }) => {
   const url = `${data.site.siteUrl}${data.markdownRemark.fields.slug}`
   const { date, title } = data.markdownRemark.frontmatter
   const { html } = data.markdownRemark
+  const publishedDate = new Date(date)
 
   return (
     <Layout>
@@ -39,7 +40,10 @@ const BlogPost = ({ data }) => {
       <div className="grid-content--center-4">
         <div>
           <h1>{title}</h1>
-          <p>Published {date}</p>
+          <h4>
+            Published {publishedDate.getDate()}.{publishedDate.getMonth()}.
+            {publishedDate.getFullYear()}
+          </h4>
         </div>
 
         <div className="mt-4">
