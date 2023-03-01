@@ -1,18 +1,24 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { GatsbySeo } from 'gatsby-plugin-next-seo'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
 import GridContent from '../components/UI/grid-content'
 import { isInViewport } from '../components/Hooks/ViewFunctions'
 import { SideShape } from '../components/graphics/landing-shape'
+import { useTrail, animated } from 'react-spring'
 
 const StrategyPage = ({ data }) => {
   const { funds, investors, investing, esg } =
     data.allFile.edges[0].node.childMarkdownRemark.frontmatter
-
   const fund = data.allMarkdownRemark.edges
-
   const principleRef = useRef(null)
+  const esgRef = useRef(null)
+  const [esgIn, setEsgIn] = useState(false)
+
+  const trail = useTrail(esg.goals.length, {
+    config: 'gentle',
+    translateY: esgIn ? 0 : -220,
+  })
 
   useEffect(() => {
     const principleNodes = principleRef.current.childNodes
@@ -29,6 +35,9 @@ const StrategyPage = ({ data }) => {
           principle.childNodes[1].childNodes[0].classList.remove('appear')
         }
       })
+
+      if (isInViewport(esgRef.current)) setEsgIn(true)
+      else setEsgIn(false)
     }
 
     layout.addEventListener('scroll', () => inView())
@@ -92,7 +101,6 @@ const StrategyPage = ({ data }) => {
           }}
         >
           {fund.map((node, i) => {
-            console.log(node)
             const { brand, logo, sub_heading, title } = node.node.frontmatter
             const slug = node.node.fields.slug
             return (
@@ -164,29 +172,21 @@ const StrategyPage = ({ data }) => {
 
       <GridContent
         id="esg"
-        layout="--center-6"
+        layout="--center-6 margin-none"
         mode={esg.mode}
         hide="true"
         background={esg.image}
       >
         <h4>{esg.section}</h4>
         <h3>{esg.heading}</h3>
-        <div
-          style={{
-            paddingTop: '3rem',
-            display: 'flex',
-            flexWrap: 'wrap',
-            rowGap: '3rem',
-            width: '100%',
-            justifyContent: 'space-between',
-          }}
-        >
-          {esg.goals.map(goal => {
+        <div className="esg-goals" ref={esgRef}>
+          {trail.map(({ ...style }, index) => {
             return (
-              <img
-                src={goal.logo.publicURL}
-                alt={goal.name}
-                key={goal.name}
+              <animated.img
+                style={{ ...style }}
+                src={esg.goals[index].logo.publicURL}
+                alt={esg.goals[index].name}
+                key={esg.goals[index].name}
                 className="mock-button"
               />
             )

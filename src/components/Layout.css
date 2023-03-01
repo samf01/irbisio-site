@@ -661,3 +661,17 @@ nav .logo:hover > path {
   height: 150px;
   margin-right: auto;
 }
+
+.esg-goals {
+  padding-top: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  row-gap: 3rem;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.margin-none {
+  margin-top: 0;
+}

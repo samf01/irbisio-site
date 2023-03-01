@@ -70,7 +70,7 @@ const Home = ({ data }) => {
               <li
                 className="slide"
                 id={`carousel__slide-${i}`}
-                tabindex="0"
+                tabIndex="0"
                 key={member.name}
               >
                 <div className="team-sheet">
