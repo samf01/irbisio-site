@@ -53,8 +53,12 @@ exports.createPages = ({ actions, graphql }) => {
       edge => edge.node.frontmatter.cms === 'news'
     )
 
-    const teamEdges = allEdges.filter(
+    const fundEdges = allEdges.filter(
       edge => edge.node.frontmatter.cms === 'fund'
+    )
+
+    const caseEdges = allEdges.filter(
+      edge => edge.node.frontmatter.cms === 'case'
     )
 
     blogEdges.forEach((post, index) => {
@@ -73,14 +77,30 @@ exports.createPages = ({ actions, graphql }) => {
       })
     })
 
-    teamEdges.forEach((post, index) => {
+    fundEdges.forEach((post, index) => {
       const previous =
-        index === teamEdges.length - 1 ? null : teamEdges[index + 1].node
-      const next = index === 0 ? null : teamEdges[index - 1].node
+        index === fundEdges.length - 1 ? null : fundEdges[index + 1].node
+      const next = index === 0 ? null : fundEdges[index - 1].node
 
       createPage({
         path: post.node.fields.slug,
         component: path.resolve(`./src/templates/fund.js`),
+        context: {
+          slug: post.node.fields.slug,
+          previous,
+          next,
+        },
+      })
+    })
+
+    caseEdges.forEach((post, index) => {
+      const previous =
+        index === caseEdges.length - 1 ? null : caseEdges[index + 1].node
+      const next = index === 0 ? null : caseEdges[index - 1].node
+
+      createPage({
+        path: post.node.fields.slug,
+        component: path.resolve(`./src/templates/case-study.js`),
         context: {
           slug: post.node.fields.slug,
           previous,
