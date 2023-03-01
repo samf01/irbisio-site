@@ -47,14 +47,44 @@ exports.createPages = ({ actions, graphql }) => {
       return Promise.reject(result.errors)
     }
 
-    const posts = result.data.allMarkdownRemark.edges
-    posts.forEach(edge => {
-      const id = edge.node.id
+    const allEdges = result.data.allMarkdownRemark.edges
+
+    const blogEdges = allEdges.filter(
+      edge => edge.node.frontmatter.cms === 'news'
+    )
+
+    const teamEdges = allEdges.filter(
+      edge => edge.node.frontmatter.cms === 'fund'
+    )
+
+    blogEdges.forEach((post, index) => {
+      const previous =
+        index === blogEdges.length - 1 ? null : blogEdges[index + 1].node
+      const next = index === 0 ? null : blogEdges[index - 1].node
+
       createPage({
-        path: edge.node.fields.slug,
-        component: path.resolve(`src/templates/blog-post.js`),
+        path: post.node.fields.slug,
+        component: path.resolve(`./src/templates/news-post.js`),
         context: {
-          id,
+          slug: post.node.fields.slug,
+          previous,
+          next,
+        },
+      })
+    })
+
+    teamEdges.forEach((post, index) => {
+      const previous =
+        index === teamEdges.length - 1 ? null : teamEdges[index + 1].node
+      const next = index === 0 ? null : teamEdges[index - 1].node
+
+      createPage({
+        path: post.node.fields.slug,
+        component: path.resolve(`./src/templates/fund.js`),
+        context: {
+          slug: post.node.fields.slug,
+          previous,
+          next,
         },
       })
     })

@@ -12,37 +12,32 @@ investing:
     Clear understanding and technical acumen. This is especially important with new technologies, their growth potential, key players and risks need to be evaluated before deployment.
   principles:
     - title: Legal and political framework
-      body:
-        " Cleantech is often affected by government regulations, so it's important
+      body: " Cleantech is often affected by government regulations, so it's important
         to understand the regulatory environment in which they operate.
         Government incentives and subsidies can provide a boost to cleantech
         companies, and changes in regulations can have a significant impact on
         their success."
     - title: Diversification
-      body:
-        This is a key principle of investing in any industry, including cleantech.
+      body: This is a key principle of investing in any industry, including cleantech.
         This means spreading the investment across a range of companies and
         technologies to minimize risk and maximize returns.
     - title: Impact Investing
-      body:
-        Cleantech investment is expected to generate a positive impact on society
+      body: Cleantech investment is expected to generate a positive impact on society
         or the environment in addition to financial returns. Impact investing is
         a powerful motivator for investors looking to make a positive difference
         in the world.
     - title: Clearly defined timeframe
-      body:
-        Cleantech is often referred as a long-term investment with years or even
+      body: Cleantech is often referred as a long-term investment with years or even
         decades before returns are seen. However the energy transition is
         changing the landscape and timescales for cleantech investing and
         offering investors the opportunity to make strong returns over a
         relatively short period.
     - title: Risk Management
-      body:
-        ' Cleantech companies are often at the forefront of new and innovative
+      body: " Cleantech companies are often at the forefront of new and innovative
         technologies and have often been associated with high-risk investing.
         Technology due diligence and implementation expertise are the core of
         de-risking these investments and companies and realising the potential
-        to generate significant returns.'
+        to generate significant returns."
     - title: Due Diligence
       body: As with any investment, it's crucial to perform due diligence to
         understand the financial and operational risks involved in cleantech
@@ -51,8 +46,7 @@ investing:
       body: These are integral in cleantech. These factors include the company's
         impact on the environment, its treatment of employees, and its
         governance and transparency.
-  footer:
-    In cleantech is a unique opportunity to generate financial returns while
+  footer: In cleantech is a unique opportunity to generate financial returns while
     contributing to a more sustainable future. By understanding the market,
     diversifying your investments, considering ESG factors, and performing due
     diligence, investors can maximise their returns and make a positive impact.
@@ -61,15 +55,13 @@ investors:
   section: Investors
   mode: light-mode
   body: >-
-    `<p>Irbisio is democratising cleantech investing to enable more to
+    <p>Irbisio is democratising cleantech investing to enable more to
     participate in the energy transition and accelerate the world to net
     zero.</p>
 
-    <br /><br />
+    <br />
 
-    <p>We are open to:</p>
-
-    <ul>
+    <p>We are open to:</p> <br /> <ul class="investor-types">
 
     <li><h4>FAMILY OFFICES</h4></li>
 
@@ -78,12 +70,12 @@ investors:
     <li><h4>individuals</h4></li>
 
 
-    </ul>`
+    </ul>
   details:
     - button:
         label: Learn More
         link: https://generagroup.it
-      name: 'Investor #1'
+      name: "Investor #1"
       logo: /assets/genera-group.svg
       body: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed
         ullamcorper augue. Maecenas eu porttitor libero, nec egestas ante. Sed
@@ -96,7 +88,8 @@ investors:
 funds:
   section: Funds
   mode: dark-mode
-  heading: Irbisio provides two cleantech funds, each with a different investment profile.
+  heading: Irbisio provides two cleantech funds, each with a different investment
+    profile.
   image: /assets/snow-leopard-bg.jpg
   fund_type:
     - button:
@@ -105,30 +98,27 @@ funds:
       name: Value Fund
       title: /assets/value-fund.svg
       logo: /assets/value-fund-logo.svg
-      body:
-        The Irbisio Value Fund seeks to maximise recurring revenue streams for
+      body: The Irbisio Value Fund seeks to maximise recurring revenue streams for
         investors through cleantech investments that are assisting the
         transition to net zero. Often focused on larger companies and
         opportunities, the Irbisio Value Fund meets needs of longer-term
         investors who want to make predictable and recurring returns on
-        investment.
+        investment.XX
     - button:
         label: Learn More
         link: /growth-fund
       name: Growth Fund
       title: /assets/growth-fund.svg
       logo: /assets/growth-fund-logo.svg
-      body:
-        The Irbisio Growth Fund is focussed on capital growth returns through
+      body: The Irbisio Growth Fund is focussed on capital growth returns through
         investments in cleantech programmes. While contributing to the carbon
         net zero goal, these investments offer higher returns to investors based
         on a more ambitious risk profile.
 esg:
   section: ESG Approach
   mode: dark-mode
-  heading:
-    'We adhere to the United Nation’s 17 Sustainable Development Goal. Our
-    investment strategy is particularly focussed on four of the UN’s 17 goals:'
+  heading: "We adhere to the United Nation’s 17 Sustainable Development Goal. Our
+    investment strategy is particularly focussed on four of the UN’s 17 goals:"
   image: /assets/background-test.jpg
   goals:
     - name: 7. Affordable and Clean Energy

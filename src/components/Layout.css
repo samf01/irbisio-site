@@ -634,3 +634,30 @@ nav .logo:hover > path {
     width: 80%;
   }
 }
+
+.investor-types {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-evenly;
+  text-decoration: none;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--irbisio-off-white);
+}
+
+.investor-types li {
+  list-style: none;
+}
+
+.investor-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--irbisio-off-white);
+}
+
+.investor-list img {
+  height: 150px;
+  margin-right: auto;
+}

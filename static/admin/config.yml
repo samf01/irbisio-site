@@ -514,7 +514,7 @@ collections:
                 ],
             }
           - {
-              label:  Funds Section,
+              label: Funds Section,
               name: funds,
               widget: object,
               summary: "{{fields.section}}",
@@ -558,7 +558,7 @@ collections:
                 ],
             }
           - {
-              label:  ESG Section,
+              label: ESG Section,
               name: esg,
               widget: object,
               summary: "{{fields.section}}",
@@ -593,6 +593,7 @@ collections:
                   { label: Background Image, name: image, widget: image},
                 ],
             }
+     
 
   - name: "posts"
     label: "News"
@@ -606,7 +607,7 @@ collections:
           widget: "hidden",
           default: "news",
         }
-      - { label: "Hrading", name: "heading", widget: "string", required: true }
+      - { label: "Heading", name: "heading", widget: "string", required: true }
       - {
           label: "Publish Date",
           name: "date",
@@ -614,3 +615,40 @@ collections:
           required: true,
         }
       - { label: "Body", name: "body", widget: "markdown", required: true }
+
+  - name: "funds"
+    label: "Fund Pages"
+    folder: "content/funds/"
+    create: true
+    path: "{{slug}}/index"
+    fields:
+      - {
+          label: "CMS Key",
+          name: "cms",
+          widget: "hidden",
+          default: "fund",
+        }
+      - { label: Title, name: title, widget: string }
+      - { label: Fund Logo (sub-brand), name: logo, widget: image, required: false }
+      - { label: Fund Brand Image, name: brand, widget: image }
+      - { label: Sub Heading, name: sub_heading, widget: markdown }
+      - { label: Investment Opportunity, name: opportunity, widget: markdown }
+      - { label: Fund Stats, name: stats, widget: list, allow_add: true, fields: 
+          [
+            { label: Statistic Name, name: name, widget: string},
+            { label: Statistic (large font), name: main, widget: string},
+            { label: Subscript (if any), name: subscript, widget: string, required: false},
+          ]
+        }
+      - { label: Bullet Lists, name: section, widget: list, allow_add: true, fields: 
+          [
+            { label: List Title, name: title, widget: string, required: false },
+            { label: Statement, name: statement, widget: string, required: false },
+            { label: Statement Appears (first or last), name: order, widget: select, options: [first, last], default: 'first' },
+            { label: List Items, name: list, widget: list, allow_add: true, fields: 
+              [
+                { label: Bullet Point, name: point, widget: string },
+              ]
+            },
+          ]
+        }

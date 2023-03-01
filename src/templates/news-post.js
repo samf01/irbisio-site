@@ -1,43 +1,36 @@
 import { graphql, Link } from 'gatsby'
-import { GatsbyImage, getImage, getSrc } from 'gatsby-plugin-image'
+
 import { GatsbySeo, ArticleJsonLd } from 'gatsby-plugin-next-seo'
 import PropTypes from 'prop-types'
 import React from 'react'
 import Layout from '../components/Layout'
 
-const BlogPost = ({
-  data: {
-    post,
-    site: {
-      siteMetadata: { siteUrl },
-    },
-  },
-}) => {
-  const url = `${siteUrl}${post.fields.slug}`
-  const { publishedDate, title } = post.frontmatter
+const BlogPost = ({ data }) => {
+  const url = `${data.site.siteUrl}${data.markdownRemark.fields.slug}`
+  const { date, title } = data.markdownRemark.frontmatter
+  const { html } = data.markdownRemark
 
   return (
     <Layout>
       <GatsbySeo
         title={title}
-        description={description}
         canonical={url}
         openGraph={{
           title,
           url,
           type: 'article',
           article: {
-            publishedTime: publishedDate,
-            modifiedTime: publishedDate,
+            publishedTime: date,
+            modifiedTime: date,
           },
         }}
       />
       <ArticleJsonLd
         url={url}
         headline={title}
-        datePublished={publishedDate}
-        dateModified={publishedDate}
-        publisherLogo={`${siteUrl}/logo.png`}
+        datePublished={date}
+        dateModified={date}
+        publisherLogo={`${data.site.siteUrl}/logo.png`}
         overrides={{
           '@type': 'BlogPosting',
         }}
@@ -46,17 +39,11 @@ const BlogPost = ({
       <div className="grid-content--center-4">
         <div>
           <h1>{title}</h1>
-          <p>Published {publishedDate}</p>
+          <p>Published {date}</p>
         </div>
-        <GatsbyImage
-          image={getImage(featuredimage)}
-          style={{ width: '100%' }}
-          alt={title}
-          title={title}
-        />
 
         <div className="mt-4">
-          <div dangerouslySetInnerHTML={{ __html: post.html }} />
+          <div dangerouslySetInnerHTML={{ __html: html }} />
         </div>
         <Link to="/blog">Back to Articles</Link>
       </div>
@@ -73,8 +60,8 @@ BlogPost.propTypes = {
 export default BlogPost
 
 export const pageQuery = graphql`
-  query BlogPostByID($id: String!) {
-    post: markdownRemark(id: { eq: $id }) {
+  query BlogPostByID($slug: String!) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       html
       fields {

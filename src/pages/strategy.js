@@ -10,6 +10,8 @@ const StrategyPage = ({ data }) => {
   const { funds, investors, investing, esg } =
     data.allFile.edges[0].node.childMarkdownRemark.frontmatter
 
+  const fund = data.allMarkdownRemark.edges
+
   const principleRef = useRef(null)
 
   useEffect(() => {
@@ -89,10 +91,13 @@ const StrategyPage = ({ data }) => {
             columnGap: '150px',
           }}
         >
-          {funds.fund_type.map((fund, i) => {
+          {fund.map((node, i) => {
+            console.log(node)
+            const { brand, logo, sub_heading, title } = node.node.frontmatter
+            const slug = node.node.fields.slug
             return (
               <div
-                key={fund.name}
+                key={title}
                 style={{
                   display: 'flex',
                   flexDirection: 'column',
@@ -100,24 +105,24 @@ const StrategyPage = ({ data }) => {
                 }}
               >
                 <img
-                  src={fund.title.publicURL}
-                  alt={fund.name}
+                  src={brand.publicURL}
+                  alt={title}
                   style={{ width: '100%' }}
                 />
-                <Link to={fund.button.link}>
+                <Link to={slug}>
                   <img
-                    src={fund.logo.publicURL}
+                    src={logo.publicURL}
                     className="mock-button"
-                    alt={fund.name}
+                    alt={title}
                     style={{ height: '230px', margin: '0 auto' }}
                   />
                 </Link>
-                <p>{fund.body}</p>
+                <p>{sub_heading}</p>
                 <Link
-                  to={fund.button.link}
+                  to={slug}
                   style={{ alignSelf: 'flex-end', marginTop: 'auto' }}
                 >
-                  {fund.button.label}
+                  Learn More
                 </Link>
               </div>
             )
@@ -127,29 +132,34 @@ const StrategyPage = ({ data }) => {
 
       <GridContent
         id="investors"
-        layout="--center-4"
+        layout="--center-6"
+        hide="true"
         mode={investors.mode}
         background={investors.image}
       >
         <h4>{investors.section}</h4>
-        {investors.details.map(investor => {
-          return (
-            <div key={investor.name}>
-              <img
-                src={investor.logo.publicURL}
-                alt={investor.name}
-                style={{ width: '100%' }}
-              />
-              <p className="markdown">{investor.body}</p>
-              <a
-                href={investor.button.link}
-                style={{ display: 'block', textAlign: 'end' }}
-              >
-                {investor.button.label}
-              </a>
-            </div>
-          )
-        })}
+        <div dangerouslySetInnerHTML={{ __html: investors.body }} />
+        <div>
+          <p>Our investors include:</p>
+          {investors.details.map(investor => {
+            return (
+              <div key={investor.name} className="investor-list">
+                {investor.logo ? (
+                  <img src={investor.logo.publicURL} alt={investor.name} />
+                ) : (
+                  <h1>{investor.name}</h1>
+                )}
+                <p className="markdown">{investor.body}</p>
+                <a
+                  href={investor.button.link}
+                  style={{ display: 'block', textAlign: 'end' }}
+                >
+                  {investor.button.label}
+                </a>
+              </div>
+            )
+          })}
+        </div>
       </GridContent>
 
       <GridContent
@@ -217,20 +227,6 @@ export const query = graphql`
                 image {
                   publicURL
                 }
-                fund_type {
-                  body
-                  button {
-                    label
-                    link
-                  }
-                  name
-                  title {
-                    publicURL
-                  }
-                  logo {
-                    publicURL
-                  }
-                }
               }
               investing {
                 body
@@ -266,6 +262,25 @@ export const query = graphql`
                 }
               }
             }
+          }
+        }
+      }
+    }
+    allMarkdownRemark(filter: { frontmatter: { cms: { eq: "fund" } } }) {
+      edges {
+        node {
+          frontmatter {
+            title
+            brand {
+              publicURL
+            }
+            logo {
+              publicURL
+            }
+            sub_heading
+          }
+          fields {
+            slug
           }
         }
       }
