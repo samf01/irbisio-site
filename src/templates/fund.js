@@ -21,7 +21,7 @@ const Fund = ({ data }) => {
         <h4>opportunity</h4>
         <p>{opportunity}</p>
       </GridContent>
-      <GridContent layout="--center-4" mode="light-mode">
+      <GridContent layout="--center-6" mode="light-mode" hide="true">
         {stats.map((stat, i) => {
           return (
             <div
@@ -42,12 +42,23 @@ const Fund = ({ data }) => {
           return (
             <div key={node.title}>
               <h4>{node.title}</h4>
-              <p>{node.statement}</p>
-              <ul>
-                {node.list.map(item => {
-                  return <li>{item.point}</li>
-                })}
-              </ul>
+              <div
+                style={{
+                  display: 'flex',
+                  flexWrap: 'nowrap',
+                  flexDirection:
+                    node.order === 'last' ? 'column-reverse' : 'column',
+                }}
+              >
+                {node.statement && (
+                  <p style={{ margin: '12px 0' }}>{node.statement}</p>
+                )}
+                <ul>
+                  {node.list.map((item, i) => {
+                    return <li key={i}>{item.point}</li>
+                  })}
+                </ul>
+              </div>
             </div>
           )
         })}
