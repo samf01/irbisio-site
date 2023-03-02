@@ -166,7 +166,7 @@ module.exports = {
               {
                 allMarkdownRemark(
                   sort: { order: DESC, fields: [frontmatter___date] }
-                  filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
+                  filter: { frontmatter: { cms: { eq: "news" } } }
                 ) {
                       edges {
                       node {
@@ -174,7 +174,7 @@ module.exports = {
                       fields { slug }
                       frontmatter {
                       title
-                        description
+                      cms
                         date
                       }
                     }
