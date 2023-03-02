@@ -79,7 +79,11 @@ const Home = ({ data }) => {
             excerpt: node.node.excerpt,
             slug: node.node.fields.slug,
           }
-          return <PreviewArticle key={i} article={article} />
+          return (
+            <div key={i}>
+              <PreviewArticle article={article} />
+            </div>
+          )
         })}
         <p>
           For more information contact:{' '}

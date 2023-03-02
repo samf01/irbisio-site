@@ -210,6 +210,10 @@ button:active * {
   transform: scale(1.2);
 }
 
+.mock-button:active {
+  transform: scale(0.8);
+}
+
 @media (max-width: 990px) {
   body {
     font-size: 12px;
@@ -303,6 +307,10 @@ nav {
   transform: scale(0.5);
 }
 
+.toggle:hover {
+  transform: scale(0.5);
+}
+
 .mobile-menu {
   position: relative;
   margin: var(--margin-page);
@@ -333,6 +341,10 @@ footer {
   .nav-list {
     display: block;
     margin-bottom: 12px;
+  }
+
+  footer {
+    padding: 0;
   }
 }
 
@@ -446,6 +458,10 @@ Link {
   flex-direction: column;
   justify-content: flex-end;
   gap: 24px;
+}
+
+.team-details h1 {
+  margin: 0;
 }
 
 .row {

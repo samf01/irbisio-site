@@ -54,6 +54,37 @@ const NavBar = ({ layoutRef }) => {
     leave: { right: '-100%' },
   })
 
+  const NavList = () => {
+    return (
+      <div className="nav-list">
+        <a className="nav-item pos-start" href="/about">
+          ABOUT
+        </a>
+        <a className="nav-item pos-start" href="/#news">
+          News
+        </a>
+        <a className="nav-item pos-start" href="/case-studies">
+          case studies
+        </a>
+        <a className="nav-item pos-start" href="/strategy">
+          strategy
+        </a>
+        <a className="nav-item pos-start" href="/about/#team">
+          team
+        </a>
+        <a className="nav-item pos-start" href="/about/#partners">
+          partners
+        </a>
+        <a className="nav-item pos-start" href="/#snow-leopard">
+          wild cat rescue
+        </a>
+        <a className="nav-item pos-start" href="#contact">
+          contact
+        </a>
+      </div>
+    )
+  }
+
   return (
     <nav id="navbar">
       <div className="nav-bar">
@@ -62,32 +93,7 @@ const NavBar = ({ layoutRef }) => {
         </Link>
 
         {isStart && !mobile ? (
-          <div className="nav-list">
-            <a className="nav-item pos-start" href="/about">
-              ABOUT
-            </a>
-            <a className="nav-item pos-start" href="/#news">
-              News
-            </a>
-            <a className="nav-item pos-start" href="/case-studies">
-              case studies
-            </a>
-            <a className="nav-item pos-start" href="/strategy">
-              strategy
-            </a>
-            <a className="nav-item pos-start" href="/about/#team">
-              team
-            </a>
-            <a className="nav-item pos-start" href="/about/#partners">
-              partners
-            </a>
-            <a className="nav-item pos-start" href="/#snow-leopard">
-              wild cat rescue
-            </a>
-            <a className="nav-item pos-start" href="#contact">
-              contact
-            </a>
-          </div>
+          <NavList />
         ) : (
           <button
             aria-label="button"
@@ -107,32 +113,7 @@ const NavBar = ({ layoutRef }) => {
               onClick={() => setNavbarOpen(!navbarOpen)}
               style={appear}
             >
-              <div className="nav-list">
-                <a className="nav-item" href="/#about">
-                  ABOUT
-                </a>
-                <a className="nav-item" href="/#projects">
-                  News
-                </a>
-                <a className="nav-item" href="/#contact">
-                  case studies
-                </a>
-                <a className="nav-item" href="/#contact">
-                  strategy
-                </a>
-                <a className="nav-item" href="/#contact">
-                  team
-                </a>
-                <a className="nav-item" href="/#contact">
-                  partners
-                </a>
-                <a className="nav-item" href="/#contact">
-                  wild cat rescue
-                </a>
-                <a className="nav-item" href="/#contact">
-                  contact
-                </a>
-              </div>
+              <NavList />
             </animated.div>
           )
       )}

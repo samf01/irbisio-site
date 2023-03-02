@@ -38,11 +38,12 @@ const FoundationButton = ({ button }) => {
 
       <a
         href={destination}
+        className="mock-button"
         style={{
           width: 'fit-content',
           padding: '8px 24px',
-          backgroundColor: 'var(--irbisio-drk-blue',
-          color: 'var(--irbisio-off-white',
+          backgroundColor: 'var(--irbisio-drk-blue)',
+          color: 'var(--irbisio-off-white)',
         }}
       >
         {label}

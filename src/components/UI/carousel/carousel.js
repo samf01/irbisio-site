@@ -20,8 +20,8 @@ const Carousel = ({ children }) => {
 
   return (
     <>
-      <section class="slider-wrapper" ref={slideRef}>
-        <ul class="slides-container" id="slides-container">
+      <section className="slider-wrapper" ref={slideRef}>
+        <ul className="slides-container" id="slides-container">
           {children}
         </ul>
 

@@ -7,7 +7,7 @@ import GridContent from '../components/UI/grid-content'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Carousel from '../components/UI/carousel/carousel'
 
-const Home = ({ data }) => {
+const AboutPage = ({ data }) => {
   const { about, team, partners } =
     data.allFile.edges[0].node.childMarkdownRemark.frontmatter
 
@@ -36,9 +36,9 @@ const Home = ({ data }) => {
         background={partners.image}
       >
         <h4>{partners.section}</h4>
-        {partners.details.map(partner => {
+        {partners.details.map((partner, i) => {
           return (
-            <div key={partner.name}>
+            <div key={i}>
               <img
                 src={partner.logo.publicURL}
                 alt={partner.name}
@@ -71,7 +71,7 @@ const Home = ({ data }) => {
                 className="slide"
                 id={`carousel__slide-${i}`}
                 tabIndex="0"
-                key={member.name}
+                key={i}
               >
                 <div className="team-sheet">
                   <div className="team-details">
@@ -100,7 +100,7 @@ const Home = ({ data }) => {
   )
 }
 
-export default Home
+export default AboutPage
 
 export const query = graphql`
   query {
