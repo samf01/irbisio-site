@@ -5,10 +5,11 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import Layout from '../components/Layout'
 import GridContent from '../components/UI/grid-content'
+import { AnimatedStatistic } from '../components/UI/news/animated-stat'
 
 const CaseStudy = ({ data }) => {
   const url = `${data.site.siteUrl}${data.markdownRemark.fields.slug}`
-  const { title } = data.markdownRemark.frontmatter
+  const { title, stats } = data.markdownRemark.frontmatter
   const { html } = data.markdownRemark
 
   return (
@@ -18,6 +19,10 @@ const CaseStudy = ({ data }) => {
         <h1>{title}</h1>
 
         <div dangerouslySetInnerHTML={{ __html: html }} />
+
+        {stats.map((stat, i) => {
+          return <AnimatedStatistic stat={stat} key={i} />
+        })}
         <Link to="/case-studies">Back to Case Studies</Link>
       </GridContent>
     </Layout>
@@ -42,6 +47,11 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
+        stats {
+          type
+          value
+          description
+        }
       }
     }
     site {

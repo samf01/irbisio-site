@@ -4,6 +4,7 @@ import { GatsbySeo, ArticleJsonLd } from 'gatsby-plugin-next-seo'
 import PropTypes from 'prop-types'
 import React from 'react'
 import Layout from '../components/Layout'
+import GridContent from '../components/UI/grid-content'
 
 const BlogPost = ({ data }) => {
   const url = `${data.site.siteUrl}${data.markdownRemark.fields.slug}`
@@ -37,20 +38,18 @@ const BlogPost = ({ data }) => {
         }}
       />
 
-      <div className="grid-content--center-4">
-        <div>
-          <h1>{title}</h1>
-          <h4>
-            Published {publishedDate.getDate()}.{publishedDate.getMonth()}.
-            {publishedDate.getFullYear()}
-          </h4>
-        </div>
+      <GridContent layout="--center-6" hide="true" mode="dark-mode">
+        <h4>News</h4>
+        <h1>{title}</h1>
+        <h4>
+          Published {publishedDate.getDate()}.{publishedDate.getMonth()}.
+          {publishedDate.getFullYear()}
+        </h4>
 
-        <div className="mt-4">
-          <div dangerouslySetInnerHTML={{ __html: html }} />
-        </div>
-        <Link to="/blog">Back to Articles</Link>
-      </div>
+        <div dangerouslySetInnerHTML={{ __html: html }} />
+
+        <Link to="/#news">Back to Articles</Link>
+      </GridContent>
     </Layout>
   )
 }

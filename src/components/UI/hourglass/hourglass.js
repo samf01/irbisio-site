@@ -15,10 +15,12 @@ const Hourglass = ({ content, hide }) => {
     //Get the parent relative position
     const parentBounds = content.current.parentElement.getBoundingClientRect()
     window.requestAnimationFrame(() => {
-      //The actual top is subtracted from the parent top
-      const relativeTop = contentBounds.top - parentBounds.top
-      hourglass.current.style.top = `${relativeTop}px`
-      hourglass.current.style.height = `${contentBounds.height}px`
+      if (hourglass.current) {
+        //The actual top is subtracted from the parent top
+        const relativeTop = contentBounds.top - parentBounds.top
+        hourglass.current.style.top = `${relativeTop}px`
+        hourglass.current.style.height = `${contentBounds.height}px`
+      }
     })
   }, [content, hourglass])
 

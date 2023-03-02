@@ -36,7 +36,7 @@ const Layout = ({ children }) => {
 
       <Pagination layoutRef={layoutRef} />
 
-      <div className="layout" ref={layoutRef}>
+      <div className="layout" id="layout" ref={layoutRef}>
         {children}
         <Footer
           footer={
