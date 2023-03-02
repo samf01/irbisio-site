@@ -20,6 +20,9 @@ const Layout = ({ children }) => {
                   mode
                   image {
                     publicURL
+                    childImageSharp {
+                      gatsbyImageData(placeholder: BLURRED)
+                    }
                   }
                 }
               }

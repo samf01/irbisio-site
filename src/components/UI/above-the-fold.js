@@ -24,8 +24,9 @@ const Landing = () => {
   const [blockScroll, allowScroll] = useScrollBlock()
 
   function handlePlay() {
+    console.log(playing)
+    playing ? videoRef.current.pause() : videoRef.current.play()
     isPlaying(!playing)
-    playing ? videoRef.current.play() : videoRef.current.pause()
   }
 
   function handleClose() {

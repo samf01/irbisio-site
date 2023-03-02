@@ -66,10 +66,11 @@ export const Close = () => {
       viewBox="0 0 33 33"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      style={{ mixBlendMode: 'luminosity' }}
     >
       <path
         d="M30.5 3L3 30.5M3 3L30.5 30.5"
-        stroke="var(--irbisio-drk-blue)"
+        stroke="var(--irbisio-off-white)"
         strokeWidth="6.875"
       />
     </svg>

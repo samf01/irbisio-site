@@ -374,6 +374,7 @@ footer {
   width: 100%;
   min-height: 100vh;
   background-size: cover;
+
   /* padding-left: 40px;
   margin-left: -40px;
   padding-top: 40px;
@@ -383,7 +384,8 @@ footer {
 
 .container-shape {
   position: absolute;
-  top: 0;
+  top: 0%;
+  left: 0%;
   width: 100%;
   height: 100%;
   overflow: hidden;

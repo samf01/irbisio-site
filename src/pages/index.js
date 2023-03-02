@@ -138,7 +138,7 @@ export const query = graphql`
                 image {
                   publicURL
                   childImageSharp {
-                    gatsbyImageData(formats: JPG, placeholder: BLURRED)
+                    gatsbyImageData(placeholder: BLURRED)
                   }
                 }
                 mode
@@ -150,7 +150,7 @@ export const query = graphql`
                 image {
                   publicURL
                   childImageSharp {
-                    gatsbyImageData(formats: JPG, placeholder: BLURRED)
+                    gatsbyImageData(placeholder: BLURRED)
                   }
                 }
                 mode
@@ -166,7 +166,7 @@ export const query = graphql`
                 image {
                   publicURL
                   childImageSharp {
-                    gatsbyImageData(formats: JPG, placeholder: BLURRED)
+                    gatsbyImageData(placeholder: BLURRED)
                   }
                 }
                 mode
@@ -181,7 +181,7 @@ export const query = graphql`
                 image {
                   publicURL
                   childImageSharp {
-                    gatsbyImageData(formats: JPG, placeholder: BLURRED)
+                    gatsbyImageData(placeholder: BLURRED)
                   }
                 }
                 mode
@@ -195,7 +195,7 @@ export const query = graphql`
                 image {
                   publicURL
                   childImageSharp {
-                    gatsbyImageData(formats: JPG, placeholder: BLURRED)
+                    gatsbyImageData(placeholder: BLURRED)
                   }
                 }
                 section
