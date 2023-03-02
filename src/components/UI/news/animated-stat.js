@@ -1,5 +1,5 @@
 import React from 'react'
-import { useInView, useSpring, animated, springValue } from 'react-spring'
+import { useInView, useSpring, animated } from 'react-spring'
 
 export const AnimatedStatistic = ({ stat }) => {
   const { type, value, description } = stat

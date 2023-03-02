@@ -1,5 +1,5 @@
 import { graphql, Link } from 'gatsby'
-
+import '../components/UI/news/case-study.css'
 import { GatsbySeo } from 'gatsby-plugin-next-seo'
 import PropTypes from 'prop-types'
 import React from 'react'
@@ -20,9 +20,10 @@ const CaseStudy = ({ data }) => {
 
         <div dangerouslySetInnerHTML={{ __html: html }} />
 
-        {stats.map((stat, i) => {
-          return <AnimatedStatistic stat={stat} key={i} />
-        })}
+        {stats && //Because there might not be any?
+          stats.map((stat, i) => {
+            return <AnimatedStatistic stat={stat} key={i} />
+          })}
         <Link to="/case-studies">Back to Case Studies</Link>
       </GridContent>
     </Layout>
