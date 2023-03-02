@@ -9,7 +9,7 @@ about:
   body: Founded by Sergey Buchin and \[name other founders], Irbisio operates
     across Western Europe. Initial projects include \[name examples or area of
     investment]
-  image: /assets/background-test.jpg
+  image: /assets/stock-photo-solar-photovoltaic-of-solar-farm-aerial-view-solar-plant-rows-array-of-on-the-water-mount-system-1527058823.jpg
 partners:
   section: Partners
   mode: light-mode
@@ -28,12 +28,12 @@ partners:
 
         Genera declares itself as a partner more than a provider within this framework. It strives to identify the best suitable interventions to Client’s needs, to choose the most enhanced technologies, to work with the most reliable suppliers.
       name: Genera Group
-  image: /assets/background-test.jpg
+  image: /assets/stock-photo-algae-seaweed-research-biofuel-industry-science-sustainable-concept-1476381542.jpg
 team:
   section: Team
   mode: dark-mode
   member: null
-  image: /assets/background-test.jpg
+  image: /assets/stock-photo-castione-switzerland-th-april-view-of-the-energy-vault-crane-tower-in-switzerland-2020276172.jpg
   members:
     - photo: /assets/maria-bio.png
       name: Maria Deyonker

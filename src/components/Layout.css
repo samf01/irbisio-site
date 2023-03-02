@@ -379,7 +379,7 @@ footer {
   margin-left: -40px;
   padding-top: 40px;
   margin-top: -40px; */
-  background-repeat: no-repeat;
+  background-repeat: repeat;
 }
 
 .container-shape {

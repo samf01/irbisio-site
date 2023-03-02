@@ -50,7 +50,7 @@ investing:
     contributing to a more sustainable future. By understanding the market,
     diversifying your investments, considering ESG factors, and performing due
     diligence, investors can maximise their returns and make a positive impact.
-  image: /assets/background-test.jpg
+  image: /assets/stock-photo-green-fresh-plant-in-glass-test-tube-in-laboratory-on-white-background-close-up-macro-1111725959.jpg
 investors:
   section: Investors
   mode: light-mode
@@ -84,7 +84,7 @@ investors:
         Mauris id magna malesuada, condimentum libero quis, varius libero.
         Integer non diam mollis mauris blandit molestie et sit amet sem. Cras
         quis sem vel quam pulvinar malesuada.
-  image: /assets/background-test.jpg
+  image: /assets/stock-photo-selective-focus-of-electric-car-lithium-battery-pack-and-wiring-connections-internal-between-cells-1748497634.jpg
 funds:
   section: Funds
   mode: dark-mode
