@@ -472,6 +472,10 @@ Link {
   grid-template-columns: 40px auto;
 }
 
+.row * {
+  height: intrinsic;
+}
+
 .margin-none {
   margin-top: 0;
 }

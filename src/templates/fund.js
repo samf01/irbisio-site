@@ -5,6 +5,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import Layout from '../components/Layout'
 import GridContent from '../components/UI/grid-content'
+import { AnimatedTextBlock } from '../components/UI/news/animations'
 
 const Fund = ({ data }) => {
   const url = `${data.site.siteUrl}${data.markdownRemark.fields.slug}`
@@ -36,11 +37,17 @@ const Fund = ({ data }) => {
               key={stat.name}
               style={{ alignSelf: i % 2 === 1 && 'flex-end' }}
             >
-              <h4 style={{ margin: '0' }}>{stat.name}</h4>
-              <h1 className="h0">{stat.main}</h1>
-              <p>
-                <small>{stat.subscript}</small>
-              </p>
+              <AnimatedTextBlock direction="-80px">
+                <h4 style={{ margin: '0' }}>{stat.name}</h4>
+              </AnimatedTextBlock>
+              <AnimatedTextBlock direction="120px">
+                <h1 className="h0">{stat.main}</h1>
+              </AnimatedTextBlock>
+              <AnimatedTextBlock direction="-120px">
+                <p>
+                  <small>{stat.subscript}</small>
+                </p>
+              </AnimatedTextBlock>
             </div>
           )
         })}

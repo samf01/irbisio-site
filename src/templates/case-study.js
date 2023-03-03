@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import Layout from '../components/Layout'
 import GridContent from '../components/UI/grid-content'
-import { AnimatedStatistic } from '../components/UI/news/animated-stat'
+import { AnimatedStatistic } from '../components/UI/news/animations'
 
 const CaseStudy = ({ data }) => {
   const url = `${data.site.siteUrl}${data.markdownRemark.fields.slug}`

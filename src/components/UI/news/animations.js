@@ -33,3 +33,23 @@ export const AnimatedStatistic = ({ stat }) => {
     </div>
   )
 }
+
+export const AnimatedTextBlock = ({ children, direction }) => {
+  const [ref, isInView] = useInView({})
+  //Negative direction = animate down. E.g. -120px
+  const springs = useSpring({
+    delay: Math.random() * 600,
+
+    y: isInView ? '0px' : direction,
+  })
+
+  return (
+    <div style={{ overflow: 'hidden', position: 'relative' }} ref={ref}>
+      <animated.div
+        style={{ ...springs, position: 'relative', marginLeft: '24px' }}
+      >
+        {children}
+      </animated.div>
+    </div>
+  )
+}
