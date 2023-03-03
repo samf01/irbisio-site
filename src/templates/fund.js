@@ -8,21 +8,29 @@ import GridContent from '../components/UI/grid-content'
 
 const Fund = ({ data }) => {
   const url = `${data.site.siteUrl}${data.markdownRemark.fields.slug}`
-  const { title, logo, brand, sub_heading, opportunity, stats, section } =
-    data.markdownRemark.frontmatter
+  const { title, page_1, page_2, page_3 } = data.markdownRemark.frontmatter
 
   return (
     <Layout>
       <GatsbySeo title={title} canonical={url} />
       <GridContent layout="--center-4" mode="dark-mode">
-        <h4>Fund</h4>
-        <img src={brand.publicURL} alt={title} style={{ width: '100%' }} />
-        <h6>{sub_heading}</h6>
+        <h4>{page_1.section}</h4>
+        <img
+          src={page_1.brand.publicURL}
+          alt={title}
+          style={{ width: '100%' }}
+        />
+        <h6>{page_1.sub_heading}</h6>
         <h4>opportunity</h4>
-        <p>{opportunity}</p>
+        <p>{page_1.opportunity}</p>
       </GridContent>
-      <GridContent layout="--center-6" mode="light-mode" hide="true">
-        {stats.map((stat, i) => {
+      <GridContent
+        layout="--center-6"
+        mode="light-mode"
+        hide="true"
+        background={page_2.image}
+      >
+        {page_2.stats.map((stat, i) => {
           return (
             <div
               key={stat.name}
@@ -38,7 +46,7 @@ const Fund = ({ data }) => {
         })}
       </GridContent>
       <GridContent layout="--center-4" mode="dark-mode">
-        {section.map(node => {
+        {page_3.bullets.map(node => {
           return (
             <div key={node.title}>
               <h4>{node.title}</h4>
@@ -85,25 +93,46 @@ export const pageQuery = graphql`
       }
       frontmatter {
         title
-        logo {
-          publicURL
+        page_1 {
+          mode
+          section
+          image {
+            publicURL
+          }
+          logo {
+            publicURL
+          }
+          brand {
+            publicURL
+          }
+          sub_heading
+          opportunity
         }
-        brand {
-          publicURL
+        page_2 {
+          mode
+          section
+          image {
+            publicURL
+          }
+          stats {
+            name
+            main
+            subscript
+          }
         }
-        sub_heading
-        opportunity
-        stats {
-          name
-          main
-          subscript
-        }
-        section {
-          order
-          title
-          statement
-          list {
-            point
+        page_3 {
+          mode
+          section
+          image {
+            publicURL
+          }
+          bullets {
+            order
+            title
+            statement
+            list {
+              point
+            }
           }
         }
       }

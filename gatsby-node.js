@@ -13,6 +13,26 @@ exports.createSchemaCustomization = ({ actions }) => {
 
   createTypes(`
 
+    type MarkdownRemarkFrontmatterPage_1  implements Node {
+      image: File @fileByRelativePath
+      brand: File @fileByRelativePath
+      logo: File @fileByRelativePath
+      section: String
+    }
+    type MarkdownRemarkFrontmatterPage_2  implements Node {
+      image: File @fileByRelativePath
+      brand: File @fileByRelativePath
+      logo: File @fileByRelativePath
+      section: String
+    }
+    type MarkdownRemarkFrontmatterPage_3  implements Node {
+      image: File @fileByRelativePath
+      brand: File @fileByRelativePath
+      logo: File @fileByRelativePath
+      section: String
+    }
+    
+
     type AllFileChildMarkdownRemarkFrontmatterIntroduction implements Node {
 
       image: File @fileByRelativePath

@@ -86,7 +86,7 @@ const StrategyPage = ({ data }) => {
 
       <GridContent
         id="funds"
-        layout="--center-6"
+        layout="--center-6 mt-auto"
         mode={funds.mode}
         background={funds.image}
         hide="true"
@@ -101,11 +101,12 @@ const StrategyPage = ({ data }) => {
           }}
         >
           {fund.map((node, i) => {
-            const { brand, logo, sub_heading, title } = node.node.frontmatter
+            const { brand, logo, sub_heading, title } =
+              node.node.frontmatter.page_1
             const slug = node.node.fields.slug
             return (
               <div
-                key={title}
+                key={i}
                 style={{
                   display: 'flex',
                   flexDirection: 'column',
@@ -114,7 +115,7 @@ const StrategyPage = ({ data }) => {
               >
                 <img
                   src={brand.publicURL}
-                  alt={title}
+                  alt={node.node.frontmatter.title}
                   style={{ width: '100%' }}
                 />
                 <Link to={slug}>
@@ -271,13 +272,15 @@ export const query = graphql`
         node {
           frontmatter {
             title
-            brand {
-              publicURL
+            page_1 {
+              brand {
+                publicURL
+              }
+              logo {
+                publicURL
+              }
+              sub_heading
             }
-            logo {
-              publicURL
-            }
-            sub_heading
           }
           fields {
             slug
