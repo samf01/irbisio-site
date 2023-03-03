@@ -1,44 +1,30 @@
-import React, { useRef, useEffect, useState } from 'react'
+import React, { useRef, useEffect } from 'react'
 import { BackgroundShape } from '../graphics/background-shape'
 import useMediaQuery from '../Hooks/MatchMedia'
 import Hourglass from './hourglass/hourglass'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+
 //Pass in the layout e.g(--center-4, etc)
 const GridContent = ({ children, layout, background, mode, id, hide }) => {
   // We get the height of the content object
   const content = useRef(null)
   const containerRef = useRef(null)
-  const [styles, setStyles] = useState({ backgroundImage: 'none' })
+
   const mobile = useMediaQuery('(max-width: 990px)')
 
-  useEffect(() => {
-    switch (mode) {
-      case 'light-mode':
-        background
-          ? setStyles({
-              backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${background.publicURL})`,
-            })
-          : setStyles({ backgroundImage: 'none' })
-        break
-      case 'dark-mode':
-        setStyles({ backgroundImage: 'none' })
-        break
-      case 'snow-mode':
-        setStyles({
-          backgroundImage: `linear-gradient(0deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url(${background.publicURL})`,
-        })
-        break
-    }
-  }, [mode])
+  const image = getImage(background)
 
   useEffect(() => {
+    const gatsbyImageBackground = containerRef.current.childNodes[0]
+
     const imageMove = event => {
       window.requestAnimationFrame(() => {
         //Percentage of width
-        let posX = ((event.clientX - width / 200) / width) * move
-        let posY = ((event.clientY - height / 200) / height) * move
-        if (containerRef.current)
-          containerRef.current.style.backgroundPosition =
-            posX + 'px ' + posY + 'px'
+        let posX = ((event.clientX - width / 200) / width) * -move
+        let posY = ((event.clientY - height / 200) / height) * -move
+        if (gatsbyImageBackground)
+          gatsbyImageBackground.style.top = -posY + 'px '
+        gatsbyImageBackground.style.left = -posX + 'px '
       })
     }
     const width = window.innerWidth
@@ -46,7 +32,7 @@ const GridContent = ({ children, layout, background, mode, id, hide }) => {
 
     //Amount the image can move (px)
     const move = -40
-    if (!mobile) {
+    if (!mobile || mode !== 'dark-mode') {
       document.addEventListener('mousemove', event => {
         imageMove(event)
       })
@@ -58,15 +44,21 @@ const GridContent = ({ children, layout, background, mode, id, hide }) => {
   }, [containerRef])
 
   return (
-    <div
-      className={`container ${mode}`}
-      ref={containerRef}
-      id={id}
-      style={styles}
-    >
-      <div className="container-shape">
-        <BackgroundShape />
-      </div>
+    <div className={`container ${mode}`} ref={containerRef} id={id}>
+      {mode !== 'dark-mode' ? (
+        <GatsbyImage
+          image={image}
+          alt=""
+          style={{
+            position: 'absolute',
+            height: '110%',
+          }}
+        />
+      ) : (
+        <div />
+      )}
+      <BackgroundShape mode={mode} />
+
       <div className="grid-column-12">
         <Hourglass content={content} hide={hide} />
         <div className={`grid-content ${layout}`} ref={content}>

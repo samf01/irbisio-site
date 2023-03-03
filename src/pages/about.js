@@ -124,6 +124,13 @@ export const query = graphql`
                 section
                 image {
                   publicURL
+                  childImageSharp {
+                    gatsbyImageData(
+                      width: 1920
+                      placeholder: BLURRED
+                      formats: [AUTO, WEBP, AVIF]
+                    )
+                  }
                 }
               }
               team {
@@ -139,6 +146,13 @@ export const query = graphql`
                 }
                 image {
                   publicURL
+                  childImageSharp {
+                    gatsbyImageData(
+                      width: 1920
+                      placeholder: BLURRED
+                      formats: [AUTO, WEBP, AVIF]
+                    )
+                  }
                 }
                 mode
                 section
@@ -151,6 +165,13 @@ export const query = graphql`
                 title
                 image {
                   publicURL
+                  childImageSharp {
+                    gatsbyImageData(
+                      width: 1920
+                      placeholder: BLURRED
+                      formats: [AUTO, WEBP, AVIF]
+                    )
+                  }
                 }
                 button {
                   label

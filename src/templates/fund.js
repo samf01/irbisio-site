@@ -105,6 +105,13 @@ export const pageQuery = graphql`
           section
           image {
             publicURL
+            childImageSharp {
+              gatsbyImageData(
+                width: 1920
+                placeholder: BLURRED
+                formats: [AUTO, WEBP, AVIF]
+              )
+            }
           }
           logo {
             publicURL
@@ -120,6 +127,13 @@ export const pageQuery = graphql`
           section
           image {
             publicURL
+            childImageSharp {
+              gatsbyImageData(
+                width: 1920
+                placeholder: BLURRED
+                formats: [AUTO, WEBP, AVIF]
+              )
+            }
           }
           stats {
             name
@@ -132,6 +146,13 @@ export const pageQuery = graphql`
           section
           image {
             publicURL
+            childImageSharp {
+              gatsbyImageData(
+                width: 1920
+                placeholder: BLURRED
+                formats: [AUTO, WEBP, AVIF]
+              )
+            }
           }
           bullets {
             order

@@ -1,4 +1,3 @@
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import React, { useRef, useEffect, useState } from 'react'
 import { BackgroundShape } from '../graphics/background-shape'
 import useMediaQuery from '../Hooks/MatchMedia'
@@ -8,10 +7,8 @@ const GridContent = ({ children, layout, background, mode, id, hide }) => {
   // We get the height of the content object
   const content = useRef(null)
   const containerRef = useRef(null)
-  const backgroundRef = useRef(null)
   const [styles, setStyles] = useState({ backgroundImage: 'none' })
   const mobile = useMediaQuery('(max-width: 990px)')
-  const image = getImage(background)
 
   useEffect(() => {
     switch (mode) {
@@ -35,19 +32,17 @@ const GridContent = ({ children, layout, background, mode, id, hide }) => {
 
   useEffect(() => {
     const imageMove = event => {
-      const width = window.innerWidth
-      const height = window.innerHeight
       window.requestAnimationFrame(() => {
         //Percentage of width
         let posX = ((event.clientX - width / 200) / width) * move
         let posY = ((event.clientY - height / 200) / height) * move
-
-        if (backgroundRef.current) {
-          backgroundRef.current.style.left = posX + 'px '
-          backgroundRef.current.style.top = posY + 'px '
-        }
+        if (containerRef.current)
+          containerRef.current.style.backgroundPosition =
+            posX + 'px ' + posY + 'px'
       })
     }
+    const width = window.innerWidth
+    const height = window.innerHeight
 
     //Amount the image can move (px)
     const move = -40
@@ -60,28 +55,18 @@ const GridContent = ({ children, layout, background, mode, id, hide }) => {
       document.removeEventListener('mousemove', event => {
         imageMove(event)
       })
-  }, [backgroundRef])
-
-  const Background = () => {
-    return (
-      <div className="container-shape" ref={backgroundRef}>
-        {mode === 'light-mode' && (
-          <>
-            <GatsbyImage
-              image={image}
-              alt=""
-              style={{ position: 'relative', width: '100%', height: '100%' }}
-            />
-          </>
-        )}
-        <BackgroundShape />
-      </div>
-    )
-  }
+  }, [containerRef])
 
   return (
-    <div className={`container ${mode}`} id={id} ref={containerRef}>
-      <Background />
+    <div
+      className={`container ${mode}`}
+      ref={containerRef}
+      id={id}
+      style={styles}
+    >
+      <div className="container-shape">
+        <BackgroundShape />
+      </div>
       <div className="grid-column-12">
         <Hourglass content={content} hide={hide} />
         <div className={`grid-content ${layout}`} ref={content}>

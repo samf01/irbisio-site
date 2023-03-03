@@ -1,13 +1,14 @@
 import React from 'react'
 
-export const BackgroundShape = () => {
+export const BackgroundShape = ({ mode }) => {
+  const backFill = console.log(backFill)
   return (
     <svg
       width="100%"
       height="1116"
       viewBox="0 0 100 100"
       preserveAspectRatio="none"
-      fill="none"
+      fill="var(--irbisio-grey)"
       xmlns="http://www.w3.org/2000/svg"
       style={{
         maxHeight: '100vh',
@@ -17,7 +18,21 @@ export const BackgroundShape = () => {
         height: '100%',
       }}
     >
-      <path d="M0 0H100V30L50 100L0 30Z" fill="var(--irbisio-grey)" />
+      <rect
+        x="0"
+        y="0"
+        width="100"
+        height="100"
+        fill={mode === 'light-mode' ? 'rgba(0, 0, 0, 0.4)' : 'none'}
+        style={{ mixBlendMode: 'multiply' }}
+      />
+      <path
+        d="M0 0H100V30L50 100L0 30Z"
+        fill={
+          mode === 'light-mode' ? 'rgba(0, 0, 0, 0.4)' : 'var(--irbsisio-grey)'
+        }
+        style={{ mixBlendMode: 'multiply' }}
+      />
     </svg>
   )
 }

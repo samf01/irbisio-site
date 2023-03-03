@@ -136,9 +136,12 @@ export const query = graphql`
                   link
                 }
                 image {
-                  publicURL
                   childImageSharp {
-                    gatsbyImageData(placeholder: BLURRED)
+                    gatsbyImageData(
+                      width: 1920
+                      placeholder: BLURRED
+                      formats: [AUTO, WEBP, AVIF]
+                    )
                   }
                 }
                 mode
@@ -150,7 +153,11 @@ export const query = graphql`
                 image {
                   publicURL
                   childImageSharp {
-                    gatsbyImageData(placeholder: BLURRED)
+                    gatsbyImageData(
+                      width: 1920
+                      placeholder: BLURRED
+                      formats: [AUTO, WEBP, AVIF]
+                    )
                   }
                 }
                 mode
@@ -166,7 +173,11 @@ export const query = graphql`
                 image {
                   publicURL
                   childImageSharp {
-                    gatsbyImageData(placeholder: BLURRED)
+                    gatsbyImageData(
+                      width: 1920
+                      placeholder: BLURRED
+                      formats: [AUTO, WEBP, AVIF]
+                    )
                   }
                 }
                 mode
@@ -181,7 +192,11 @@ export const query = graphql`
                 image {
                   publicURL
                   childImageSharp {
-                    gatsbyImageData(placeholder: BLURRED)
+                    gatsbyImageData(
+                      width: 1920
+                      placeholder: BLURRED
+                      formats: [AUTO, WEBP, AVIF]
+                    )
                   }
                 }
                 mode
@@ -195,7 +210,11 @@ export const query = graphql`
                 image {
                   publicURL
                   childImageSharp {
-                    gatsbyImageData(placeholder: BLURRED)
+                    gatsbyImageData(
+                      width: 1920
+                      placeholder: BLURRED
+                      formats: [AUTO, WEBP, AVIF]
+                    )
                   }
                 }
                 section

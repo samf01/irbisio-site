@@ -213,6 +213,13 @@ export const query = graphql`
                 heading
                 image {
                   publicURL
+                  childImageSharp {
+                    gatsbyImageData(
+                      width: 1920
+                      placeholder: BLURRED
+                      formats: [AUTO, WEBP, AVIF]
+                    )
+                  }
                 }
                 goals {
                   name
@@ -237,6 +244,13 @@ export const query = graphql`
                 title
                 image {
                   publicURL
+                  childImageSharp {
+                    gatsbyImageData(
+                      width: 1920
+                      placeholder: BLURRED
+                      formats: [AUTO, WEBP, AVIF]
+                    )
+                  }
                 }
                 principles {
                   body
@@ -249,6 +263,13 @@ export const query = graphql`
                 body
                 image {
                   publicURL
+                  childImageSharp {
+                    gatsbyImageData(
+                      width: 1920
+                      placeholder: BLURRED
+                      formats: [AUTO, WEBP, AVIF]
+                    )
+                  }
                 }
                 details {
                   body
@@ -259,6 +280,13 @@ export const query = graphql`
                   }
                   logo {
                     publicURL
+                    childImageSharp {
+                      gatsbyImageData(
+                        width: 1920
+                        placeholder: BLURRED
+                        formats: [AUTO, WEBP, AVIF]
+                      )
+                    }
                   }
                 }
               }
