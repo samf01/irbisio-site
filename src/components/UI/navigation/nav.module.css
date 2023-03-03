@@ -118,17 +118,20 @@
 
 #navicon2 span:nth-child(1),
 #navicon2 span:nth-child(2) {
-  top: 4px;
+  /* top: 4px; */
+  margin-top: 4px;
 }
 
 #navicon2 span:nth-child(3),
 #navicon2 span:nth-child(4) {
-  top: 18px;
+  /* top: 18px; */
+  margin-top: 18px;
 }
 
 #navicon2 span:nth-child(5),
 #navicon2 span:nth-child(6) {
-  top: 32px;
+  /* top: 32px; */
+  margin-top: 32px;
 }
 
 #navicon2.open span:nth-child(1),
@@ -149,12 +152,16 @@
 
 #navicon2.open span:nth-child(1) {
   left: 5px;
-  top: 10px;
+  /* top: 10px; */
+  margin-top: 10px;
 }
 
 #navicon2.open span:nth-child(2) {
   left: calc(50% - 5px);
-  top: 10px;
+  left: -webkit-calc(50% - 5px);
+  left: -moz-calc(50% - 5px);
+  /* top: 10px; */
+  margin-top: 10px;
 }
 
 #navicon2.open span:nth-child(3) {
@@ -169,12 +176,16 @@
 
 #navicon2.open span:nth-child(5) {
   left: 5px;
-  top: 25px;
+  /* top: 25px; */
+  margin-top: 25px;
 }
 
 #navicon2.open span:nth-child(6) {
   left: calc(50% - 5px);
-  top: 25px;
+  left: -webkit-calc(50% - 5px);
+  left: -moz-calc(50% - 5px);
+  /* top: 25px; */
+  margin-top: 25px;
 }
 
 /* Icon 3 */
