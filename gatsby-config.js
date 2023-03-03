@@ -86,7 +86,7 @@ module.exports = {
               linkImagesToOriginal: true,
               loading: 'lazy',
               showCaptions: true,
-
+              disableBgImage: false,
               withWebp: true,
             },
           },

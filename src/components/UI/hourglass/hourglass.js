@@ -9,8 +9,9 @@ const Hourglass = ({ content, hide }) => {
   useEffect(() => {
     // We need svg brand mark on left
     const contentBounds = content.current.getBoundingClientRect()
+    const hourglassWidth = hourglass.current.getBoundingClientRect().width
     // The difference between the top and bottom of the knockin, should be
-    setKnockin((75 / contentBounds.height) * 100)
+    setKnockin((hourglassWidth / contentBounds.height) * 100)
 
     //Get the parent relative position
     const parentBounds = content.current.parentElement.getBoundingClientRect()
@@ -48,7 +49,7 @@ const Hourglass = ({ content, hide }) => {
             <animate
               attributeName="points"
               repeatCount="indefinite"
-              dur="4s"
+              dur="8s"
               fill="freeze"
               values={` 0 0,
                     100 0,

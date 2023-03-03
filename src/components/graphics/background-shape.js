@@ -1,7 +1,6 @@
 import React from 'react'
 
 export const BackgroundShape = ({ mode }) => {
-  const backFill = console.log(backFill)
   return (
     <svg
       width="100%"

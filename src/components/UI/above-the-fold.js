@@ -44,7 +44,14 @@ const Landing = () => {
   return (
     <div className="container" id="atf">
       <div className="container-shape">
-        <video ref={videoRef} autoPlay loop muted className="video-cutter">
+        <video
+          ref={videoRef}
+          autoPlay
+          loop
+          muted
+          playsinline
+          className="video-cutter"
+        >
           <source src={video} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
@@ -64,7 +71,7 @@ const Landing = () => {
         </div>
         <BottomShape />
         <div className="video-controls">
-          <button onClick={handlePlay}>{playing ? <Play /> : <Pause />}</button>
+          <button onClick={handlePlay}>{playing ? <Pause /> : <Play />}</button>
           <button onClick={handleOpen}>
             <Fullscreen />
           </button>
@@ -88,9 +95,11 @@ const Landing = () => {
             width="100%"
             height="100%"
             controls
+            id="video-block"
             webkitallowfullscreen="true"
             mozallowfullscreen="true"
             allowFullScreen
+            rotate-to-fullscreen
           >
             <source src={video} type="video/mp4" />
             Your browser does not support the video tag.

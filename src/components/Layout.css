@@ -384,8 +384,8 @@ footer {
 
 .container-shape {
   position: absolute;
-  top: -40px;
-  left: -40px;
+  /* top: -40px;
+  left: -40px; */
   width: 110%;
   height: 110%;
   overflow: hidden;
@@ -532,6 +532,10 @@ Link {
     height: fit-content;
     grid-column: 2 / 8;
   }
+
+  .fullscreen-button {
+    display: none;
+  }
 }
 
 .article-preview {
@@ -620,6 +624,7 @@ Link {
   /* This makes the object sit in top of things that have clipping -- z-index doesn't work... */
   transform: scale(1);
   transition: 0.3s;
+  width: auto;
 }
 
 nav .logo:hover {
