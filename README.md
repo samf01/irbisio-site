@@ -22,6 +22,7 @@ Gatsby 5 is still out because of NetlifyCMS compatibility issues with React 18.
 - Modal Routing Plugins - none work (currently)
 - The nav bar scroll-away animation causes a development crash on any page not wrapped in Layout
 - Scroll snap behaviour requires #gatsby-focus-wrapper to be 100vh. Then a layout class can be applied to snap-type: _whatever_ and inidivual sections can have differing snap-aligns, etc. Biut if a section has no snap-align applied it might become in accesible (if it's too thin!).
+- Netlify CMS: folder collections cannot use path: {{slug}}/index **AND** use the media_folder. Git-hub issues suggests they may have a future solve via _media collections_.
 
 ## Development
 
