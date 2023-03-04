@@ -6,7 +6,8 @@ import video from '../../../static/assets/video-1.mp4'
 import useScrollBlock from '../Hooks/useScrollBlock'
 import { TopShape, BottomShape } from '../graphics/landing-shape'
 import Logo from '../graphics/logo'
-import poster from '../../../static/assets/stock-photo-algae-seaweed-research-biofuel-industry-science-sustainable-concept-1476381542.jpg'
+import poster from '../../../static/assets/poster.jpg'
+import useMediaQuery from '../Hooks/MatchMedia'
 
 const customStyles = {
   content: {
@@ -23,6 +24,8 @@ const Landing = () => {
   const videoRef = useRef(null)
   const [fullscreen, makeFullscreen] = useState(false)
   const [blockScroll, allowScroll] = useScrollBlock()
+
+  const mobile = useMediaQuery('(max-width: 768px)')
 
   function handlePlay() {
     console.log(playing)
@@ -42,22 +45,26 @@ const Landing = () => {
     }, 700)
   }
 
+  console.log(mobile)
+
   return (
     <div className="container" id="atf">
       <div className="container-shape">
-        <video
-          ref={videoRef}
-          autoPlay
-          loop
-          preload="none"
-          muted
-          playsInline
-          className="video-cutter"
-          poster={poster}
-        >
-          <source src={video} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+        {!mobile && (
+          <video
+            ref={videoRef}
+            autoPlay
+            loop
+            preload="none"
+            muted
+            playsInline
+            className="video-cutter"
+            poster={poster}
+          >
+            <source src={video} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        )}
         <BackgroundShape />
       </div>
       <div
@@ -73,53 +80,57 @@ const Landing = () => {
           <Logo />
         </div>
         <BottomShape />
-        <div className="video-controls">
-          <button role="button" aria-label="Play/Pause" onClick={handlePlay}>
-            {playing ? <Pause /> : <Play />}
-          </button>
-          <button role="button" aria-label="Fullscreen" onClick={handleOpen}>
-            <Fullscreen />
-          </button>
-        </div>
+        {!mobile && (
+          <div className="video-controls">
+            <button role="button" aria-label="Play/Pause" onClick={handlePlay}>
+              {playing ? <Pause /> : <Play />}
+            </button>
+            <button role="button" aria-label="Fullscreen" onClick={handleOpen}>
+              <Fullscreen />
+            </button>
+          </div>
+        )}
       </div>
-      <ReactModal
-        isOpen={fullscreen}
-        onAfterOpen={blockScroll}
-        onRequestClose={allowScroll()}
-        contentLabel="Video Viewer"
-        style={customStyles}
-      >
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            gap: '2rem',
-          }}
+      {!mobile && (
+        <ReactModal
+          isOpen={fullscreen}
+          onAfterOpen={blockScroll}
+          onRequestClose={allowScroll()}
+          contentLabel="Video Viewer"
+          style={customStyles}
         >
-          <video
-            width="100%"
-            height="100%"
-            controls
-            playsInline
-            id="video-block"
-            webkitallowfullscreen="true"
-            mozallowfullscreen="true"
-            allowFullScreen
-            rotate-to-fullscreen
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              gap: '2rem',
+            }}
           >
-            <source src={video} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-          <button
-            aria-label="Close"
-            role="button"
-            style={{ position: 'relative', top: ' 85px', right: '105px' }}
-            onClick={handleClose}
-          >
-            <Close />
-          </button>
-        </div>
-      </ReactModal>
+            <video
+              width="100%"
+              height="100%"
+              controls
+              playsInline
+              id="video-block"
+              webkitallowfullscreen="true"
+              mozallowfullscreen="true"
+              allowFullScreen
+              rotate-to-fullscreen
+            >
+              <source src={video} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <button
+              aria-label="Close"
+              role="button"
+              style={{ position: 'relative', top: ' 85px', right: '105px' }}
+              onClick={handleClose}
+            >
+              <Close />
+            </button>
+          </div>
+        </ReactModal>
+      )}
     </div>
   )
 }

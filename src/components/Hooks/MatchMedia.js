@@ -1,10 +1,11 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect } from 'react'
 
 export default function useMediaQuery(query) {
   const [matches, setMatches] = useState(false)
 
   //JS Media Query function - call from component and pass in the breakpoint. Use like a ternary operator.
   //For example: let isPageWide = useMediaQuery("(min-width: 1024px)") then use it in a ternary or as a truthy value
+  //The query has to match an media-query in CSS value.
 
   useEffect(() => {
     const media = window.matchMedia(query)
@@ -14,8 +15,8 @@ export default function useMediaQuery(query) {
     const listener = () => {
       setMatches(media.matches)
     }
-    media.addListener(listener)
-    return () => media.removeListener(listener)
+    media.addEventListener('DOMContentLoaded', listener)
+    return () => media.removeEventListener('DOMContentLoaded', listener)
   }, [matches, query])
 
   return matches

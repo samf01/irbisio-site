@@ -36,3 +36,13 @@ form:nth-child(3),
 form:nth-child(4) {
   grid-row-start: 2;
 }
+
+@media (max-width: 768px) {
+  form {
+    display: block;
+  }
+
+  .submit {
+    width: 100%;
+  }
+}

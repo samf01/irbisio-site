@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "author": "Sam Fazakerley <sam@cornellbox.studio>",
   "dependencies": {
+    "@loadable/component": "^5.15.3",
     "gatsby": "4.25.4",
     "gatsby-plugin-catch-links": "4.25.0",
     "gatsby-plugin-env-variables": "^2.3.0",

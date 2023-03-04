@@ -2,9 +2,11 @@ import React, { useRef } from 'react'
 import './Layout.css'
 import { useStaticQuery, graphql } from 'gatsby'
 import Pagination from './UI/pagination/paginator'
+import loadable from '@loadable/component'
 
-import Footer from './UI/footer'
 import NavBar from './UI/navigation/nav'
+
+const Footer = loadable(() => import('./UI/footer'))
 
 const Layout = ({ children }) => {
   const layoutRef = useRef(null)
