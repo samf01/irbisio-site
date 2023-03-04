@@ -144,7 +144,7 @@ const Form = () => {
               <label>{errors.errorMessage}</label>
             </div>
 
-            <button className="submit">
+            <button role="button" aria-label="Submit" className="submit">
               <h4>Submit</h4>
             </button>
           </form>

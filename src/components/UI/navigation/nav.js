@@ -96,7 +96,8 @@ const NavBar = ({ layoutRef }) => {
           <NavList />
         ) : (
           <button
-            aria-label="button"
+            role="button"
+            aria-label="toggle"
             className="toggle"
             onClick={() => setNavbarOpen(!navbarOpen)}
           >

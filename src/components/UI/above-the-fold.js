@@ -6,6 +6,7 @@ import video from '../../../static/assets/video-1.mp4'
 import useScrollBlock from '../Hooks/useScrollBlock'
 import { TopShape, BottomShape } from '../graphics/landing-shape'
 import Logo from '../graphics/logo'
+import poster from '../../../static/assets/stock-photo-algae-seaweed-research-biofuel-industry-science-sustainable-concept-1476381542.jpg'
 
 const customStyles = {
   content: {
@@ -48,9 +49,11 @@ const Landing = () => {
           ref={videoRef}
           autoPlay
           loop
+          preload="none"
           muted
-          playsinline
+          playsInline
           className="video-cutter"
+          poster={poster}
         >
           <source src={video} type="video/mp4" />
           Your browser does not support the video tag.
@@ -71,8 +74,10 @@ const Landing = () => {
         </div>
         <BottomShape />
         <div className="video-controls">
-          <button onClick={handlePlay}>{playing ? <Pause /> : <Play />}</button>
-          <button onClick={handleOpen}>
+          <button role="button" aria-label="Play/Pause" onClick={handlePlay}>
+            {playing ? <Pause /> : <Play />}
+          </button>
+          <button role="button" aria-label="Fullscreen" onClick={handleOpen}>
             <Fullscreen />
           </button>
         </div>
@@ -95,6 +100,7 @@ const Landing = () => {
             width="100%"
             height="100%"
             controls
+            playsInline
             id="video-block"
             webkitallowfullscreen="true"
             mozallowfullscreen="true"
@@ -104,12 +110,14 @@ const Landing = () => {
             <source src={video} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
-          <div
+          <button
+            aria-label="Close"
+            role="button"
             style={{ position: 'relative', top: ' 85px', right: '105px' }}
             onClick={handleClose}
           >
             <Close />
-          </div>
+          </button>
         </div>
       </ReactModal>
     </div>
