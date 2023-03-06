@@ -22,11 +22,11 @@ import Footer from '../components/UI/footer'
 //   )
 // }
 
-const FooterPreview = ({ entry, getAsset }) => {
+const FooterPreview = ({ entry }) => {
   const details = entry.getIn(['data']).toJS()
 
   const footer = { ...details.footer }
-  console.log(footer)
+
   return <Footer footer={footer} />
 }
 

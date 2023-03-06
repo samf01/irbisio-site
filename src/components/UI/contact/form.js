@@ -27,7 +27,7 @@ const Form = () => {
 
   const handleChange = e => {
     setDetails({ ...details, [e.target.name]: e.target.value })
-    console.log(reCaptcha.current.getValue())
+
     setErrors({
       errorName: '',
       errorEmail: '',

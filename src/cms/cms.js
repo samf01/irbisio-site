@@ -12,6 +12,9 @@ CMS.registerPreviewStyle('./cms.css')
 // CMS.registerMediaLibrary(cloudinary)
 import BlogPreview from './BlogPreview'
 import FooterPreview from './FooterPreview'
+import HomePreview from './HomePreview'
+//Anything wrapped in <Layout> will need to have it removed...
 
 CMS.registerPreviewTemplate('posts', BlogPreview)
 CMS.registerPreviewTemplate('footer', FooterPreview)
+CMS.registerPreviewTemplate('home', HomePreview)

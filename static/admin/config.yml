@@ -607,7 +607,7 @@ collections:
           widget: "hidden",
           default: "news",
         }
-      - { label: "Heading", name: "heading", widget: "string", required: true }
+      - { label: "Title", name: "title", widget: "string", required: true }
       - {
           label: "Publish Date",
           name: "date",
