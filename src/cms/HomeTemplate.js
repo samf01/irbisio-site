@@ -9,12 +9,29 @@ import {
   TechIcon,
 } from '../components/graphics/icons'
 
-const Home = ({ data, articles }) => {
+const articles = [
+  {
+    title: 'The article previews will appear here.',
+    date: new Date(),
+    excerpt:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed ullamcorper augue. Maecenas eu porttitor libero, nec egestas ante. Sed eleifend ultrices velit in molestie. Nulla at tellus id dui bibendum eleifend nec nec turpis. Morbi cursus sed augue pellentesque convallis. Mauris id magna malesuada, condimentum libero quis, varius libero. Integer non diam mollis mauris blandit molestie et sit amet sem. Cras quis sem vel quam pulvinar malesuada. Morbi cursus sed augue pellentesque convallis. Mauris id magna malesuada, condimentum libero quis, varius libero. Integer non diam mollis mauris blandit molestie et sit amet sem. Cras quis sem vel quam pulvinar malesuada. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed ullamcorper augue. Maecenas eu porttitor libero, nec egestas ante. Sed eleifend ultrices velit in molestie.',
+    slug: '/',
+  },
+  {
+    title:
+      'To edit the articles, go back to the main menu and click on news...',
+    date: new Date(),
+    excerpt:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed ullamcorper augue. Maecenas eu porttitor libero, nec egestas ante. Sed eleifend ultrices velit in molestie. Nulla at tellus id dui bibendum eleifend nec nec turpis. Morbi cursus sed augue pellentesque convallis. Mauris id magna malesuada, condimentum libero quis, varius libero. Integer non diam mollis mauris blandit molestie et sit amet sem. Cras quis sem vel quam pulvinar malesuada. Morbi cursus sed augue pellentesque convallis. Mauris id magna malesuada, condimentum libero quis, varius libero. Integer non diam mollis mauris blandit molestie et sit amet sem. Cras quis sem vel quam pulvinar malesuada. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed ullamcorper augue. Maecenas eu porttitor libero, nec egestas ante. Sed eleifend ultrices velit in molestie.',
+    slug: '/',
+  },
+]
+
+const HomeTemplate = ({ data }) => {
   const { introduction, about, leopard, news, strategy } = data
 
   return (
-    <Layout>
-      <GatsbySeo title="Home Page" />
+    <>
       <Landing />
       <GridContent
         id="introduction"
@@ -56,7 +73,7 @@ const Home = ({ data, articles }) => {
           )
         })}
         <p className="markdown">{strategy.page_2.body}</p>
-        <Link to={strategy.button.link}>{strategy.button.label}</Link>
+        <a href={strategy.button.link}>{strategy.button.label}</a>
       </GridContent>
       <GridContent
         id="news"
@@ -65,13 +82,7 @@ const Home = ({ data, articles }) => {
         background={news.image}
       >
         <h4>{news.section}</h4>
-        {articles.map((node, i) => {
-          const article = {
-            title: node.node.frontmatter.title,
-            date: node.node.frontmatter.date,
-            excerpt: node.node.excerpt,
-            slug: node.node.fields.slug,
-          }
+        {articles.map((article, i) => {
           return (
             <div key={i}>
               <PreviewArticle article={article} />
@@ -92,7 +103,7 @@ const Home = ({ data, articles }) => {
         <h4>{about.section}</h4>
         <h1>{about.title}</h1>
         <p className="markdown">{about.body}</p>
-        <Link to={about.button.link}>{about.button.label}</Link>
+        <a href={about.button.link}>{about.button.label}</a>
       </GridContent>
       <GridContent
         id="snow-leopard"
@@ -105,145 +116,8 @@ const Home = ({ data, articles }) => {
         <p className="markdown">{leopard.body}</p>
         <FoundationButton button={leopard.button} />
       </GridContent>
-    </Layout>
+    </>
   )
 }
 
-export default Home
-
-export const query = graphql`
-  query {
-    allFile(filter: { name: { eq: "home" } }) {
-      edges {
-        node {
-          id
-          childMarkdownRemark {
-            fields {
-              slug
-            }
-            frontmatter {
-              about {
-                body
-                button {
-                  label
-                  link
-                }
-                image {
-                  childImageSharp {
-                    gatsbyImageData(
-                      width: 1920
-                      placeholder: BLURRED
-                      formats: [AUTO, WEBP, AVIF]
-                    )
-                  }
-                }
-                mode
-                section
-                title
-              }
-              introduction {
-                body
-                image {
-                  publicURL
-                  childImageSharp {
-                    gatsbyImageData(
-                      width: 1920
-                      placeholder: BLURRED
-                      formats: [AUTO, WEBP, AVIF]
-                    )
-                  }
-                }
-                mode
-                section
-                title
-              }
-              leopard {
-                body
-                button {
-                  label
-                  link
-                }
-                image {
-                  publicURL
-                  childImageSharp {
-                    gatsbyImageData(
-                      width: 1920
-                      placeholder: BLURRED
-                      formats: [AUTO, WEBP, AVIF]
-                    )
-                  }
-                }
-                mode
-                section
-                title
-              }
-              news {
-                contact {
-                  label
-                  link
-                }
-                image {
-                  publicURL
-                  childImageSharp {
-                    gatsbyImageData(
-                      width: 1920
-                      placeholder: BLURRED
-                      formats: [AUTO, WEBP, AVIF]
-                    )
-                  }
-                }
-                mode
-                section
-              }
-              strategy {
-                button {
-                  label
-                  link
-                }
-                image {
-                  publicURL
-                  childImageSharp {
-                    gatsbyImageData(
-                      width: 1920
-                      placeholder: BLURRED
-                      formats: [AUTO, WEBP, AVIF]
-                    )
-                  }
-                }
-                section
-                page_1 {
-                  body
-                  mode
-                  title
-                }
-                page_2 {
-                  body
-                  bullets {
-                    body
-                    icon
-                  }
-                  mode
-                  statement
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-    allMarkdownRemark(filter: { frontmatter: { cms: { eq: "news" } } }) {
-      edges {
-        node {
-          excerpt(pruneLength: 230)
-          frontmatter {
-            title
-            date
-          }
-          fields {
-            slug
-          }
-        }
-      }
-    }
-  }
-`
+export default HomeTemplate

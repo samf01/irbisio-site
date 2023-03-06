@@ -5,16 +5,21 @@ import '../components/Layout.css'
 // import cloudinary from 'netlify-cms-media-library-cloudinary'
 
 CMS.registerBackend('local', {})
-CMS.registerPreviewStyle('../components/Layout.css')
+
 CMS.registerPreviewStyle('./cms.css')
 
-// CMS.registerMediaLibrary(uploadcare)
-// CMS.registerMediaLibrary(cloudinary)
+import '../components/layout.css'
+import './cms.css'
+
 import BlogPreview from './BlogPreview'
 import FooterPreview from './FooterPreview'
 import HomePreview from './HomePreview'
-//Anything wrapped in <Layout> will need to have it removed...
+import AboutPreview from './AboutPreview'
+import StrategyPreview from './StrategyPreview'
+//Use loadable-component to stop normal-users from downloading the template pages.
 
 CMS.registerPreviewTemplate('posts', BlogPreview)
 CMS.registerPreviewTemplate('footer', FooterPreview)
 CMS.registerPreviewTemplate('home', HomePreview)
+CMS.registerPreviewTemplate('about', AboutPreview)
+CMS.registerPreviewTemplate('strategy', StrategyPreview)
