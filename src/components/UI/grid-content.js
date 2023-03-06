@@ -11,7 +11,8 @@ const GridContent = ({ children, layout, background, mode, id, hide }) => {
   const containerRef = useRef(null)
 
   const mobile = useMediaQuery('(max-width: 990px)')
-
+  //Creat a test for CMS previews, need to remove GatsbyImage
+  const admin = window.location.href.indexOf('admin') > -1
   const image = getImage(background)
 
   useEffect(() => {
@@ -45,7 +46,16 @@ const GridContent = ({ children, layout, background, mode, id, hide }) => {
 
   return (
     <div className={`container ${mode}`} ref={containerRef} id={id}>
-      {mode !== 'dark-mode' ? (
+      {admin && mode !== 'dark-mode' ? (
+        <img
+          src={background}
+          alt=""
+          style={{
+            position: 'absolute',
+            height: '110%',
+          }}
+        />
+      ) : mode !== 'dark-mode' ? (
         <GatsbyImage
           image={image}
           alt=""
@@ -60,7 +70,7 @@ const GridContent = ({ children, layout, background, mode, id, hide }) => {
       <BackgroundShape mode={mode} />
 
       <div className="grid-column-12">
-        <Hourglass content={content} hide={hide} />
+        {admin ? null : <Hourglass content={content} hide={hide} />}
         <div className={`grid-content ${layout}`} ref={content}>
           {children}
         </div>

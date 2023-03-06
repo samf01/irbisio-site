@@ -16,6 +16,8 @@ const customStyles = {
     right: '0',
     width: '100%',
     height: '100%',
+    padding: '0',
+    border: 'none',
   },
 }
 
@@ -28,7 +30,6 @@ const Landing = () => {
   const mobile = useMediaQuery('(max-width: 768px)')
 
   function handlePlay() {
-    console.log(playing)
     playing ? videoRef.current.pause() : videoRef.current.play()
     isPlaying(!playing)
   }
@@ -44,8 +45,6 @@ const Landing = () => {
       videoRef.current.play()
     }, 700)
   }
-
-  console.log(mobile)
 
   return (
     <div className="container" id="atf">
@@ -98,12 +97,13 @@ const Landing = () => {
           onRequestClose={allowScroll()}
           contentLabel="Video Viewer"
           style={customStyles}
+          ariaHideApp={false}
         >
           <div
             style={{
-              display: 'flex',
-              justifyContent: 'center',
-              gap: '2rem',
+              position: 'relative',
+              top: 0,
+              left: 0,
             }}
           >
             <video
@@ -115,7 +115,7 @@ const Landing = () => {
               webkitallowfullscreen="true"
               mozallowfullscreen="true"
               allowFullScreen
-              rotate-to-fullscreen
+              rotate-to-fullscreen="true"
             >
               <source src={video} type="video/mp4" />
               Your browser does not support the video tag.
@@ -123,7 +123,7 @@ const Landing = () => {
             <button
               aria-label="Close"
               role="button"
-              style={{ position: 'relative', top: ' 85px', right: '105px' }}
+              style={{ position: 'absolute', top: ' 12%', right: '6%' }}
               onClick={handleClose}
             >
               <Close />

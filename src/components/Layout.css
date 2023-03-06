@@ -320,7 +320,7 @@ nav {
 footer {
   position: relative;
   bottom: 70px;
-  background-color: rgba(0, 0, 0, 0.8);
+  /* background-color: rgba(0, 0, 0, 0.8); */
   display: flex;
   flex-wrap: wrap;
   padding: 24px 0;
@@ -391,12 +391,6 @@ footer {
   height: 110%;
   overflow: hidden;
   /* opacity: 0.93; */
-}
-
-.video-cutter {
-  width: 100%;
-  opacity: 0.33;
-  clip-path: polygon(0 0, 100% 0, 100% 30%, 50% 100%, 0 30%);
 }
 
 .grid-column-12 {
@@ -561,6 +555,10 @@ Link {
   background-color: var(--irbisio-drk-blue);
 }
 
+.light-mode * {
+  color: var(--irbisio-off-white);
+}
+
 .dark-mode > * {
   color: var(--irbisio-drk-blue) !important;
 }
@@ -612,15 +610,6 @@ Link {
   color: var(--irbisio-off-white) !important;
 }
 
-.video-controls {
-  position: relative;
-  bottom: 80px;
-  display: flex;
-  gap: 32px;
-  align-self: flex-end;
-  grid-column: 1 / 3;
-}
-
 .logo {
   /* This makes the object sit in top of things that have clipping -- z-index doesn't work... */
   transform: scale(1);
@@ -666,16 +655,6 @@ nav .logo:hover > path {
   transform: translateY(0);
 }
 
-@media (max-width: 990px) {
-  .principle {
-    width: 80%;
-  }
-
-  .video-controls {
-    bottom: 20px;
-  }
-}
-
 .investor-types {
   display: flex;
   flex-wrap: wrap;
@@ -711,4 +690,31 @@ nav .logo:hover > path {
   row-gap: 3rem;
   width: 100%;
   justify-content: space-between;
+}
+
+/* REACT Modal and Video */
+
+.video-controls {
+  position: relative;
+  bottom: 80px;
+  display: flex;
+  gap: 32px;
+  align-self: flex-end;
+  grid-column: 1 / 3;
+}
+
+.video-cutter {
+  width: 100%;
+  opacity: 0.33;
+  clip-path: polygon(0 0, 100% 0, 100% 30%, 50% 100%, 0 30%);
+}
+
+@media (max-width: 990px) {
+  .principle {
+    width: 80%;
+  }
+
+  .video-controls {
+    bottom: 20px;
+  }
 }
