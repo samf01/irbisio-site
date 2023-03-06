@@ -8,8 +8,8 @@ CMS.registerBackend('local', {})
 
 CMS.registerPreviewStyle('./cms.css')
 
-import '../components/layout.css'
-import './cms.css'
+// import '../components/layout.css'
+// import './cms.css'
 
 import BlogPreview from './BlogPreview'
 import FooterPreview from './FooterPreview'

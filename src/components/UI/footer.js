@@ -19,7 +19,7 @@ const Footer = ({ footer }) => {
       </GridContent>
       {admin ? (
         <footer id="footer">
-          <a href="/" style={{ textTransform: 'unset', fontWeight: 'normal' }}>
+          <a href="/" className="copywrite">
             Irbisio Ltd is regulated by the Financial Conduct Authority. All
             rights reserved. © Irbisio Ltd {year.getFullYear()} Irbisio
             Investments Ltd
@@ -32,7 +32,7 @@ const Footer = ({ footer }) => {
         </footer>
       ) : (
         <footer id="footer">
-          <Link to="/" style={{ textTransform: 'unset', fontWeight: 'normal' }}>
+          <Link to="/" className="copywrite">
             Irbisio Ltd is regulated by the Financial Conduct Authority. All
             rights reserved. © Irbisio Ltd {year.getFullYear()} Irbisio
             Investments Ltd

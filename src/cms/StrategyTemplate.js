@@ -46,8 +46,7 @@ const StrategyTemplate = ({ data }) => {
               <div
                 key={i}
                 id={`investing-principle__${i + 1}`}
-                className="principle"
-                style={{ alignSelf: i % 2 === 1 && 'flex-end' }}
+                style={{ alignSelf: i % 2 === 1 && 'flex-end', width: '50%' }}
               >
                 <div>
                   <h2>{principle.title}</h2>
