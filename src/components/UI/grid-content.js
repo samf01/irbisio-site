@@ -3,6 +3,7 @@ import { BackgroundShape } from '../graphics/background-shape'
 import useMediaQuery from '../Hooks/MatchMedia'
 import Hourglass from './hourglass/hourglass'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import { useAdmin } from '../Hooks/useAdmin'
 
 //Pass in the layout e.g(--center-4, etc)
 const GridContent = ({ children, layout, background, mode, id, hide }) => {
@@ -11,8 +12,7 @@ const GridContent = ({ children, layout, background, mode, id, hide }) => {
   const containerRef = useRef(null)
 
   const mobile = useMediaQuery('(max-width: 990px)')
-  //Creat a test for CMS previews, need to remove GatsbyImage
-  const admin = window.location.href.indexOf('admin') > -1
+  const admin = useAdmin()
   const image = getImage(background)
 
   useEffect(() => {

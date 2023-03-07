@@ -3,9 +3,10 @@ import { Link } from 'gatsby'
 import GridContent from './grid-content'
 import Form from './contact/form'
 import MockForm from '../graphics/contact-form-mockup'
+import { useAdmin } from '../Hooks/useAdmin'
 
 const Footer = ({ footer }) => {
-  const admin = window.location.href.indexOf('admin') > -1
+  const admin = useAdmin()
   const year = new Date()
   return (
     <div id="contact">
