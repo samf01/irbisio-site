@@ -1,10 +1,9 @@
-import PropTypes from 'prop-types'
 import React from 'react'
 
 import GridContent from '../components/UI/grid-content'
 
-const BlogPost = ({ data }) => {
-  const { title, date, body } = data
+const BlogPost = ({ data, body }) => {
+  const { title, date } = data
   const publishedDate = new Date(date)
   return (
     <GridContent layout="--center-6" hide="true" mode="dark-mode">

@@ -48,7 +48,9 @@ const BlogPost = ({ data }) => {
 
         <div dangerouslySetInnerHTML={{ __html: html }} />
 
-        <Link to="/#news">Back to Articles</Link>
+        <Link to="/#news" className="mock-button">
+          Back to Articles
+        </Link>
       </GridContent>
     </Layout>
   )

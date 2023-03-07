@@ -24,7 +24,9 @@ const CaseStudy = ({ data }) => {
           stats.map((stat, i) => {
             return <AnimatedStatistic stat={stat} key={i} />
           })}
-        <Link to="/case-studies">Back to Case Studies</Link>
+        <Link to="/case-studies" className="mock-button">
+          Back to Case Studies
+        </Link>
       </GridContent>
     </Layout>
   )

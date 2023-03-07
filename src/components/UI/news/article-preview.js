@@ -14,6 +14,7 @@ const PreviewArticle = ({ article }) => {
       <h2>{article.title}</h2>
       <div dangerouslySetInnerHTML={{ __html: article.excerpt }} />
       <Link
+        className="mock-button"
         to={article.slug}
         style={{ alignSelf: 'flex-end', paddingBottom: '8px' }}
       >

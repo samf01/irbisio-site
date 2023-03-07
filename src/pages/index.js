@@ -63,7 +63,9 @@ const Home = ({ data }) => {
           )
         })}
         <p className="markdown">{strategy.page_2.body}</p>
-        <Link to={strategy.button.link}>{strategy.button.label}</Link>
+        <Link className="mock-button" to={strategy.button.link}>
+          {strategy.button.label}
+        </Link>
       </GridContent>
       <GridContent
         id="news"
@@ -99,7 +101,9 @@ const Home = ({ data }) => {
         <h4>{about.section}</h4>
         <h1>{about.title}</h1>
         <p className="markdown">{about.body}</p>
-        <Link to={about.button.link}>{about.button.label}</Link>
+        <Link className="mock-button" to={about.button.link}>
+          {about.button.label}
+        </Link>
       </GridContent>
       <GridContent
         id="snow-leopard"

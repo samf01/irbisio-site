@@ -77,7 +77,9 @@ const Fund = ({ data }) => {
             </div>
           )
         })}
-        <Link to="/strategy/#funds">Back to Funds</Link>
+        <Link to="/strategy/#funds" className="mock-button">
+          Back to Funds
+        </Link>
       </GridContent>
     </Layout>
   )

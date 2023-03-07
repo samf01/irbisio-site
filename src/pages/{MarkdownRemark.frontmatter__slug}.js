@@ -16,7 +16,7 @@ export default function Template({
         <h1>{frontmatter.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: html }} />
 
-        <Link className="footer" to="/">
+        <Link className="footer mock-button" to="/">
           Agree & Close
         </Link>
       </GridContent>

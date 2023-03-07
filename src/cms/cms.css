@@ -1,5 +1,6 @@
 @import '../components/Layout.css';
 @import '../components/UI/carousel/carousel.css';
+@import '../components/UI/news/case-study.css';
 
 body {
   width: 100%;

@@ -30,6 +30,10 @@
 
 /* Markdown Rules */
 
+.gatsby-resp-image-figure {
+  margin-top: 24px !important;
+}
+
 .gatsby-resp-image-figcaption {
   margin: 0 auto;
   max-width: 715px;
