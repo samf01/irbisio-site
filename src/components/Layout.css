@@ -85,6 +85,14 @@ body {
   line-height: 126.5%;
 }
 
+/* iOS 15 rules */
+
+.tabbar {
+  position: fixed;
+  bottom: 0;
+  bottom: env(safe-area-inset-bottom);
+}
+
 #gatsby-focus-wrapper {
   height: 100vh;
 }
@@ -317,7 +325,7 @@ nav {
   /* width: 100%; */
 }
 
-footer {
+#footer {
   position: relative;
   bottom: 70px;
   /* background-color: rgba(0, 0, 0, 0.8); */
@@ -366,7 +374,7 @@ footer {
 .layout {
   width: 100%;
   height: 100%;
-  scroll-snap-type: y mandatory;
+  /* scroll-snap-type: y mandatory; */
   overflow-y: scroll;
   overflow-x: hidden;
   scroll-behavior: smooth;
@@ -402,7 +410,7 @@ footer {
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: minmax(100vh, auto);
   column-gap: 8px;
-  scroll-snap-align: start;
+  scroll-snap-align: end;
 }
 
 .grid-content {
@@ -607,7 +615,7 @@ textarea::placeholder {
   mix-blend-mode: multiply;
 }
 
-.light-mode + footer > a,
+.light-mode + #footer > a,
 Link {
   color: var(--irbisio-off-white) !important;
 }
@@ -692,6 +700,13 @@ nav .logo:hover > path {
   row-gap: 3rem;
   width: 100%;
   justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+  .esg-goals {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 /* REACT Modal and Video */

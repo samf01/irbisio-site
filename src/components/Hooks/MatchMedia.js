@@ -15,8 +15,8 @@ export default function useMediaQuery(query) {
     const listener = () => {
       setMatches(media.matches)
     }
-    media.addEventListener('DOMContentLoaded', listener)
-    return () => media.removeEventListener('DOMContentLoaded', listener)
+    window.addEventListener('DOMContentLoaded', listener)
+    return () => window.removeEventListener('DOMContentLoaded', listener)
   }, [matches, query])
 
   return matches

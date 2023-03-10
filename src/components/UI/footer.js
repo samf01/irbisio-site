@@ -9,8 +9,9 @@ const Footer = ({ footer }) => {
   const admin = useAdmin()
   const year = new Date()
   return (
-    <div id="contact">
+    <div style={{ height: '100%' }}>
       <GridContent
+        id="contact"
         layout="--center-4"
         mode={footer.mode}
         background={footer.image}
@@ -32,7 +33,7 @@ const Footer = ({ footer }) => {
           <a href="/#contact">Contact Us</a>
         </footer>
       ) : (
-        <footer id="footer">
+        <div id="footer">
           <Link to="/" className="copywrite">
             Iribisio Management Ltd. c/o M Q Services Ltd. Victoria Place, 31
             Victoria Street, Hamilton HM10. Bermuda. All rights reserved. ©{' '}
@@ -43,7 +44,7 @@ const Footer = ({ footer }) => {
           <Link to="/#projects">News</Link>
           <Link to="/#projects">Strategy</Link>
           <Link to="/#contact">Contact Us</Link>
-        </footer>
+        </div>
       )}
     </div>
   )

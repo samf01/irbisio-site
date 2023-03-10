@@ -280,13 +280,6 @@ export const query = graphql`
                   }
                   logo {
                     publicURL
-                    childImageSharp {
-                      gatsbyImageData(
-                        width: 800
-                        placeholder: BLURRED
-                        formats: [AUTO, WEBP, AVIF]
-                      )
-                    }
                   }
                 }
               }
