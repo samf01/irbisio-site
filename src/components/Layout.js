@@ -24,7 +24,7 @@ const Layout = ({ children }) => {
                     publicURL
                     childImageSharp {
                       gatsbyImageData(
-                        width: 1920
+                        width: 800
                         placeholder: BLURRED
                         formats: [AUTO, WEBP, AVIF]
                       )

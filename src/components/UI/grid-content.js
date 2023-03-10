@@ -62,6 +62,7 @@ const GridContent = ({ children, layout, background, mode, id, hide }) => {
           style={{
             position: 'absolute',
             height: '110%',
+            width: '110%',
           }}
         />
       ) : (

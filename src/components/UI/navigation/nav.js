@@ -69,9 +69,9 @@ const NavBar = ({ layoutRef }) => {
         <a className="nav-item pos-start" href="/strategy">
           strategy
         </a>
-        <a className="nav-item pos-start" href="/about/#team">
+        {/* <a className="nav-item pos-start" href="/about/#team">
           team
-        </a>
+        </a> */}
         <a className="nav-item pos-start" href="/about/#partners">
           partners
         </a>
