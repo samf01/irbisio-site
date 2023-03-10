@@ -101,7 +101,7 @@ funds:
         transition to net zero. Often focused on larger companies and
         opportunities, the Irbisio Value Fund meets needs of longer-term
         investors who want to make predictable and recurring returns on
-        investment.XX
+        investment.
     - button:
         label: Learn More
         link: /growth-fund
