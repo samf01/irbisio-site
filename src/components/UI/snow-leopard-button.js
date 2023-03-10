@@ -1,7 +1,7 @@
 import React from 'react'
 
 const FoundationButton = ({ button }) => {
-  const { label, destination } = button
+  const { label, link } = button
   return (
     <div
       style={{
@@ -37,7 +37,7 @@ const FoundationButton = ({ button }) => {
       </svg>
 
       <a
-        href={destination}
+        href={link}
         className="mock-button"
         style={{
           width: 'fit-content',

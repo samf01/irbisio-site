@@ -88,7 +88,7 @@ const NavBar = ({ layoutRef }) => {
   return (
     <nav id="navbar">
       <div className="nav-bar">
-        <Link to="/" style={{ height: '16px' }}>
+        <Link to="/#atf" style={{ height: '16px' }}>
           <Logo />
         </Link>
 

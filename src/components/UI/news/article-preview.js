@@ -3,7 +3,7 @@ import React from 'react'
 
 const PreviewArticle = ({ article }) => {
   const date = new Date(article.date)
-  console.log(article.title)
+
   return (
     <div className="article-preview">
       {article.date && (

@@ -34,9 +34,9 @@ const Footer = ({ footer }) => {
       ) : (
         <footer id="footer">
           <Link to="/" className="copywrite">
-            Irbisio Ltd is regulated by the Financial Conduct Authority. All
-            rights reserved. © Irbisio Ltd {year.getFullYear()} Irbisio
-            Investments Ltd
+            Iribisio Management Ltd. c/o M Q Services Ltd. Victoria Place, 31
+            Victoria Street, Hamilton HM10. Bermuda. All rights reserved. ©{' '}
+            {year.getFullYear()} Irbisio Investments Ltd
           </Link>
           <Link to="/cookie-policy">Cookie Policy</Link>
           <Link to="/#about">About</Link>

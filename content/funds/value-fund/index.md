@@ -4,11 +4,10 @@ title: Value Fund
 page_1:
   section: Fund
   mode: light-mode
-  image: stock-photo-power-cable-pump-plug-in-charging-power-to-electric-vehicle-ev-car-with-modern-technology-ui-1884591043.jpg
+  image: shutterstock_1752574595.jpg
   logo: value-fund-logo.svg
   brand: value-fund.svg
-  sub_heading:
-    The Irbisio Value Fund seeks to maximise recurring revenue streams
+  sub_heading: The Irbisio Value Fund seeks to maximise recurring revenue streams
     for investors through cleantech investments that are assisting the
     transition to net zero. Often focused on larger companies and opportunities,
     the Irbisio Value Fund meets needs of longer-term investors who want to make
@@ -25,7 +24,7 @@ page_1:
 page_2:
   section: null
   mode: light-mode
-  image: stock-photo-castione-switzerland-th-april-view-of-the-energy-vault-crane-tower-in-switzerland-2020276172.jpg
+  image: shutterstock_1884591043.jpg
   stats:
     - name: Fund Target Size (2023)
       main: USD 25m
@@ -33,8 +32,7 @@ page_2:
       main: 10 -15
     - name: Fund Duration
       main: 5 years
-      subscript:
-        with 2 years extension option (including an investment period of 1.5
+      subscript: with 2 years extension option (including an investment period of 1.5
         - 2 years)
     - name: Target returns
       main: 1.5 - 2x
@@ -42,22 +40,19 @@ page_2:
 page_3:
   section: null
   mode: light-mode
-  image: stock-photo-professional-automotive-engineer-in-glasses-with-a-computer-and-inspection-tools-is-testing-an-used-1472897873.jpg
+  image: shutterstock_1748497634.jpg
   bullets:
     - order: first
       title: Strategy
-      statement: 'Irbisio is redefining the risk-reward equation of clean tech
-        investing by replacing unpredictable investments with reliable returns:'
+      statement: "Irbisio is redefining the risk-reward equation of clean tech
+        investing by replacing unpredictable investments with reliable returns:"
       list:
-        - point:
-            Evaluation and implementation of existing technologies to complete
+        - point: Evaluation and implementation of existing technologies to complete
             projects in manageable timelines and deliver achievable ROIs
-        - point:
-            Deep technology understanding to provide cleantech investors with a clear
+        - point: Deep technology understanding to provide cleantech investors with a clear
             advantage in navigating fast-changing cleantech markets
-        - point:
-            'Integrated approach: finance, technology and project management skills
-            to make net zero ambitionsbecome a reality'
+        - point: "Integrated approach: finance, technology and project management skills
+            to make net zero ambitionsbecome a reality"
         - point: The opening of cleantech investing to individuals and investor
             organisations to enable them to participate in this financially
             rewarding sector
@@ -65,14 +60,12 @@ page_3:
       title: Operational Focus
       list:
         - point: Anchor investments in cleantech transition programmes
-        - point:
-            Reliable international partner who sources and supports the projects
+        - point: Reliable international partner who sources and supports the projects
             backed up by our expertise
         - point: Strong governance and international experts’ pool
     - order: last
       title: Investment Focus
-      statement:
-        All investment programmes undertaken by Irbisio are compliant with
+      statement: All investment programmes undertaken by Irbisio are compliant with
         the United Nations Sustainable Development Goals
       list:
         - point: Low carbon mobility solutions

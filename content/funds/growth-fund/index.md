@@ -6,7 +6,7 @@ page_1:
   mode: dark-mode
   logo: growth-fund-logo.svg
   brand: growth-fund.svg
-  image: stock-photo-green-fresh-plant-in-glass-test-tube-in-laboratory-on-white-background-close-up-macro-1111725959.jpg
+  image: shutterstock_1111725959.jpg
   sub_heading: The Irbisio Growth Fund is focussed on capital growth returns
     through investments in cleantech programmes. While contributing to the
     carbon net zero goal, these investments offer higher returns to investors
@@ -18,7 +18,7 @@ page_1:
 page_2:
   section: null
   mode: light-mode
-  image: stock-photo-solar-photovoltaic-of-solar-farm-aerial-view-solar-plant-rows-array-of-on-the-water-mount-system-1527058823.jpg
+  image: shutterstock_1527058823.jpg
   stats:
     - name: Fund Target Size (2023)
       main: USD 25m
@@ -33,7 +33,7 @@ page_2:
 page_3:
   section: null
   mode: dark-mode
-  image: stock-photo-algae-seaweed-research-biofuel-industry-science-sustainable-concept-1476381557.jpg
+  image: shutterstock_1476381557.jpg
   bullets:
     - order: first
       title: Strategy

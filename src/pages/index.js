@@ -107,6 +107,7 @@ const Home = ({ data }) => {
       </GridContent>
       <GridContent
         id="snow-leopard"
+        hide="true"
         layout="--center-4"
         mode={leopard.mode}
         background={leopard.image}
