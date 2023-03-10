@@ -4,11 +4,13 @@ about:
   mode: dark-mode
   title: Irbisio was founded in January 2023 to provide a new approach to
     cleantech investing
-  sub_title: Based on deep expertise and a focus on pragmatic projects that will
-    accelerate carbon net zero while making returns for investors.
-  body: Founded by Sergey Buchin and \[name other founders], Irbisio operates
-    across Western Europe. Initial projects include \[name examples or area of
-    investment]
+  sub_title: Irbisio is built on deep expertise and a focus on pragmatic projects
+    that will accelerate carbon net zero while making returns for investors.
+  body: "Irbisio was founded by experienced investment professionals and operates
+    across Western Europe. Initial projects will focus on opportunities in areas
+    such as carbon reduction, water management and alternative energy, with all
+    investment programmes compliant with the United Nations Sustainable
+    Development Goals. "
   image: /assets/shutterstock_1527058823.jpg
 partners:
   section: Partners
