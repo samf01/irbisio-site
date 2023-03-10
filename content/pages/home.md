@@ -47,7 +47,7 @@ strategy:
     label: Learn More
     link: /strategy
 news:
-  section: news
+  section: cleantech investment news
   mode: dark-mode
   image: /assets/shutterstock_1752574595.jpg
   contact:
