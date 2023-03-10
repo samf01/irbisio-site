@@ -7,4 +7,4 @@ Japanese ISP Internet Initiative Japan Inc. has installed solar panels at one of
 
 ![solar panel](image10.png "Shiroi data centre campus in Chiba Prefecture.")
 
-The panels are expected to generate approximately 373MWh annually, amounting to 3 percent of the facility’s needs to help take control of carbon dioxide emissions.
+The panels are expected to generate approximately 373MWh annually, amounting to 3% of the facility’s needs to help take control of carbon dioxide emissions.
