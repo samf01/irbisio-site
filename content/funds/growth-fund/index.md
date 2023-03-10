@@ -12,7 +12,7 @@ page_1:
     carbon net zero goal, these investments offer higher returns to investors
     based on a more ambitious risk profile.
   opportunity: We select, implement and scale up cleantech projects in the mid and
-    small market. As new technologies emergefrom the subsidised R&D phase into
+    small market. As new technologies emerge from the subsidised R&D phase into
     the profitable deployment phase, we seize the opportunity to generate
     predictable returns for our investors.
 page_2:
