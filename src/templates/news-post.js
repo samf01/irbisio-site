@@ -46,9 +46,13 @@ const BlogPost = ({ data }) => {
           {publishedDate.getFullYear()}
         </h4>
 
-        <div dangerouslySetInnerHTML={{ __html: html }} />
+        <div
+          dangerouslySetInnerHTML={{ __html: html }}
+          className="markdown"
+          style={{ scrollSnapAlign: 'end' }}
+        />
 
-        <Link to="/#news" className="mock-button">
+        <Link to="/news" className="mock-button">
           Back to Articles
         </Link>
       </GridContent>

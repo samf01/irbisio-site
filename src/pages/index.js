@@ -14,10 +14,18 @@ import {
 } from '../components/graphics/icons'
 
 const Home = ({ data }) => {
-  const { introduction, about, leopard, news, strategy } =
+  const { introduction, about, leopard, news, press, strategy } =
     data.allFile.edges[0].node.childMarkdownRemark.frontmatter
 
-  const articles = data.allMarkdownRemark.edges
+  const articles = data.allMarkdownRemark.edges.filter(
+    edge => edge.node.frontmatter.cms === 'news'
+  )
+
+  const release = data.allMarkdownRemark.edges.filter(
+    edge => edge.node.frontmatter.cms === 'press'
+  )
+
+  console.log(release)
 
   return (
     <Layout>
@@ -68,13 +76,13 @@ const Home = ({ data }) => {
         </Link>
       </GridContent>
       <GridContent
-        id="news"
+        id="press"
         layout="--center-4"
-        mode={news.mode}
-        background={news.image}
+        mode={press.mode}
+        background={press.image}
       >
-        <h4>{news.section}</h4>
-        {articles.map((node, i) => {
+        <h4>{press.section}</h4>
+        {release.slice(0, 2).map((node, i) => {
           const article = {
             title: node.node.frontmatter.title,
             date: node.node.frontmatter.date,
@@ -87,10 +95,29 @@ const Home = ({ data }) => {
             </div>
           )
         })}
-        <p>
-          For more information contact:{' '}
-          <a href={news.contact.link}>{news.contact.label}</a>
-        </p>
+        <Link to="/press">More Articles</Link>
+      </GridContent>
+      <GridContent
+        id="news"
+        layout="--center-4"
+        mode={news.mode}
+        background={news.image}
+      >
+        <h4>{news.section}</h4>
+        {articles.slice(0, 2).map((node, i) => {
+          const article = {
+            title: node.node.frontmatter.title,
+            date: node.node.frontmatter.date,
+            excerpt: node.node.excerpt,
+            slug: node.node.fields.slug,
+          }
+          return (
+            <div key={i}>
+              <PreviewArticle article={article} />
+            </div>
+          )
+        })}
+        <Link to="/news">More Articles</Link>
       </GridContent>
       <GridContent
         id="about"
@@ -207,6 +234,24 @@ export const query = graphql`
                 mode
                 section
               }
+              press {
+                contact {
+                  label
+                  link
+                }
+                image {
+                  publicURL
+                  childImageSharp {
+                    gatsbyImageData(
+                      width: 800
+                      placeholder: BLURRED
+                      formats: [AUTO, WEBP, AVIF]
+                    )
+                  }
+                }
+                mode
+                section
+              }
               strategy {
                 button {
                   label
@@ -243,11 +288,12 @@ export const query = graphql`
         }
       }
     }
-    allMarkdownRemark(filter: { frontmatter: { cms: { eq: "news" } } }) {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
           excerpt(pruneLength: 230)
           frontmatter {
+            cms
             title
             date
           }

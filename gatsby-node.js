@@ -81,10 +81,30 @@ exports.createPages = ({ actions, graphql }) => {
       edge => edge.node.frontmatter.cms === 'case'
     )
 
+    const pressEdges = allEdges.filter(
+      edge => edge.node.frontmatter.cms === 'press'
+    )
+
     blogEdges.forEach((post, index) => {
       const previous =
         index === blogEdges.length - 1 ? null : blogEdges[index + 1].node
       const next = index === 0 ? null : blogEdges[index - 1].node
+
+      createPage({
+        path: post.node.fields.slug,
+        component: path.resolve(`./src/templates/news-post.js`),
+        context: {
+          slug: post.node.fields.slug,
+          previous,
+          next,
+        },
+      })
+    })
+
+    pressEdges.forEach((post, index) => {
+      const previous =
+        index === pressEdges.length - 1 ? null : pressEdges[index + 1].node
+      const next = index === 0 ? null : pressEdges[index - 1].node
 
       createPage({
         path: post.node.fields.slug,

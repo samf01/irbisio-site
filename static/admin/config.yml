@@ -220,6 +220,49 @@ collections:
                 ],    
             }
           - {
+              label: Press Release,
+              name: press,
+              widget: object,
+              summary: "{{fields.section}}",
+              fields:
+                [
+                  {
+                    label: Section Name,
+                    name: section,
+                    widget: string,
+                    default: Irbisio News,
+                  },
+                  {
+                    label: Section Background & Colour Scheme,
+                    name: mode,
+                    widget: select,
+                    multiple: false,
+                    options:
+                      [
+                        { label: "Light/no image - white background", value: "dark-mode" },
+                        { label: "Dark - image background", value: "light-mode" },
+                        { label: "Light, with image, (ala Snow Leopard)", value: "snow-mode" },
+                      ],
+                    default: ["light-mode"],
+                  },
+                  {
+                    label: Title,
+                    name: title,
+                    widget: string,
+                    default: Who We Are,
+                    required: false,
+                  },
+                  { label: Background Image, name: image, widget: image },
+                  { label: Body, name: body, widget: markdown, required: false },
+                  { label: Contact Link, name: contact, widget: object, fields: 
+                    [
+                      { label: Label, name: label, widget: string, default: media@irbisio.com },
+                      { label: Destination, name: link, widget: string, default: media@irbisio.com },
+                    ]
+                  }
+                ],    
+            }
+          - {
               label: About,
               name: about,
               widget: object,
@@ -607,6 +650,27 @@ collections:
           name: "cms",
           widget: "hidden",
           default: "news",
+        }
+      - { label: "Title", name: "title", widget: "string", required: true }
+      - {
+          label: "Publish Date",
+          name: "date",
+          widget: "datetime",
+          required: true,
+        }
+      - { label: "Body", name: "body", widget: "markdown", required: true }
+
+  - name: "press"
+    label: "Press Release"
+    folder: "content/press/"
+    create: true
+    path: "{{slug}}/index"
+    fields:
+      - {
+          label: "CMS Key",
+          name: "cms",
+          widget: "hidden",
+          default: "press",
         }
       - { label: "Title", name: "title", widget: "string", required: true }
       - {

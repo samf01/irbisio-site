@@ -32,7 +32,7 @@ export default CaseStudies
 
 export const query = graphql`
   query {
-    allMarkdownRemark(filter: { frontmatter: { cms: { eq: "news" } } }) {
+    allMarkdownRemark(filter: { frontmatter: { cms: { eq: "press" } } }) {
       edges {
         node {
           excerpt(pruneLength: 230)

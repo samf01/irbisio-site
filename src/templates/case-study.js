@@ -18,7 +18,11 @@ const CaseStudy = ({ data }) => {
       <GridContent layout="--center-6" mode="dark-mode" hide="true">
         <h1>{title}</h1>
 
-        <div dangerouslySetInnerHTML={{ __html: html }} className="markdown" />
+        <div
+          dangerouslySetInnerHTML={{ __html: html }}
+          className="markdown"
+          style={{ scrollSnapAlign: 'end' }}
+        />
 
         {stats && //Because there might not be any?
           stats.map((stat, i) => {

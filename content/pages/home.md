@@ -1,7 +1,8 @@
 ---
 introduction:
   section: Introduction
-  title: Integrated cleantech investing to deliver predictable ROI and  accelerate
+  title:
+    Integrated cleantech investing to deliver predictable ROI and  accelerate
     carbon net zero.
   body: >-
     At Irbisio, we bring together technology expertise, project management
@@ -13,33 +14,38 @@ introduction:
 
     We make investment in sustainability, sustainable.
   image: /assets/shutterstock_1884591043.jpg
-  mode: light-mode
+  mode: dark-mode
 strategy:
   section: Strategy
   page_1:
     title: Cleantech investing is no longer about speculative bets on possible
       winners...
-    mode: dark-mode
+    mode: light-mode
     body: ...but rather about sustainable investments in projects and programmes
       that are going to make a difference in the transition to carbon net zero,
       while creating value and delivering stable returns for investors.
   page_2:
-    mode: light-mode
+    mode: dark-mode
     bullets:
       - icon: tech
-        body: The Irbisio Technology Insights Team brings together some of the most
+        body:
+          The Irbisio Technology Insights Team brings together some of the most
           knowledgeable leaders in energy technology and enables us to identify
           remunerative opportunities faster and execute on these.
       - icon: finance
-        body: Our investment directors understand the rigours required in cleantech
+        body:
+          Our investment directors understand the rigours required in cleantech
           investing and bring the financial control expertise to ensure that
           projects are delivered profitably for investors.
       - icon: project
-        body: Our project managers know how to get the job done and have the track
+        body:
+          Our project managers know how to get the job done and have the track
           record to prove it.
-    statement: "We integrate the core capabilities for successful and responsible
-      cleantech investing:"
-    body: Our integrated approach to cleantech investing means that we see through
+    statement:
+      'We integrate the core capabilities for successful and responsible
+      cleantech investing:'
+    body:
+      Our integrated approach to cleantech investing means that we see through
       the programme cycle from identification of new game changing technologies
       to project execution and profitable exits.
   image: /assets/shutterstock_2198943597.jpg
@@ -53,6 +59,13 @@ news:
   contact:
     label: media@irbisio.com
     link: media@irbisio.com
+press:
+  section: Irbisio News
+  mode: light-mode
+  image: /assets/shutterstock_1748497634.jpg
+  contact:
+    label: More Articles
+    link: /press
 about:
   section: about
   mode: light-mode
