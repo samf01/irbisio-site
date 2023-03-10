@@ -4,8 +4,7 @@ about:
   mode: dark-mode
   title: Irbisio was founded in January 2023 to provide a new approach to
     cleantech investing
-  sub_title:
-    Irbisio is built on deep expertise and a focus on pragmatic projects
+  sub_title: Irbisio is built on deep expertise and a focus on pragmatic projects
     that will accelerate carbon net zero while making returns for investors.
   body: Irbisio was founded by experienced investment professionals and operates
     across Western Europe. Initial projects will focus on opportunities in areas
@@ -51,7 +50,7 @@ team:
         asset management organisation.
 
 
-        Maria spent eight years with Credit Suisse working in a number of positions in private banking, working with UNHWI, leading to her joining JP Morgan, again in the privat banking division. Prior to working for Credit Suisse, Maria held senior roles at RBS and in the investment arm of Dutch bank, ABN AMRO.
+        Maria spent eight years with Credit Suisse in a number of positions in private banking, working with UNHWI, leading to her joining JP Morgan, again in the private banking division. Prior to working for Credit Suisse, Maria held senior roles at RBS and in the investment arm of Dutch bank, ABN AMRO.
 
 
         Maria holds a Master of Science in Regional Development and Planning and holds a Becker CPA Review qualification.
@@ -61,13 +60,13 @@ team:
       body: >-
         Sergey is an entrepreneur and experienced executive across the
         technology and finance sectors. Prior to founding Irbisio, Sergey
-        co-founded HeadOffice a unique multi-family office with more than 20
-        UHNWI clients, before starting HeadOffice, he spent several years
-        heading up an energy innovation project, where he developed a new
-        business strategyhelping to deliver a successful restructure for the
-        business. Before this, Sergey worked with a private trust where he
-        helped oversee assets of over $7 billion in a portfolio that included
-        energy, biotech and real estate.
+        co-founded HeadOffice, a unique multi-family office with more than 20
+        UHNWI clients. Before starting HeadOffice, he spent several years
+        leading an energy innovation project, where he developed a new business
+        strategy, helping to deliver a successful restructuring of the business.
+        Before this, Sergey worked with a private trust where he helped oversee
+        assets of over $7 billion in a portfolio that included energy, biotech
+        and real estate. 
 
 
         Sergey’s business experience before this included General Director and CEO of Intercomp, a finance and human resources outsourcing company, and Managing Partner of InvestTEK, a construction engineering company in the oil and gas sector. He started his career in expanding a family business, and founded and sold his own consulting business at 21.
