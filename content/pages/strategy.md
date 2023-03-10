@@ -3,32 +3,30 @@ investing:
   section: Investing Principles
   mode: dark-mode
   title: Irbisio’s principles of cleantech investing
-  body: >-
-    Investing in cleantech can provide a unique opportunity for investors to
+  body: "Investing in cleantech provides a unique opportunity for investors to
     generate financial returns while also contributing to a more sustainable
-    future. Here are some principles we rely on when investing in cleantech.
-
-
-    Clear understanding and technical acumen. This is especially important with new technologies, their growth potential, key players and risks need to be evaluated before deployment.
+    future.  Our investment principles are guided by clear understanding and
+    technical acumen in assessing growth potential, key players and potential
+    risks:"
   principles:
     - title: Legal and political framework
       body: " Cleantech is often affected by government regulations, so it's important
-        to understand the regulatory environment in which they operate.
-        Government incentives and subsidies can provide a boost to cleantech
-        companies, and changes in regulations can have a significant impact on
-        their success."
+        to understand the regulatory environment in which companies are
+        operating. Government incentives and subsidies can provide a boost to
+        cleantech companies, and changes in regulations can have a significant
+        impact on their success."
     - title: Diversification
       body: This is a key principle of investing in any industry, including cleantech.
         This means spreading the investment across a range of companies and
-        technologies to minimize risk and maximize returns.
+        technologies to minimise risk and maximise returns.
     - title: Impact Investing
       body: Cleantech investment is expected to generate a positive impact on society
         or the environment in addition to financial returns. Impact investing is
         a powerful motivator for investors looking to make a positive difference
         in the world.
-    - title: Clearly defined timeframe
-      body: Cleantech is often referred as a long-term investment with years or even
-        decades before returns are seen. However the energy transition is
+    - title: Clearly defined timeframes
+      body: Cleantech is often referred to as a long-term investment, with years or
+        even decades before returns are seen. However the energy transition is
         changing the landscape and timescales for cleantech investing and
         offering investors the opportunity to make strong returns over a
         relatively short period.
