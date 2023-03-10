@@ -115,7 +115,7 @@ funds:
 esg:
   section: ESG Approach
   mode: dark-mode
-  heading: "We adhere to the United Nations' 17 Sustainable Development Goals. Our
+  heading: "We adhere to the United Nations 17 Sustainable Development Goals. Our
     investment strategy is particularly focussed on four of the UN’s 17 goals:"
   image: /assets/shutterstock_1884591043.jpg
   goals:
