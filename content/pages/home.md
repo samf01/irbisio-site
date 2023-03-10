@@ -29,7 +29,7 @@ strategy:
       - icon: tech
         body: The Irbisio Technology Insights Team brings together some of the most
           knowledgeable leaders in energy technology and enables us to identify
-          lucrative opportunities faster and execute on these.
+          remunerative opportunities faster and execute on these.
       - icon: finance
         body: Our investment directors understand the rigours required in cleantech
           investing and bring the financial control expertise to ensure that
