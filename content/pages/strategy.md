@@ -19,7 +19,7 @@ investing:
       body: This is a key principle of investing in any industry, including cleantech.
         This means spreading the investment across a range of companies and
         technologies to minimise risk and maximise returns.
-    - title: Impact Investing
+    - title: Impact investing
       body: Cleantech investment is expected to generate a positive impact on society
         or the environment in addition to financial returns. Impact investing is
         a powerful motivator for investors looking to make a positive difference
@@ -30,21 +30,21 @@ investing:
         changing the landscape and timescales for cleantech investing and
         offering investors the opportunity to make strong returns over a
         relatively short period.
-    - title: Risk Management
+    - title: Risk management
       body: " Cleantech companies are often at the forefront of new and innovative
         technologies and have often been associated with high-risk investing.
         Technology due diligence and implementation expertise are the core of
         de-risking these investments and companies and realising the potential
         to generate significant returns."
-    - title: Due Diligence
+    - title: Due diligence
       body: As with any investment, it's crucial to perform due diligence to
         understand the financial and operational risks involved in cleantech
         investing.
-    - title: ESG Factors
-      body: These are integral in cleantech. These factors include the company's
-        impact on the environment, its treatment of employees, and its
-        governance and transparency.
-  footer: In cleantech is a unique opportunity to generate financial returns while
+    - title: ESG factors
+      body: These are integral to cleantech. Factors include the company's impact on
+        the environment, its treatment of employees, and its governance and
+        transparency.
+  footer: Cleantech is a unique opportunity to generate financial returns while
     contributing to a more sustainable future. By understanding the market,
     diversifying your investments, considering ESG factors, and performing due
     diligence, investors can maximise their returns and make a positive impact.
