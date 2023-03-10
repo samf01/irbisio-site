@@ -37,7 +37,7 @@ page_3:
   bullets:
     - order: first
       title: Strategy
-      statement: "Irbisio is redefining the risk-reward equation of clean tech
+      statement: "Irbisio is redefining the risk-reward equation of cleantech
         investing by replacing unpredictable investments with reliable returns:"
       list:
         - point: Evaluation and implementation of existing technologies to complete
@@ -45,7 +45,7 @@ page_3:
         - point: Deep technology understanding to provide cleantech investors with a clear
             advantage in navigating fast-changing cleantech markets
         - point: "Integrated approach: finance, technology and project management skills
-            to make net zero ambitionsbecome a reality"
+            to make net zero ambitions become a reality"
         - point: The opening of cleantech investing to individuals and investor
             organisations to enable them to participate in this financially
             rewarding sector
@@ -61,7 +61,7 @@ page_3:
       statement: All investment programmes undertaken by Irbisio are compliant with
         the United Nations Sustainable Development Goals
       list:
-        - point: Low carbon mobility solutions
+        - point: Low-carbon mobility solutions
         - point: Sustainable buildings and energy efficiency
         - point: Biochemicals
         - point: Water and waste management
