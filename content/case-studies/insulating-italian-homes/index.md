@@ -1,6 +1,6 @@
 ---
 cms: case
-title: Insulating Italian Homes
+title: Insulating Italian homes
 contact: media@irbisio.com
 logo: genera-group.svg
 stats:
