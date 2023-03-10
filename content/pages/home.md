@@ -8,7 +8,7 @@ introduction:
     skills and financial acumen into one integrated approach to investment.
 
 
-    We carefully select, fund, manage and profitably exit cleantech investment projects, companies and programmes.
+    Our teams carefully select, fund, manage and profitably exit cleantech investment opportunities. 
 
 
     We make investment in sustainability, sustainable.
@@ -63,7 +63,7 @@ about:
     accelerate carbon net zero while making returns for investors.
 
 
-    Founded by a group of energy professionals, technical specialists and investment experts, Irbisio operates across Western Europe. Initial projects (include name examples or area of investment).
+    Founded by a group of energy professionals, technical specialists and investment experts, Irbisio operates across Western Europe. Initial projects teams will focus on opportunities in areas such as carbon reduction, water management and alternative energy, with all investment programmes compliant with the United Nations Sustainable Development Goals.
   button:
     link: /about
     label: Learn More
