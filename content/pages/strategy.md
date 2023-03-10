@@ -50,7 +50,7 @@ investing:
     contributing to a more sustainable future. By understanding the market,
     diversifying your investments, considering ESG factors, and performing due
     diligence, investors can maximise their returns and make a positive impact.
-  image: /assets/stock-photo-green-fresh-plant-in-glass-test-tube-in-laboratory-on-white-background-close-up-macro-1111725959.jpg
+  image: /assets/shutterstock_1111725959.jpg
 investors:
   section: Investors
   mode: light-mode
@@ -84,13 +84,13 @@ investors:
         Mauris id magna malesuada, condimentum libero quis, varius libero.
         Integer non diam mollis mauris blandit molestie et sit amet sem. Cras
         quis sem vel quam pulvinar malesuada.
-  image: /assets/stock-photo-selective-focus-of-electric-car-lithium-battery-pack-and-wiring-connections-internal-between-cells-1748497634.jpg
+  image: /assets/shutterstock_1748497634.jpg
 funds:
   section: Funds
   mode: dark-mode
   heading: Irbisio provides two cleantech funds, each with a different investment
     profile.
-  image: /assets/snow-leopard-bg.jpg
+  image: /assets/shutterstock_1527058823.jpg
   fund_type:
     - button:
         label: Learn More
@@ -119,7 +119,7 @@ esg:
   mode: dark-mode
   heading: "We adhere to the United Nation’s 17 Sustainable Development Goal. Our
     investment strategy is particularly focussed on four of the UN’s 17 goals:"
-  image: /assets/background-test.jpg
+  image: /assets/shutterstock_1884591043.jpg
   goals:
     - name: 7. Affordable and Clean Energy
       logo: /assets/un-goal-7.svg
