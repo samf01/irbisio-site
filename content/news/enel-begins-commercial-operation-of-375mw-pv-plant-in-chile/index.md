@@ -7,4 +7,4 @@ Enel Green Power Chile, the renewable branch of Enel Chile, has begun commercial
 
 ![375MW Campos del Sol PV power plant](image4.png "375MW Campos del Sol PV power plant")
 
-The purpose of the project is to continue advancing in the diversification of the generation matrix, to contribute to the process of electrification of consumption at a national level.
+The purpose of the project is to increase the use of energy from renewable sources to accelerate the energy transition and decarbonisation.
