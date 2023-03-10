@@ -31,12 +31,16 @@
 /* Markdown Rules */
 
 .gatsby-resp-image-figure {
+  margin: 0 auto;
   margin-top: 24px !important;
+  width: inherit;
 }
 
 .gatsby-resp-image-figcaption {
   margin: 0 auto;
   max-width: 715px;
+  text-align: left;
+  width: max-content;
   font-style: italic;
   font-size: 12px;
 }

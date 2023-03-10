@@ -138,7 +138,7 @@ const StrategyPage = ({ data }) => {
           })}
         </div>
       </GridContent>
-
+      {/* 
       <GridContent
         id="investors"
         layout="--center-6"
@@ -169,7 +169,7 @@ const StrategyPage = ({ data }) => {
             )
           })}
         </div>
-      </GridContent>
+      </GridContent> */}
 
       <GridContent
         id="esg"

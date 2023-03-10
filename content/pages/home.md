@@ -1,7 +1,8 @@
 ---
 introduction:
   section: Introduction
-  title: Integrated cleantech investing to deliver predictable ROI and  accelerate
+  title:
+    Integrated cleantech investing to deliver predictable ROI and  accelerate
     carbon net zero.
   body: >-
     At Irbisio, we bring together technology expertise, project management
@@ -27,19 +28,24 @@ strategy:
     mode: light-mode
     bullets:
       - icon: tech
-        body: The Irbisio Technology Insights Team brings together some of the most
+        body:
+          The Irbisio Technology Insights Team brings together some of the most
           knowledgeable leaders in energy technology and enables us to identify
           lucrative opportunities faster and execute on these.
       - icon: finance
-        body: Our investment directors understand the rigours required in cleantech
+        body:
+          Our investment directors understand the rigours required in cleantech
           investing and bring the financial control expertise to ensure that
           projects are delivered profitably for investors.
       - icon: project
-        body: Our project managers know how to get the job done and have the track
+        body:
+          Our project managers know how to get the job done and have the track
           record to prove it.
-    statement: "We integrate the core capabilities for successful and responsible
-      cleantech investing:"
-    body: Our integrated approach to cleantech investing means that we see through
+    statement:
+      'We integrate the core capabilities for successful and responsible
+      cleantech investing:'
+    body:
+      Our integrated approach to cleantech investing means that we see through
       the programme cycle from identification of new game changing technologies
       to project execution and profitable exits.
   image: /assets/stock-photo-illuminated-gas-or-oil-blue-pipeline-in-dark-tunnel-2198943597.jpg
@@ -80,6 +86,6 @@ leopard:
 
     We support Snow Leopard Trust and its aims to better understand and protect this endangered species in partnership with communities that share its habitat.
   button:
-    link: /
+    link: https://snowleopard.org/
     label: Track the Leopard
 ---

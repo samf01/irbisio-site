@@ -55,7 +55,7 @@ const AboutPage = ({ data }) => {
           )
         })}
       </GridContent>
-
+      {/* 
       <GridContent
         id="team"
         layout="--center-6-offset"
@@ -95,7 +95,7 @@ const AboutPage = ({ data }) => {
             )
           })}
         </Carousel>
-      </GridContent>
+      </GridContent> */}
     </Layout>
   )
 }

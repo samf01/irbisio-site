@@ -630,13 +630,14 @@ collections:
           default: "case",
         }
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Contact details", name: "contact", widget: "string", required: false }
+      - { label: "Contact details", name: "contact", widget: "string", required: false, default: media@irbisio.com }
       - {
           label: Partner Logo, name: logo, widget: image, required: false
         }
       - { label: Statistics Icons, name: stats, widget: list, allow_add: true, required: false, fields: 
           [
-            { label: Type, name: type, widget: select, options: [dollar, euro, percentage], default: percentage},
+            { label: Prefix, name: prefix, widget: string,},
+            { label: Suffix, name: suffix, widget: string},
             { label: Value, name: value, widget: number},
             { label: Description, name: description, widget: string },
           ]

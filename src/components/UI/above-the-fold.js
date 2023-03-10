@@ -1,13 +1,15 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { BackgroundShape } from '../graphics/background-shape'
 import { Close, Fullscreen, Pause, Play } from '../graphics/video-controls'
 import ReactModal from 'react-modal'
-import video from '../../../static/assets/video-1.mp4'
+import videoMp4 from '../../../static/assets/video-1.mp4'
+import videoWebM from '../../../static/assets/video-1.webm'
 import useScrollBlock from '../Hooks/useScrollBlock'
 import { TopShape, BottomShape } from '../graphics/landing-shape'
 import Logo from '../graphics/logo'
 import poster from '../../../static/assets/poster.jpg'
 import useMediaQuery from '../Hooks/MatchMedia'
+import { useInView } from 'react-spring'
 
 const customStyles = {
   content: {
@@ -24,10 +26,16 @@ const customStyles = {
 const Landing = () => {
   const [playing, isPlaying] = useState(true)
   const videoRef = useRef(null)
+  const [containerRef, isInView] = useInView({})
   const [fullscreen, makeFullscreen] = useState(false)
   const [blockScroll, allowScroll] = useScrollBlock()
 
   const mobile = useMediaQuery('(max-width: 768px)')
+
+  useEffect(() => {
+    if (videoRef.current)
+      isInView ? videoRef.current.play() : videoRef.current.pause()
+  }, [isInView])
 
   function handlePlay() {
     playing ? videoRef.current.pause() : videoRef.current.play()
@@ -47,7 +55,7 @@ const Landing = () => {
   }
 
   return (
-    <div className="container" id="atf">
+    <div className="container" id="atf" ref={containerRef}>
       <div className="container-shape">
         {!mobile && (
           <video
@@ -60,7 +68,8 @@ const Landing = () => {
             className="video-cutter"
             poster={poster}
           >
-            <source src={video} type="video/mp4" />
+            <source src={videoMp4} type="video/mp4" />
+            <source src={videoWebM} type="video/webM" />
             Your browser does not support the video tag.
           </video>
         )}
@@ -117,7 +126,8 @@ const Landing = () => {
               allowFullScreen
               rotate-to-fullscreen="true"
             >
-              <source src={video} type="video/mp4" />
+              <source src={videoMp4} type="video/mp4" />
+              <source src={videoWebM} type="video/webM" />
               Your browser does not support the video tag.
             </video>
             <button
