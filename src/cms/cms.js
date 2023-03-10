@@ -1,5 +1,7 @@
 import CMS from 'netlify-cms-app'
 import './cms.css'
+//For the fix to the markdown box cursor jump issue see ./static/admin/admin.css
+import './cms-utils'
 import '../components/Layout.css'
 // import uploadcare from 'netlify-cms-media-library-uploadcare'
 // import cloudinary from 'netlify-cms-media-library-cloudinary'

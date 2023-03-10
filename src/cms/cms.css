@@ -6,7 +6,3 @@ body {
   width: 100%;
   margin: 0;
 }
-
-[data-slate-editor] {
-  -webkit-user-modify: read-write !important;
-}
