@@ -6,7 +6,7 @@ investing:
   body: "Investing in cleantech provides a unique opportunity for investors to
     generate financial returns while also contributing to a more sustainable
     future.  Our investment principles are guided by clear understanding and
-    technical acumen in assessing growth potential, key players and potential
+    technical acumen in assessing growth potential, key players and possible
     risks:"
   principles:
     - title: Legal and political framework
@@ -16,9 +16,9 @@ investing:
         cleantech companies, and changes in regulations can have a significant
         impact on their success."
     - title: Diversification
-      body: This is a key principle of investing in any industry, including cleantech.
-        This means spreading the investment across a range of companies and
-        technologies to minimise risk and maximise returns.
+      body: This is a key principle of investing in any industry, including cleantech
+        - spreading investment across a range of companies and technologies to
+        minimise risk and maximise returns.
     - title: Impact investing
       body: Cleantech investment is expected to generate a positive impact on society
         or the environment in addition to financial returns. Impact investing is
@@ -27,15 +27,15 @@ investing:
     - title: Clearly defined timeframes
       body: Cleantech is often referred to as a long-term investment, with years or
         even decades before returns are seen. However the energy transition is
-        changing the landscape and timescales for cleantech investing and
-        offering investors the opportunity to make strong returns over a
-        relatively short period.
+        changing the landscape and timescales for cleantech investing, offering
+        investors the opportunity to make strong returns over a relatively short
+        period.
     - title: Risk management
-      body: " Cleantech companies are often at the forefront of new and innovative
+      body: " Cleantech companies are at the forefront of new and innovative
         technologies and have often been associated with high-risk investing.
-        Technology due diligence and implementation expertise are the core of
-        de-risking these investments and companies and realising the potential
-        to generate significant returns."
+        Technology due diligence and implementation expertise are at the core of
+        de-risking these investments and realising the potential to generate
+        significant returns."
     - title: Due diligence
       body: As with any investment, it's crucial to perform due diligence to
         understand the financial and operational risks involved in cleantech
@@ -53,7 +53,7 @@ investors:
   section: Investors
   mode: light-mode
   body: >-
-    <p>Irbisio is democratising cleantech investing to enable more to
+    <p>Irbisio is democratising cleantech investing to enable more people to
     participate in the energy transition and accelerate the world to net
     zero.</p>
 
