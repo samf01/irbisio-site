@@ -5,7 +5,9 @@ import ReactModal from 'react-modal'
 import videoMp4 from '../../../static/assets/video-1.mp4'
 import videoWebM from '../../../static/assets/video-1.webm'
 import useScrollBlock from '../Hooks/useScrollBlock'
-import { TopShape, BottomShape } from '../graphics/landing-shape'
+
+import TopShape from '../../../static/assets/icons/top-shape.svg'
+import BottomShape from '../../../static/assets/icons/top-shape.svg'
 import Logo from '../graphics/logo'
 import poster from '../../../static/assets/poster.jpg'
 import useMediaQuery from '../Hooks/MatchMedia'
@@ -30,7 +32,7 @@ const Landing = () => {
   const [fullscreen, makeFullscreen] = useState(false)
   const [blockScroll, allowScroll] = useScrollBlock()
 
-  const mobile = useMediaQuery('(max-width: 768px)')
+  //const mobile = useMediaQuery('(max-width: 768px)')
 
   useEffect(() => {
     if (videoRef.current)
@@ -89,11 +91,34 @@ const Landing = () => {
           rowGap: '24px',
         }}
       >
-        <TopShape />
+        <div
+          style={{
+            gridColumn: '6 / 8',
+            transform: 'scaleX(1)',
+          }}
+        >
+          <object
+            type="image/svg+xml"
+            data={TopShape}
+            style={{ width: '100%', height: '100%' }}
+          />
+        </div>
         <div className="landing-content-center">
           <Logo />
         </div>
-        <BottomShape />
+        <div
+          style={{
+            gridColumn: '6 / 8',
+            gridRowStart: '3',
+            transform: 'scaleX(-1)',
+          }}
+        >
+          <object
+            type="image/svg+xml"
+            data={BottomShape}
+            style={{ width: '100%', height: '100%' }}
+          />
+        </div>
 
         <div className="video-controls">
           <button role="button" aria-label="Play/Pause" onClick={handlePlay}>

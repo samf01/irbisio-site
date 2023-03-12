@@ -379,8 +379,9 @@ nav {
 .layout {
   width: 100%;
   height: 100%;
-  scroll-snap-type: y mandatory;
-  -webkit-overflow-scrolling: touch;
+  /* scroll-snap-type: y mandatory; */
+  /* -webkit-scroll-snap-type: none; */
+  /* -webkit-overflow-scrolling: touch; */
   overflow-y: auto;
   overflow-x: hidden;
   scroll-behavior: smooth;
@@ -720,8 +721,9 @@ nav .logo:hover > path {
 .video-controls {
   position: relative;
   bottom: 80px;
+  justify-content: space-between;
   display: flex;
-  gap: 32px;
+  column-gap: 32px;
   align-self: flex-end;
   grid-column: 1 / 3;
 }
