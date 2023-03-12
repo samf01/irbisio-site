@@ -56,23 +56,29 @@ const Landing = () => {
 
   return (
     <div className="container" id="atf" ref={containerRef}>
-      <div className="container-shape">
-        {!mobile && (
-          <video
-            ref={videoRef}
-            autoPlay
-            loop
-            preload="none"
-            muted
-            playsInline
-            className="video-cutter"
-            poster={poster}
-          >
-            <source src={videoMp4} type="video/mp4" />
-            <source src={videoWebM} type="video/webM" />
-            Your browser does not support the video tag.
-          </video>
-        )}
+      <div
+        style={{
+          position: 'absolute',
+          width: '100%',
+          height: '100vh',
+          top: 0,
+          left: 0,
+        }}
+      >
+        <video
+          ref={videoRef}
+          autoPlay
+          loop
+          preload="none"
+          muted
+          playsInline
+          className="video-cutter"
+          poster={poster}
+        >
+          <source src={videoMp4} type="video/mp4" />
+          <source src={videoWebM} type="video/webM" />
+          Your browser does not support the video tag.
+        </video>
         <BackgroundShape />
       </div>
       <div
@@ -88,59 +94,57 @@ const Landing = () => {
           <Logo />
         </div>
         <BottomShape />
-        {!mobile && (
-          <div className="video-controls">
-            <button role="button" aria-label="Play/Pause" onClick={handlePlay}>
-              {playing ? <Pause /> : <Play />}
-            </button>
-            <button role="button" aria-label="Fullscreen" onClick={handleOpen}>
-              <Fullscreen />
-            </button>
-          </div>
-        )}
+
+        <div className="video-controls">
+          <button role="button" aria-label="Play/Pause" onClick={handlePlay}>
+            {playing ? <Pause /> : <Play />}
+          </button>
+          <button role="button" aria-label="Fullscreen" onClick={handleOpen}>
+            <Fullscreen />
+          </button>
+        </div>
       </div>
-      {!mobile && (
-        <ReactModal
-          isOpen={fullscreen}
-          onAfterOpen={blockScroll}
-          onRequestClose={allowScroll()}
-          contentLabel="Video Viewer"
-          style={customStyles}
-          ariaHideApp={false}
+
+      <ReactModal
+        isOpen={fullscreen}
+        onAfterOpen={blockScroll}
+        onRequestClose={allowScroll()}
+        contentLabel="Video Viewer"
+        style={customStyles}
+        ariaHideApp={false}
+      >
+        <div
+          style={{
+            position: 'relative',
+            top: 0,
+            left: 0,
+          }}
         >
-          <div
-            style={{
-              position: 'relative',
-              top: 0,
-              left: 0,
-            }}
+          <video
+            width="100%"
+            height="100%"
+            controls
+            playsInline
+            id="video-block"
+            webkitallowfullscreen="true"
+            mozallowfullscreen="true"
+            allowFullScreen
+            rotate-to-fullscreen="true"
           >
-            <video
-              width="100%"
-              height="100%"
-              controls
-              playsInline
-              id="video-block"
-              webkitallowfullscreen="true"
-              mozallowfullscreen="true"
-              allowFullScreen
-              rotate-to-fullscreen="true"
-            >
-              <source src={videoMp4} type="video/mp4" />
-              <source src={videoWebM} type="video/webM" />
-              Your browser does not support the video tag.
-            </video>
-            <button
-              aria-label="Close"
-              role="button"
-              style={{ position: 'absolute', top: ' 12%', right: '6%' }}
-              onClick={handleClose}
-            >
-              <Close />
-            </button>
-          </div>
-        </ReactModal>
-      )}
+            <source src={videoMp4} type="video/mp4" />
+            <source src={videoWebM} type="video/webM" />
+            Your browser does not support the video tag.
+          </video>
+          <button
+            aria-label="Close"
+            role="button"
+            style={{ position: 'absolute', top: ' 12%', right: '6%' }}
+            onClick={handleClose}
+          >
+            <Close />
+          </button>
+        </div>
+      </ReactModal>
     </div>
   )
 }

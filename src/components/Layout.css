@@ -328,14 +328,19 @@ nav {
 #footer {
   position: relative;
   bottom: 70px;
+
   /* background-color: rgba(0, 0, 0, 0.8); */
   display: flex;
   flex-wrap: wrap;
-  padding: 24px 0;
+  /* padding: 24px 0; */
   margin: var(--margin-page);
   justify-content: space-around;
   align-items: center;
   scroll-snap-align: end;
+}
+
+#footer * {
+  color: var(--irbisio-off-white);
 }
 
 @media (max-width: 990px) {
@@ -546,9 +551,9 @@ Link {
     grid-column: 2 / 8;
   }
 
-  .fullscreen-button {
+  /* .fullscreen-button {
     display: none;
-  }
+  } */
 }
 
 /* Light/Dark Mode Modifiers */
@@ -734,5 +739,20 @@ nav .logo:hover > path {
 
   .video-controls {
     bottom: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .video-cutter {
+    clip-path: none;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  #footer {
+    position: unset;
+    margin: 0;
+    padding: 0 16px 24px 16px;
+    background-color: black;
   }
 }

@@ -1,8 +1,5 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import GridContent from './grid-content'
-import Form from './contact/form'
-import MockForm from '../graphics/contact-form-mockup'
 import { useAdmin } from '../Hooks/useAdmin'
 
 const Footer = ({ footer }) => {
@@ -10,15 +7,6 @@ const Footer = ({ footer }) => {
   const year = new Date()
   return (
     <div style={{ height: '100%' }}>
-      <GridContent
-        id="contact"
-        layout="--center-4"
-        mode={footer.mode}
-        background={footer.image}
-      >
-        <h4>Contact</h4>
-        {admin ? <MockForm /> : <Form />}
-      </GridContent>
       {admin ? (
         <footer id="footer">
           <a href="/" className="copywrite">

@@ -25,8 +25,6 @@ const Home = ({ data }) => {
     edge => edge.node.frontmatter.cms === 'press'
   )
 
-  console.log(release)
-
   return (
     <Layout>
       <GatsbySeo title="Home Page" />

@@ -29,3 +29,6 @@ Gatsby 5 is still out because of NetlifyCMS compatibility issues with React 18.
 
 To run a development server, run: _gatsby develop_
 To run a local netlifyCMS server, run (in a separate terminal): _npx netlify-cms-proxy-server_
+To run a development server on local network _yarn develop -H 0.0.0.0_
+
+- Sometimes it doesn't end on _Cntrl + C_ you may need to run _npx kill-port 8000_

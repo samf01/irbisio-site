@@ -45,4 +45,8 @@ form:nth-child(4) {
   .submit {
     width: 100%;
   }
+
+  .input-box {
+    margin-bottom: 6px;
+  }
 }

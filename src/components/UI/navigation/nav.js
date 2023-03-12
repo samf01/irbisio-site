@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'gatsby'
 import * as NavStyles from './nav.module.css'
 import { Hamburger } from './hamburgers'
@@ -10,16 +10,12 @@ import useMediaQuery from '../../Hooks/MatchMedia'
 import Logo from '../../graphics/logo'
 
 const NavBar = ({ layoutRef }) => {
-  const [isStart, setIsStart] = useState(true)
   const [navbarOpen, setNavbarOpen] = useState(false)
   const mobile = useMediaQuery('(max-width: 990px)')
   const [scrollPosY, prevScrollPosY] = useState(0)
 
-  const scrollFunction = useCallback(
-    _.debounce(() => {
-      const checkType = _.once(() => {
-        if (scrollPosY > 10 && !mobile) setIsStart(!isStart)
-      })
+  useEffect(() => {
+    const scrollFunction = () => {
       setNavbarOpen(false)
       //It is no longer window. that is scrolling > need to ref() the layout div...
       //let currentScrollPosY = window.scrollY
@@ -27,26 +23,23 @@ const NavBar = ({ layoutRef }) => {
 
       if (scrollPosY > currentScrollPosY) {
         document.getElementById('navbar').style.top = '0'
-        checkType()
       } else {
         document.getElementById('navbar').style.top = '-60px'
       }
       prevScrollPosY(currentScrollPosY)
-    }, 12),
-    [prevScrollPosY]
-  )
+    }
+    if (layoutRef.current)
+      layoutRef.current.addEventListener('scroll', () => {
+        scrollFunction()
+      })
 
-  // useEffect(() => {
-  //   document.addEventListener('scroll', () => {
-  //     scrollFunction()
-  //   })
-
-  //   return () => {
-  //     document.removeEventListener('scroll', () => {
-  //       scrollFunction()
-  //     })
-  //   }
-  // }, [scrollPosY])
+    return () => {
+      if (layoutRef.current)
+        layoutRef.current.removeEventListener('scroll', () => {
+          scrollFunction()
+        })
+    }
+  }, [scrollPosY])
 
   const appear = useTransition(navbarOpen, {
     from: { right: '-100%' },
@@ -92,7 +85,7 @@ const NavBar = ({ layoutRef }) => {
           <Logo />
         </Link>
 
-        {isStart && !mobile ? (
+        {!mobile ? (
           <NavList />
         ) : (
           <button
